@@ -61,3 +61,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Project_Show-off/Library
+Project_Show-off/Logs
+Project_Show-off/Temp
+Project_Show-off/UserSettings
+Project_Show-off/.vsconfig
