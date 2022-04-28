@@ -12,6 +12,7 @@ public class CheckIfGrounded : MonoBehaviour
     private void Update()
     {
         CountdownCoyoteTime();
+        Debug.Log(Physics.Raycast(transform.position, transform.up * -1, checkDistance, 1001000));
     }
 
     /// <summary>
@@ -20,7 +21,7 @@ public class CheckIfGrounded : MonoBehaviour
     /// <returns> true if the object is resting on a terrain object</returns>
     public bool IsGrounded()
     {
-        if (Physics.Raycast(transform.position, transform.up * -1, checkDistance, 1000))
+        if (Physics.Raycast(transform.position, transform.up * -1, checkDistance, 1001000))
         {
             CoyoteTimeAvailable = true;
             return true;
@@ -45,5 +46,4 @@ public class CheckIfGrounded : MonoBehaviour
             coyoteTimeCooldown -= Time.deltaTime;
         }
     }
-
 }
