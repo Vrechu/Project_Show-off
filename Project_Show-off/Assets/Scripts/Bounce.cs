@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    [SerializeField] private float bounceForce = 100000;
+    [SerializeField] private float bounceForce = 500;
 
     void Start()
     {
