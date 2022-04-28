@@ -7,6 +7,7 @@ public class ControlCharacter : MonoBehaviour
     private Rigidbody objectRigidbody;
 
     [SerializeField] private float moveSpeed = 500;
+    [SerializeField] private float inAirmoveSpeed = 250;
     [SerializeField] private float turnSpeed = 100;
     private float forwardInput;
     private float sidewaysInput;
@@ -37,7 +38,11 @@ public class ControlCharacter : MonoBehaviour
     /// <returns>the object velocity vector based on the imputs and movement speed</returns>
     private Vector3 velocity()
     {
-        return transform.forward * forwardInput * moveSpeed * Time.deltaTime;
+        if (GetComponent<CheckIfGrounded>().IsGrounded())
+        {
+            return transform.forward * forwardInput * moveSpeed * Time.deltaTime;
+        }
+        else return transform.forward * forwardInput * inAirmoveSpeed * Time.deltaTime;
     }
 
     /// <summary>
@@ -45,10 +50,7 @@ public class ControlCharacter : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        if (GetComponent<CheckIfGrounded>().IsGrounded())
-        {
-            objectRigidbody.AddForce(velocity());
-            transform.Rotate(transform.up, sidewaysInput * turnSpeed * Time.deltaTime);
-        }
+        objectRigidbody.AddForce(velocity());
+        transform.Rotate(transform.up, sidewaysInput * turnSpeed * Time.deltaTime);
     }
 }
