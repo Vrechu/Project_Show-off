@@ -12,7 +12,7 @@ public class CheckIfGrounded : MonoBehaviour
     private void Update()
     {
         CountdownCoyoteTime();
-        Debug.Log(Physics.Raycast(transform.position, transform.up * -1, checkDistance, 1001000));
+
     }
 
     /// <summary>
