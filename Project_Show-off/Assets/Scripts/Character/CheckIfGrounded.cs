@@ -12,7 +12,6 @@ public class CheckIfGrounded : MonoBehaviour
     private void Update()
     {
         CountdownCoyoteTime();
-
     }
 
     /// <summary>
