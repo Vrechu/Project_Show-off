@@ -46,13 +46,18 @@ public class MoveWall : MonoBehaviour
 
     private void MoveToTarget()
     {
-        if (TargetReached(movePositionQueue.Peek()))
+        if (!waiting)
         {
-            movePositionQueue.Enqueue(movePositionQueue.Dequeue());
-        }
-        else 
-        {
-            transform.Translate(MoveDirection() * moveSpeed * Time.deltaTime);
+            if (TargetReached(movePositionQueue.Peek()))
+            {
+                movePositionQueue.Enqueue(movePositionQueue.Dequeue());
+                waiting = true;
+                waitingTimer = waitingTime;
+            }
+            else
+            {
+                transform.Translate(MoveDirection() * moveSpeed * Time.deltaTime);
+            }
         }
     }
 
@@ -63,9 +68,9 @@ public class MoveWall : MonoBehaviour
 
     private void WaitCountDown()
     {
-        if (waitingTimer >= 0)
+        if (waitingTimer >= 0 
+            && waiting)
         {
-            waiting = true;
             waitingTimer -= Time.deltaTime;
         }
         else waiting = false;
