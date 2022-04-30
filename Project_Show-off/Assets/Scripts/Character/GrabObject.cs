@@ -4,21 +4,43 @@ using UnityEngine;
 
 public class GrabObject : MonoBehaviour
 {
+    private Transform grabbingObject;
+    private Transform originalParent;
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Grabbable")
+        if (Input.GetAxis("Fire1") == 1)
         {
-            if (Input.GetAxis("Fire1") == 1)
+            switch (other.tag)
             {
-                other.attachedRigidbody.useGravity = false;
-                other.gameObject.transform.parent = this.transform;
-                other.transform.position = this.transform.position;
+                case "Grabbable":
+                    if (grabbingObject == null)
+                    {
+                        grabbingObject = other.transform;
+                        originalParent = grabbingObject.parent;
+                        grabbingObject.parent = this.transform;
+                        grabbingObject.GetComponent<Rigidbody>().useGravity = false;
+                        grabbingObject.position = this.transform.position;
+                    }
+                    else
+                    {
+                        grabbingObject.position = this.transform.position;
+                    }
+
+                    break;
+
+                case "Player":
+                    //implement player grab
+                    break;
             }
-            else
-            {
-                other.attachedRigidbody.useGravity = true;
-                other.gameObject.transform.parent = null;
-            }
+
+        }
+        else if (grabbingObject != null)
+        {
+            grabbingObject.GetComponent<Rigidbody>().useGravity = true;
+            if (originalParent == null) grabbingObject.parent = null;
+            else grabbingObject.parent = originalParent;
+            grabbingObject = null;
         }
     }
 }
