@@ -15,7 +15,7 @@ public class WakeUpSurroundings : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Grabbable")
+        if (other.GetComponent<PhysicsHandler>() != null)
         {
             other.GetComponent<PhysicsHandler>().WakUpRB();
         }
