@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 787e1bc7702137c42a859a3aeda2e2be
+labels:
+- Enemy
+- Environment
+- Player
+- Test
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
