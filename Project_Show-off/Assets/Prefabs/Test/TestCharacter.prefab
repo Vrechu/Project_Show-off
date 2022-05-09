@@ -233,10 +233,11 @@ GameObject:
   - component: {fileID: 5828065531307143952}
   - component: {fileID: 6712952146064914083}
   - component: {fileID: 5911920473042421565}
+  - component: {fileID: 9004482198193472156}
+  - component: {fileID: 8586122256611843580}
   - component: {fileID: 8322557860867561022}
   - component: {fileID: 1073208264925706338}
   - component: {fileID: 1898795693768397785}
-  - component: {fileID: 8586122256611843580}
   m_Layer: 0
   m_Name: TestCharacter
   m_TagString: Player
@@ -252,7 +253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9204511848866849038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.63, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -341,7 +342,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &8322557860867561022
+--- !u!114 &9004482198193472156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,6 +350,59 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9204511848866849038}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: cf239da0242f4ca4a91bb4fcb6e17e2b, type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5f0515ed-d1d1-4d28-8f8e-41c4373dec74
+    m_ActionName: Ingame/Walk
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 946076e2-47ea-4a42-a2b5-f703da1593f7
+    m_ActionName: Ingame/Jump[/Keyboard/space]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Ingame
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &8586122256611843580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204511848866849038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22bb6e80d4edb4408b2f0c70ebda3c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  inAirmoveSpeed: 2
+  turnSpeed: 100
+--- !u!114 &8322557860867561022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204511848866849038}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ac47a133779e8e428bf796ef586899a, type: 3}
   m_Name: 
@@ -368,8 +422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92be7e50ac025b14e993a586141e07a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 20000
-  jumpCooldownTime: 0.05
+  jumpSpeed: 100000
+  jumpCooldownTime: 0
   jumpTimer: 0
 --- !u!114 &1898795693768397785
 MonoBehaviour:
@@ -386,18 +440,3 @@ MonoBehaviour:
   checkDistance: 1.3
   coyoteTime: 0.05
   coyoteTimeCooldown: 0
---- !u!114 &8586122256611843580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9204511848866849038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c22bb6e80d4edb4408b2f0c70ebda3c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  inAirMoveSpeed: 3
-  turnSpeed: 100
