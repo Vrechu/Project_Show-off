@@ -33,7 +33,7 @@ public class TestJump : MonoBehaviour
     {
         if (GetComponent<CheckIfGrounded>().IsGrounded())
         {
-            objectRigidbody.AddForce(transform.up * jumpInput * jumpSpeed * Time.deltaTime);
+            objectRigidbody.AddForce(transform.up * jumpInput * jumpSpeed);
         }
     }
 }
