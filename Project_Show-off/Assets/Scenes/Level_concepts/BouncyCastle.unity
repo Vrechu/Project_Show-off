@@ -192,14 +192,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1045504042741135717, guid: c366ccb232c190f41b12134c7a8f85ba, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1045504042741135717, guid: c366ccb232c190f41b12134c7a8f85ba, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1045504042741135717, guid: c366ccb232c190f41b12134c7a8f85ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.77
       objectReference: {fileID: 0}
@@ -475,12 +467,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2941617038277168163, guid: cb712bf49d0b43f469255d1277dc0a1a, type: 3}
+      propertyPath: isDelayed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941617038277168163, guid: cb712bf49d0b43f469255d1277dc0a1a, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2941617038277168163, guid: cb712bf49d0b43f469255d1277dc0a1a, type: 3}
       propertyPath: bounceForce
-      value: 15000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 2941617038277168172, guid: cb712bf49d0b43f469255d1277dc0a1a, type: 3}
       propertyPath: m_Materials.Array.data[0]
