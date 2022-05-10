@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 785061329}
   - component: {fileID: 785061328}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: WakeUpCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

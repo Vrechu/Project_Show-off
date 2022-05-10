@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "Walk",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "5f0515ed-d1d1-4d28-8f8e-41c4373dec74",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": "Hold",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
@@ -31,14 +31,25 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard1",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Walk Vector",
-                    "id": "9a2d2ce1-93c5-40ee-a276-d6df48c20cea",
+                    "name": "",
+                    "id": "5dc4f53b-ca3c-460f-b187-537aadeb4694",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "f3072608-876c-49bc-a10a-2cdf3221dd32",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -49,50 +60,72 @@
                 },
                 {
                     "name": "up",
-                    "id": "939a3e4f-4a8a-4ade-88be-b5131d03d301",
+                    "id": "ce42129f-9563-4853-83da-acb39387e122",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard1",
                     "action": "Walk",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "e857604f-a7cb-4814-8cd9-2c8d3ebb3add",
+                    "id": "803f2ebd-b71b-4cb8-b4dc-8141fe658cb7",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard1",
                     "action": "Walk",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "89e397b7-99db-4cf2-9569-44501edb849f",
+                    "id": "ed9e5304-b039-41f6-8d63-6ac33100fcb8",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard1",
                     "action": "Walk",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "400bc1e6-6a4c-47c0-bfe5-1cacd53a5f30",
+                    "id": "67e3c941-c8cb-4f87-b529-f93cdeb0d696",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard1",
                     "action": "Walk",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "7d7770b1-7f47-42a2-9ff1-747055cda5ac",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Walk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Keyboard1",
+            "bindingGroup": "Keyboard1",
+            "devices": []
+        },
+        {
+            "name": "Controller",
+            "bindingGroup": "Controller",
+            "devices": []
+        }
+    ]
 }

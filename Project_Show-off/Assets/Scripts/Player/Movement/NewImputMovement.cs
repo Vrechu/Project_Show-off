@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class NewImputMovement : MonoBehaviour
 {
@@ -12,9 +13,13 @@ public class NewImputMovement : MonoBehaviour
     private float forwardInput;
     private float sidewaysInput;
 
+    private Player1KeyboardInputs player1KeyboardInputs;
+
     void Start()
     {
         objectRigidbody = GetComponent<Rigidbody>();
+        player1KeyboardInputs = new Player1KeyboardInputs();
+        player1KeyboardInputs.Ingame.Walk.Enable();
     }
 
     void Update()
@@ -28,8 +33,8 @@ public class NewImputMovement : MonoBehaviour
     /// </summary>
     private void SetKeys()
     {
-        forwardInput = Input.GetAxis("Vertical");
-        sidewaysInput = Input.GetAxis("Horizontal");
+        forwardInput = player1KeyboardInputs.Ingame.Walk.ReadValue<Vector2>().y;
+        sidewaysInput = player1KeyboardInputs.Ingame.Walk.ReadValue<Vector2>().x;
     }
 
     /// <summary>
