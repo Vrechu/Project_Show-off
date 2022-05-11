@@ -238,6 +238,8 @@ GameObject:
   - component: {fileID: 8322557860867561022}
   - component: {fileID: 1073208264925706338}
   - component: {fileID: 1898795693768397785}
+  - component: {fileID: 1067008514}
+  - component: {fileID: 1047692238}
   m_Layer: 0
   m_Name: TestCharacter
   m_TagString: Player
@@ -355,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: cf239da0242f4ca4a91bb4fcb6e17e2b, type: 3}
-  m_NotificationBehavior: 3
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -372,11 +374,23 @@ MonoBehaviour:
     m_ActionId: 5f0515ed-d1d1-4d28-8f8e-41c4373dec74
     m_ActionName: Ingame/Walk
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1073208264925706338}
+        m_TargetAssemblyTypeName: JumpCharacter, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 946076e2-47ea-4a42-a2b5-f703da1593f7
     m_ActionName: Ingame/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard1
   m_DefaultActionMap: Ingame
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -402,14 +416,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9204511848866849038}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ac47a133779e8e428bf796ef586899a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10000
-  inAirMoveSpeed: 250
+  inAirMoveSpeed: 5000
   turnSpeed: 100
+  playerNumber: 0
 --- !u!114 &1073208264925706338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,12 +432,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9204511848866849038}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92be7e50ac025b14e993a586141e07a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 100000
+  jumpSpeed: 100
   jumpCooldownTime: 0
   jumpTimer: 0
 --- !u!114 &1898795693768397785
@@ -440,3 +455,32 @@ MonoBehaviour:
   checkDistance: 1.3
   coyoteTime: 0.05
   coyoteTimeCooldown: 0
+--- !u!114 &1067008514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204511848866849038}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c50003a5b23b5b44bacd15285d434e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10000
+  inAirMoveSpeed: 5000
+  turnSpeed: 100
+--- !u!114 &1047692238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204511848866849038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c16399e1ce70f04989fc8c37e011ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  jumpSpeed: 100

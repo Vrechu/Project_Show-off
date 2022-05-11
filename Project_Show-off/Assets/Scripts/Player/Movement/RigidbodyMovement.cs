@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RigidbodyMovement: MonoBehaviour
+public class RigidbodyMovement : MonoBehaviour
 {
     private Rigidbody objectRigidbody;
 
@@ -11,6 +11,12 @@ public class RigidbodyMovement: MonoBehaviour
     [SerializeField] private float turnSpeed = 100;
     private float forwardInput;
     private float sidewaysInput;
+    private enum PlayerNumber
+    {
+        Player1, Player2
+    }
+
+    [SerializeField] private PlayerNumber playerNumber = PlayerNumber.Player1;
 
     void Start()
     {
@@ -19,7 +25,7 @@ public class RigidbodyMovement: MonoBehaviour
 
     void Update()
     {
-        SetKeys();
+        //SetKeys();
         Move();
     }
 
@@ -28,8 +34,65 @@ public class RigidbodyMovement: MonoBehaviour
     /// </summary>
     private void SetKeys()
     {
+
         forwardInput = Input.GetAxis("Vertical");
         sidewaysInput = Input.GetAxis("Horizontal");
+
+
+
+    }
+
+    Vector2 direction()
+    {
+        Debug.Log("1");
+        float up = 0;
+        float down = 0;
+        float left = 0;
+        float right = 0;
+
+        switch (playerNumber)
+        {
+            case PlayerNumber.Player1:
+                Debug.Log("2");
+                if (Input.GetKey(KeyCode.W))
+                {
+                    Debug.Log("3");
+                    up = 1;
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    down = -1;
+                }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    left = -1;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    right = 1;
+                }
+                break;
+
+            case PlayerNumber.Player2:
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    up = 1;
+                }
+                if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    down = -1;
+                }
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    left = -1;
+                }
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    right = 1;
+                }
+                break;
+        }
+        return new Vector2(left + right, up + down).normalized;
     }
 
     /// <summary>
@@ -40,9 +103,9 @@ public class RigidbodyMovement: MonoBehaviour
     {
         if (GetComponent<CheckIfGrounded>().IsGrounded())
         {
-            return transform.forward * forwardInput * moveSpeed * Time.deltaTime;
+            return transform.forward * direction().y * moveSpeed * Time.deltaTime;
         }
-        else return transform.forward * forwardInput * inAirMoveSpeed * Time.deltaTime;
+        else return transform.forward * direction().y * inAirMoveSpeed * Time.deltaTime;
     }
 
     /// <summary>
@@ -51,6 +114,6 @@ public class RigidbodyMovement: MonoBehaviour
     private void Move()
     {
         objectRigidbody.AddForce(Velocity());
-        transform.Rotate(transform.up, sidewaysInput * turnSpeed * Time.deltaTime);
+        transform.Rotate(transform.up, direction().x * turnSpeed * Time.deltaTime);
     }
 }

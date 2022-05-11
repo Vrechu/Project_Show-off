@@ -6,7 +6,14 @@ public class TestJump : MonoBehaviour
 {
     private Rigidbody objectRigidbody;
 
-    [SerializeField] private float jumpSpeed = 10000;
+    private enum PlayerNumber
+    {
+        Player1, Player2
+    }
+
+    [SerializeField] private PlayerNumber playerNumber = PlayerNumber.Player1;
+
+    [SerializeField] private float jumpSpeed = 100;
 
     private float jumpInput;
 
@@ -26,7 +33,16 @@ public class TestJump : MonoBehaviour
     /// </summary>
     private void SetImput()
     {
-        jumpInput = Input.GetAxis("Jump");
+        switch (playerNumber)
+        {
+            case PlayerNumber.Player1:
+                jumpInput = Input.GetAxis("Fire1");
+                break;
+
+            case PlayerNumber.Player2:
+                jumpInput = Input.GetAxis("Fire2");
+                break;
+        }
     }
 
     private void Jump()
