@@ -9,7 +9,7 @@ public class GrabObject : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetAxis("Fire1") == 1)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             switch (other.tag)
             {

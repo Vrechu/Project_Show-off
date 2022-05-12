@@ -6,6 +6,9 @@ public class TestJump : MonoBehaviour
 {
     private Rigidbody objectRigidbody;
 
+    [SerializeField] private float jumpTime = 1;
+    [SerializeField] private float jumpTimer = 0;
+
     private enum PlayerNumber
     {
         Player1, Player2
@@ -26,6 +29,7 @@ public class TestJump : MonoBehaviour
     {
         SetImput();
         Jump();
+        JumpCounter();
     }
 
     /// <summary>
@@ -47,9 +51,20 @@ public class TestJump : MonoBehaviour
 
     private void Jump()
     {
-        if (GetComponent<CheckIfGrounded>().IsGrounded())
+        if (GetComponent<CheckIfGrounded>().IsGrounded()
+            && jumpTimer < 0 
+            && jumpInput == 1)
         {
-            objectRigidbody.AddForce(transform.up * jumpInput * jumpSpeed);
+            objectRigidbody.AddForce(transform.up * jumpSpeed);
+            jumpTimer = jumpTime;
+        }
+    }
+
+    private void JumpCounter()
+    {
+        if (jumpTimer >= 0)
+        {
+            jumpTimer -= Time.deltaTime;
         }
     }
 }
