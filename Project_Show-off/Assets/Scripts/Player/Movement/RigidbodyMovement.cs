@@ -53,10 +53,8 @@ public class RigidbodyMovement : MonoBehaviour
         switch (playerNumber)
         {
             case PlayerNumber.Player1:
-                Debug.Log("2");
                 if (Input.GetKey(KeyCode.W))
                 {
-                    Debug.Log("3");
                     up = 1;
                 }
                 if (Input.GetKey(KeyCode.S))

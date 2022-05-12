@@ -25,7 +25,7 @@ public class FallingTile : MonoBehaviour
     {
         if (!hasFallen)
         {
-            if (fallDownTimer > 0)
+            if (fallDownTimer >= 0)
             {
                 fallDownTimer -= Time.deltaTime;
             }

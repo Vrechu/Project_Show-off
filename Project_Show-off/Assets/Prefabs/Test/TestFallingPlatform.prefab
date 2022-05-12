@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1079463197531731918}
   - component: {fileID: 1079463197531731919}
   - component: {fileID: 663610437}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TestFallingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
