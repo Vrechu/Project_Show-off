@@ -107,6 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3700725611124992927}
+  - component: {fileID: 1397946634898491075}
   m_Layer: 0
   m_Name: LEAF_PLATFORM
   m_TagString: Untagged
@@ -131,6 +132,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1397946634898491075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201941654584401703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197d41cf1651e934f86c844ad52b8bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movePositions: []
+  moveSpeed: 3
+  waitingTime: 1
+  waitingTimer: 0
 --- !u!1 &4858387448928289350
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +209,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: c3f41eb956e845244b230c92cc457286, type: 3}
+  - {fileID: 2100000, guid: 5ebcac848c74f954ba7ea00a73756229, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
