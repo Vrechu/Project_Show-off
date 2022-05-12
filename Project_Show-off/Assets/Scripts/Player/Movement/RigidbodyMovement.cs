@@ -44,7 +44,6 @@ public class RigidbodyMovement : MonoBehaviour
 
     Vector2 direction()
     {
-        Debug.Log("1");
         float up = 0;
         float down = 0;
         float left = 0;
