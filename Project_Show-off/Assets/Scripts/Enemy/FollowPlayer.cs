@@ -7,16 +7,20 @@ public class FollowPlayer : MonoBehaviour
 {
     private NavMeshAgent agent;
     [SerializeField] private float followDistance = 4;
+
+    private GameObject player;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        if ((GameObject.FindGameObjectWithTag("Player").transform.position - transform.position).magnitude < followDistance)
+        if ((player.transform.position - transform.position).magnitude < followDistance)
         {
-            agent.destination = GameObject.FindGameObjectWithTag("Player").transform.position;
+            agent.destination = player.transform.position;
         }
         else agent.destination = transform.position;
     }
