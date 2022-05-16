@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float currentSpeed = 0;
     [SerializeField] private float groundedDrag = 0.02f;
     [SerializeField] private float inAirDrag = 0.05f;
+    [SerializeField] private Transform cameraTransform;
 
     private enum PlayerNumber
     {
@@ -48,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float Acceleration()
     {
+        Debug.Log(GetComponent<CheckIfGrounded>().IsGrounded());
         if (GetComponent<CheckIfGrounded>().IsGrounded())
         {
             return groundedAcceleration * Time.deltaTime;
@@ -111,6 +113,12 @@ public class PlayerMovement : MonoBehaviour
                 }
                 break;
         }
-        return new Vector2(left + right, up + down).normalized;
+
+        if (cameraTransform != null)
+        {
+            Vector3 cameraVector = (cameraTransform.right * (left + right) + cameraTransform.forward * (up + down)).normalized;
+            return new Vector2(cameraVector.x, cameraVector.z);
+        }
+        else return new Vector2(left + right, up + down).normalized;
     }
 }

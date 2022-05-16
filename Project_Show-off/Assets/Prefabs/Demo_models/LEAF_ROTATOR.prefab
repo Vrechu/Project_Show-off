@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7025646243469132924}
   - component: {fileID: 1771518079153387023}
   - component: {fileID: 8980065475779025139}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 4679522189138895974}
   - component: {fileID: 6480648849212250607}
   - component: {fileID: 1435502859202946481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LEAF_PLATFORM_COLLIDER (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 6022669832745569364}
   - component: {fileID: 1791064420971561104}
   - component: {fileID: 11930649186283233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LEAF_PLATFORM_COLLIDER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 3882692401057257772}
   - component: {fileID: 2027380565270281101}
   - component: {fileID: 6084731162645988442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LEAF_PLATFORM_COLLIDER (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

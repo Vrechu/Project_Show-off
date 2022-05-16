@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122535830}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 138089080622383614}
   - component: {fileID: 138089080622383613}
   - component: {fileID: 138089080622383612}
+  - component: {fileID: -6716760171945060333}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -331,9 +332,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138089080622383589}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0.5
-  m_AngularDrag: 15
+  m_Mass: 5
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -357,6 +358,7 @@ MonoBehaviour:
   currentSpeed: 0
   groundedDrag: 180
   inAirDrag: 50
+  cameraTransform: {fileID: 0}
   playerNumber: 0
 --- !u!114 &138089080622383613
 MonoBehaviour:
@@ -370,9 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e104876353ccb4e997f3cd2efcb1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDistance: 1.01
-  coyoteTime: 0
-  coyoteTimeCooldown: 0
+  checkDistance: 0.51
 --- !u!114 &138089080622383612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,4 +388,17 @@ MonoBehaviour:
   jumpTime: 0.2
   jumpTimer: 0
   playerNumber: 0
-  jumpSpeed: 500
+  jumpSpeed: 1000
+--- !u!114 &-6716760171945060333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138089080622383589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd998a1677f5914c95715bc54d0edd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 0}
