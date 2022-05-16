@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class CheckIfGrounded : MonoBehaviour
 {
-    [SerializeField]private float checkDistance = 1.1f;
-    [SerializeField] private float coyoteTime = 0.05f;
-    [SerializeField] private float coyoteTimeCooldown = 0;
-    private bool CoyoteTimeAvailable = false;
+    [SerializeField] private float checkDistance = 1.1f;
 
-    private void Update()
-    {
-        CountdownCoyoteTime();
-    }
 
     /// <summary>
     /// 
@@ -20,29 +13,21 @@ public class CheckIfGrounded : MonoBehaviour
     /// <returns> true if the object is resting on a terrain object</returns>
     public bool IsGrounded()
     {
-        if (Physics.Raycast(transform.position, transform.up * -1, checkDistance, 1001000))
+        RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position, transform.up * -1, out hitInfo, checkDistance, 0b1001000))
         {
-            CoyoteTimeAvailable = true;
+                Debug.Log(hitInfo.transform.gameObject.layer);
+            if (hitInfo.transform.gameObject.layer == 6)
+            {
+                transform.parent = hitInfo.transform;
+            }
+            else transform.parent = null;
             return true;
         }
-        else if (coyoteTimeCooldown > 0)
+        else
         {
-            return true;
-        }
-        else if (CoyoteTimeAvailable == true)
-        {
-            CoyoteTimeAvailable = false;
-            coyoteTimeCooldown = coyoteTime;
-            return true;
-        } 
-        else return false;
-    }
-
-    private void CountdownCoyoteTime()
-    {
-        if (coyoteTimeCooldown >= 0)
-        {
-            coyoteTimeCooldown -= Time.deltaTime;
+            transform.parent = null;
+            return false;
         }
     }
 }

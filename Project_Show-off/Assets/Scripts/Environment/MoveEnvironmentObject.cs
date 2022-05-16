@@ -56,7 +56,7 @@ public class MoveEnvironmentObject : MonoBehaviour
             }
             else
             {
-                transform.Translate(MoveDirection() * moveSpeed * Time.deltaTime);
+                transform.Translate(MoveDirection() * moveSpeed * Time.deltaTime,Space.World);
             }
         }
     }
