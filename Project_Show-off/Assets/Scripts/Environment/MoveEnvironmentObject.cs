@@ -6,11 +6,13 @@ public class MoveEnvironmentObject : MonoBehaviour
 {
     [SerializeField] private Transform[] movePositions;
     private Queue<Vector3> movePositionQueue = new Queue<Vector3>();
+    [SerializeField] private bool Loop = true;
 
     [SerializeField] private float moveSpeed = 0.5f;
     [SerializeField] private float waitingTime = 1;
     [SerializeField] private float waitingTimer = 0;
     private bool waiting = true;
+    
 
     void Start()
     {
@@ -46,11 +48,15 @@ public class MoveEnvironmentObject : MonoBehaviour
 
     private void MoveToTarget()
     {
-        if (!waiting)
+        if (!waiting && movePositionQueue.Count > 0)
         {
             if (TargetReached(movePositionQueue.Peek()))
             {
-                movePositionQueue.Enqueue(movePositionQueue.Dequeue());
+                if (Loop)
+                {
+                    movePositionQueue.Enqueue(movePositionQueue.Dequeue());
+                }
+                else movePositionQueue.Dequeue();
                 waiting = true;
                 waitingTimer = waitingTime;
             }
