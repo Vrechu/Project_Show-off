@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallingTile : MonoBehaviour
 {
-    private Rigidbody rigidbody;
+    private Rigidbody tileRigidbody;
     [SerializeField] private float fallDownTime = 10;
     [SerializeField] private float fallDownTimer = 0;
     private bool hasFallen = false;
@@ -15,9 +15,9 @@ public class FallingTile : MonoBehaviour
     {
         if (GetComponent<Rigidbody>()!= null)
         {
-        rigidbody = GetComponent<Rigidbody>();
+        tileRigidbody = GetComponent<Rigidbody>();
         }
-        else rigidbody = GetComponentInParent<Rigidbody>();
+        else tileRigidbody = GetComponentInParent<Rigidbody>();
 
         fallDownTimer = fallDownTime;
     }
@@ -44,7 +44,7 @@ public class FallingTile : MonoBehaviour
 
     public void FallDown()
     {
-        rigidbody.isKinematic = false;
+        tileRigidbody.isKinematic = false;
         hasFallen = true;
     }
 }

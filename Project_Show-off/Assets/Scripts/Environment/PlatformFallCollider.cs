@@ -6,10 +6,8 @@ public class PlatformFallCollider : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("2");
-        if (other.GetComponent<FallingTile>() != null)
+        if (other.GetComponent<FallingTile>() != null && other.attachedRigidbody.isKinematic)
         {
-            Debug.Log("1");
             other.GetComponent<FallingTile>().FallDown();
         }
     }
