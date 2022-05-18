@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
-    [SerializeField] private Transform respawnPoint;
+    private RespawnManager respawnManager;
 
-   public void MoveToRespawn()
+    private void Start()
     {
-        transform.position = respawnPoint.position;
+        respawnManager = RespawnManager.Instance;
+    }
+
+    public void MoveToRespawn()
+    {
+        if (respawnManager.CurrentRespawnPoint() != null)
+        {
+            transform.position = respawnManager.CurrentRespawnPoint().position;
+        }
     }
 }
