@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7025646243469132924}
   - component: {fileID: 1771518079153387023}
   - component: {fileID: 8980065475779025139}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3307888251255658338, guid: c3f41eb956e845244b230c92cc457286, type: 3}
 --- !u!1 &5722321920255561046
@@ -406,7 +406,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3307888251255658338, guid: c3f41eb956e845244b230c92cc457286, type: 3}
 --- !u!1 &6184378655332954579
@@ -504,7 +504,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3307888251255658338, guid: c3f41eb956e845244b230c92cc457286, type: 3}
 --- !u!1 &8694370736839604059
