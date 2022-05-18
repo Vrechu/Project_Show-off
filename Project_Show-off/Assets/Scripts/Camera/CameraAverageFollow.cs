@@ -6,11 +6,13 @@ public class CameraAverageFollow : MonoBehaviour
 {
     private GameObject[] players;
     private Vector3 offset;
+    private Camera cam;
 
     void Start()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         offset = transform.position - PlayerAverage();
+        
     }
 
     void Update()
