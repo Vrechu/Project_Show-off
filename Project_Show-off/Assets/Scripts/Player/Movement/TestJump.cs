@@ -40,7 +40,7 @@ public class TestJump : MonoBehaviour
         switch (playerNumber)
         {
             case PlayerNumber.Player1:
-                jumpInput = Input.GetAxis("Fire1");
+                jumpInput = Input.GetAxis("Jump");
                 break;
 
             case PlayerNumber.Player2:
@@ -55,7 +55,7 @@ public class TestJump : MonoBehaviour
             && jumpTimer < 0 
             && jumpInput == 1)
         {
-            objectRigidbody.AddForce(transform.up * jumpSpeed);
+            objectRigidbody.AddForce(transform.up * jumpSpeed,ForceMode.Acceleration);
             jumpTimer = jumpTime;
         }
     }

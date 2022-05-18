@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
 
     private float Acceleration()
     {
-        Debug.Log(GetComponent<CheckIfGrounded>().IsGrounded());
         if (GetComponent<CheckIfGrounded>().IsGrounded())
         {
             return groundedAcceleration * Time.deltaTime;
