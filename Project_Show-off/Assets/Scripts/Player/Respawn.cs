@@ -6,6 +6,13 @@ public class Respawn : MonoBehaviour
 {
     private RespawnManager respawnManager;
 
+    private enum PlayerNumber
+    {
+        Player1, Player2
+    }
+
+    [SerializeField] private PlayerNumber playerNumber = PlayerNumber.Player1;
+
     private void Start()
     {
         respawnManager = RespawnManager.Instance;
@@ -15,7 +22,16 @@ public class Respawn : MonoBehaviour
     {
         if (respawnManager.CurrentRespawnPoint() != null)
         {
-            transform.position = respawnManager.CurrentRespawnPoint().position;
+            switch (playerNumber)
+            {
+                case PlayerNumber.Player1:
+                    transform.position = respawnManager.CurrentRespawnPoint().position;
+                    break;
+
+                case PlayerNumber.Player2:
+                    transform.position = respawnManager.CurrentRespawnPoint().position + Vector3.right;
+                    break;
+            }
         }
     }
 }
