@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class JointGrab : MonoBehaviour
 {
-    private Transform grabbingObject;
+    private enum PlayerNumber
+    {
+        Player1, Player2
+    }
 
+    [SerializeField] private PlayerNumber playerNumber = PlayerNumber.Player1;
+
+    private Transform grabbingObject;
+    public bool IsGrabbing = false;
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && playerNumber == PlayerNumber.Player1
+            || Input.GetKey(KeyCode.RightShift) && playerNumber == PlayerNumber.Player2)
         {
             switch (other.tag)
             {
@@ -19,6 +27,7 @@ public class JointGrab : MonoBehaviour
                         grabbingObject = other.transform;
                         grabbingObject.gameObject.AddComponent<FixedJoint>();
                         grabbingObject.GetComponent<FixedJoint>().connectedBody = GetComponentInParent<Rigidbody>();
+                        IsGrabbing = true;
                     }
 
                     break;
@@ -29,6 +38,7 @@ public class JointGrab : MonoBehaviour
                         grabbingObject = other.transform;
                         grabbingObject.gameObject.AddComponent<FixedJoint>();
                         grabbingObject.GetComponent<FixedJoint>().connectedBody = GetComponentInParent<Rigidbody>();
+                        IsGrabbing = true;
                     }
                     break;
             }
@@ -38,6 +48,7 @@ public class JointGrab : MonoBehaviour
         {
             Destroy(grabbingObject.GetComponent<FixedJoint>());
             grabbingObject = null;
+            IsGrabbing = false;
         }
     }
 }

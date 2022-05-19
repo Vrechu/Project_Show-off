@@ -16,7 +16,7 @@ public class CheckIfGrounded : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(transform.position, transform.up * -1, out hitInfo, checkDistance, 0b1001000))
         {
-            if (hitInfo.transform.gameObject.layer == 6)
+            if (hitInfo.transform.gameObject.layer == 6)        //6 == layer MovingTerrain
             {
                 transform.parent = hitInfo.transform;
             }

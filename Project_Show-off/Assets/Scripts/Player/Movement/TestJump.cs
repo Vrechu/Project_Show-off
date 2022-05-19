@@ -40,7 +40,7 @@ public class TestJump : MonoBehaviour
         switch (playerNumber)
         {
             case PlayerNumber.Player1:
-                jumpInput = Input.GetAxis("Jump");
+                jumpInput = Input.GetAxis("Fire1");
                 break;
 
             case PlayerNumber.Player2:

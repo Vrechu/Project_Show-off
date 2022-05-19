@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         else return playerRigidbody.velocity * inAirDrag  * -1 * Time.deltaTime;
     }
 
-    Vector2 direction()
+    public Vector2 direction()
     {
         float up = 0;
         float down = 0;
