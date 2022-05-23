@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,11 +20,15 @@ public class PlayerMovement : MonoBehaviour
         Player1, Player2
     }
 
-    [SerializeField] private PlayerNumber playerNumber = PlayerNumber.Player1;
 
-    void Start()
+    private PlayerInputScript playerInputScript;
+    private PlayerInput playerInput;
+
+    private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
+        playerInputScript = new PlayerInputScript();
+        playerInputScript.Ingame.Walk.Enable();
     }
 
     void Update()
@@ -60,64 +65,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GetComponent<CheckIfGrounded>().IsGrounded())
         {
-            return playerRigidbody.velocity * groundedDrag  * -1 * Time.deltaTime;
+            return playerRigidbody.velocity * groundedDrag * -1 * Time.deltaTime;
         }
-        else return playerRigidbody.velocity * inAirDrag  * -1 * Time.deltaTime;
+        else return playerRigidbody.velocity * inAirDrag * -1 * Time.deltaTime;
     }
 
     public Vector2 direction()
     {
-        float up = 0;
-        float down = 0;
-        float left = 0;
-        float right = 0;
-
-        switch (playerNumber)
-        {
-            case PlayerNumber.Player1:
-                if (Input.GetKey(KeyCode.W))
-                {
-                    up = 1;
-                }
-                if (Input.GetKey(KeyCode.S))
-                {
-                    down = -1;
-                }
-                if (Input.GetKey(KeyCode.A))
-                {
-                    left = -1;
-                }
-                if (Input.GetKey(KeyCode.D))
-                {
-                    right = 1;
-                }
-                break;
-
-            case PlayerNumber.Player2:
-                if (Input.GetKey(KeyCode.UpArrow))
-                {
-                    up = 1;
-                }
-                if (Input.GetKey(KeyCode.DownArrow))
-                {
-                    down = -1;
-                }
-                if (Input.GetKey(KeyCode.LeftArrow))
-                {
-                    left = -1;
-                }
-                if (Input.GetKey(KeyCode.RightArrow))
-                {
-                    right = 1;
-                }
-                break;
-        }
-
         if (cameraTransform != null)
         {
-            Vector3 cameraVector = (cameraTransform.right * (left + right) + cameraTransform.forward * (up + down)).normalized;
+            Vector3 cameraVector = (cameraTransform.right * playerInputScript.Ingame.Walk.ReadValue<Vector2>().x
+            + cameraTransform.forward * playerInputScript.Ingame.Walk.ReadValue<Vector2>().y).normalized;
             return new Vector2(cameraVector.x, cameraVector.z);
         }
-        else return new Vector2(left + right, up + down).normalized;
+        else return playerInputScript.Ingame.Walk.ReadValue<Vector2>().normalized;
     }
 }

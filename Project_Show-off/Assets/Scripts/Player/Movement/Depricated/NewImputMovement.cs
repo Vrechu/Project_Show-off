@@ -13,12 +13,12 @@ public class NewImputMovement : MonoBehaviour
     private float forwardInput;
     private float sidewaysInput;
 
-    private Player1KeyboardInputs player1KeyboardInputs;
+    private PlayerInputScript player1KeyboardInputs;
 
     void Start()
     {
         objectRigidbody = GetComponent<Rigidbody>();
-        player1KeyboardInputs = new Player1KeyboardInputs();
+        player1KeyboardInputs = new PlayerInputScript();
         player1KeyboardInputs.Ingame.Walk.Enable();
     }
 

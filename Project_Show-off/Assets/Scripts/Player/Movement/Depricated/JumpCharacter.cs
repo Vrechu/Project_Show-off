@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class JumpCharacter : MonoBehaviour
 {
-    private Player1KeyboardInputs player1KeyboardInputs;
+    private PlayerInputScript player1KeyboardInputs;
     private Rigidbody objectRigidbody;
 
     [SerializeField] private float jumpSpeed = 100;
@@ -15,7 +15,7 @@ public class JumpCharacter : MonoBehaviour
     private void Start()
     {
         objectRigidbody = GetComponent<Rigidbody>();
-        player1KeyboardInputs = new Player1KeyboardInputs();
+        player1KeyboardInputs = new PlayerInputScript();
         player1KeyboardInputs.Ingame.Jump.Enable();
         player1KeyboardInputs.Ingame.Jump.started += Jump;
     }
