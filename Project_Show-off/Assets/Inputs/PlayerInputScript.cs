@@ -15,10 +15,10 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public partial class @Player1KeyboardInputs : IInputActionCollection2, IDisposable
+public partial class @PLayerInputScript : IInputActionCollection2, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @Player1KeyboardInputs()
+    public @PLayerInputScript()
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""PlayerInplutActions"",
@@ -289,8 +289,8 @@ public partial class @Player1KeyboardInputs : IInputActionCollection2, IDisposab
     private readonly InputAction m_Ingame_Jump;
     public struct IngameActions
     {
-        private @Player1KeyboardInputs m_Wrapper;
-        public IngameActions(@Player1KeyboardInputs wrapper) { m_Wrapper = wrapper; }
+        private @PLayerInputScript m_Wrapper;
+        public IngameActions(@PLayerInputScript wrapper) { m_Wrapper = wrapper; }
         public InputAction @Walk => m_Wrapper.m_Ingame_Walk;
         public InputAction @Jump => m_Wrapper.m_Ingame_Jump;
         public InputActionMap Get() { return m_Wrapper.m_Ingame; }
