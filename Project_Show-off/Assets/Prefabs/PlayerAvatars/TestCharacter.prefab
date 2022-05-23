@@ -110,6 +110,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787e1bc7702137c42a859a3aeda2e2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1208171675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1208171678}
+  - component: {fileID: 1208171677}
+  m_Layer: 0
+  m_Name: playerCamera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1208171678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208171675}
+  m_LocalRotation: {x: 0.17021061, y: -0, z: -0, w: 0.98540777}
+  m_LocalPosition: {x: 0, y: 5.52, z: -16.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1045504042741135717}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 19.6, y: 0, z: 0}
+--- !u!20 &1208171677
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208171675}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &6062346653992113810
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +311,6 @@ GameObject:
   - component: {fileID: 9004482198193472156}
   - component: {fileID: 8586122256611843580}
   - component: {fileID: 8322557860867561022}
-  - component: {fileID: 1073208264925706338}
   - component: {fileID: 1898795693768397785}
   - component: {fileID: 1067008514}
   - component: {fileID: 1047692238}
@@ -261,6 +335,7 @@ Transform:
   m_Children:
   - {fileID: 5964482902646683061}
   - {fileID: 504336290}
+  - {fileID: 1208171678}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -375,7 +450,7 @@ MonoBehaviour:
     m_ActionName: Ingame/Walk
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1073208264925706338}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: JumpCharacter, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
@@ -389,11 +464,11 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 946076e2-47ea-4a42-a2b5-f703da1593f7
     m_ActionName: Ingame/Jump[/Keyboard/space]
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard1
   m_DefaultActionMap: Ingame
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1208171677}
 --- !u!114 &8586122256611843580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +491,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9204511848866849038}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ac47a133779e8e428bf796ef586899a, type: 3}
   m_Name: 
@@ -425,21 +500,6 @@ MonoBehaviour:
   inAirMoveSpeed: 5000
   turnSpeed: 100
   playerNumber: 0
---- !u!114 &1073208264925706338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9204511848866849038}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92be7e50ac025b14e993a586141e07a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpSpeed: 100
-  jumpCooldownTime: 0
-  jumpTimer: 0
 --- !u!114 &1898795693768397785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,8 +513,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkDistance: 1.3
-  coyoteTime: 0.05
-  coyoteTimeCooldown: 0
 --- !u!114 &1067008514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +520,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9204511848866849038}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c50003a5b23b5b44bacd15285d434e1e, type: 3}
   m_Name: 
@@ -482,5 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c16399e1ce70f04989fc8c37e011ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpTime: 1
+  jumpTimer: 0
   playerNumber: 0
   jumpSpeed: 100
