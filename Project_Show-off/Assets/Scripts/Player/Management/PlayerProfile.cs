@@ -2,16 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Keeps track of the player controls, score ID number, and inputs
+/// </summary>
 public class PlayerProfile
 {
-    readonly public int number;
+    readonly public int Number;
     private float score = 0;
     private GameObject avatar;
+    public PlayerInputs PlayerInputs;
+    public bool InScene = false;
 
-    public PlayerProfile(int playerNumber)
+    public PlayerProfile(int playerNumber, PlayerInputs inputs)
     {
-        number = playerNumber;
+        Number = playerNumber;
         score = 0;
+        PlayerInputs = inputs;
+        Debug.Log(PlayerInputs);
     }
 
     public void AddScore(float addedScore)
