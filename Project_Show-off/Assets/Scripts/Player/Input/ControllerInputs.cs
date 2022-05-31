@@ -10,7 +10,7 @@ public class ControllerInputs : PlayerInputs
 
     public override Vector2 Direction()
     {
-        return new Vector2(Input.GetAxis("CHorizontal" + playerNumber), Input.GetAxis("CVertical" + playerNumber));
+        return new Vector2(Input.GetAxis("CHorizontal" + playerNumber)* -1, Input.GetAxis("CVertical" + playerNumber));
     }
 
     public override float Jump()

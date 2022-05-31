@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (cameraTransform != null)
         {
-            Vector3 cameraVector = (cameraTransform.right * playerInputs.Direction().x * -1)
+            Vector3 cameraVector = (cameraTransform.right * playerInputs.Direction().x)
             + (cameraTransform.forward * playerInputs.Direction().y).normalized;
             return new Vector2(cameraVector.x, cameraVector.z);
         }

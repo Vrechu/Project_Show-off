@@ -18,7 +18,6 @@ public class PlayerProfile
         Number = playerNumber;
         score = 0;
         PlayerInputs = inputs;
-        Debug.Log(PlayerInputs);
     }
 
     public void AddScore(float addedScore)

@@ -26,6 +26,15 @@ public class PlayerManager : MonoBehaviour
         else Debug.LogError("Maximum players reached!");
     }
 
+    public void NewKeyboardPlayer()
+    {
+        if (playerProfiles.Count < maxPlayers)
+        {
+            playerProfiles.Add(new PlayerProfile(playerProfiles.Count + 1, new KeyboardInputs(playerProfiles.Count + 1)));
+        }
+        else Debug.LogError("Maximum players reached!");
+    }
+
     public List<PlayerProfile> GetPlayerProfiles()
     {
         return playerProfiles;
