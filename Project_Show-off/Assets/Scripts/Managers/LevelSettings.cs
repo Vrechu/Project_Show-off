@@ -9,6 +9,8 @@ public class LevelSettings : MonoBehaviour
     public static event Action OnSettingsReady;
 
     public RespawnManager RespawnManager { get; set; }
+
+    private bool LevelSettingsDone = false;
     
 
     void Start()
@@ -18,10 +20,11 @@ public class LevelSettings : MonoBehaviour
     }
     private void Update()
     {
-        if (RespawnManager != null)
+        if (RespawnManager != null && !LevelSettingsDone)
         {
             OnSettingsReady?.Invoke();
             Debug.Log("Level settings done");
+            LevelSettingsDone = true;
         }
     }
 }
