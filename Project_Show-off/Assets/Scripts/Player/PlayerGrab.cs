@@ -2,22 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JointGrab : MonoBehaviour
+public class PlayerGrab : MonoBehaviour
 {
-    private enum PlayerNumber
-    {
-        Player1, Player2
-    }
-
-    [SerializeField] private PlayerNumber playerNumber = PlayerNumber.Player1;
-
+    private PlayerInputs playerInputs;
     private Transform grabbingObject;
     public bool IsGrabbing = false;
 
+    private void Start()
+    {
+        playerInputs = GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs;
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.LeftShift) && playerNumber == PlayerNumber.Player1
-            || Input.GetKey(KeyCode.RightShift) && playerNumber == PlayerNumber.Player2)
+        if (playerInputs.Grab() == 1)
         {
             switch (other.tag)
             {
