@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SetNextRespawnOnTrigger : MonoBehaviour
 {
-    private RespawnManager respawnManager;
+    private QueueRespawnManager respawnManager;
 
     private void Start()
     {
-        respawnManager = RespawnManager.Instance;
+        respawnManager = QueueRespawnManager.Instance;
     }
 
     private void OnTriggerEnter(Collider other)
