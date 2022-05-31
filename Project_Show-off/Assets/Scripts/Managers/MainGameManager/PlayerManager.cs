@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; set; }
-    private List<PlayerProfile> playersProfiles = new List<PlayerProfile>();
+    private List<PlayerProfile> playerProfiles = new List<PlayerProfile>();
     [SerializeField] private int maxPlayers = 4;
 
     private void Start()
@@ -17,17 +17,17 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void NewPlayer()
+    public void NewControllerPlayer()
     {
-        if (playersProfiles.Count < maxPlayers)
+        if (playerProfiles.Count < maxPlayers)
         {
-            playersProfiles.Add(new PlayerProfile(playersProfiles.Count));
+            playerProfiles.Add(new PlayerProfile(playerProfiles.Count + 1, new ControllerInputs(playerProfiles.Count + 1)));
         }
         else Debug.LogError("Maximum players reached!");
     }
 
     public List<PlayerProfile> GetPlayerProfiles()
     {
-        return playersProfiles;
+        return playerProfiles;
     }
 }
