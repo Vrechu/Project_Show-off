@@ -5,23 +5,33 @@ using UnityEngine.InputSystem;
 
 public class PlacePlayers : MonoBehaviour
 {
-    private PlayerInputManager inputManager;
-
+    private RespawnManager respawnManager;
     private void Start()
     {
-        inputManager = GetComponent<PlayerInputManager>();
+        LevelSettings.OnSettingsReady += SetSpawnManager;
+    }
+
+    private void OnDestroy()
+    {
+        LevelSettings.OnSettingsReady -= SetSpawnManager;
+    }
+
+    private void SetSpawnManager()
+    {
+        respawnManager = LevelSettings.Instance.RespawnManager;
     }
 
     public void InstantiatePlayers()
     {
-        inputManager.splitScreen = true;
-        inputManager.EnableJoining();
         foreach (PlayerProfile playerProfile in PlayerManager.Instance.GetPlayerProfiles())
         {
-            inputManager.playerPrefab = playerProfile.GetAvatar();
-            inputManager.JoinPlayer();
+            if (!playerProfile.InScene)
+            {
+                GameObject avatar = Instantiate(playerProfile.GetAvatar(), respawnManager.MySpawnPoint(playerProfile.Number));
+                avatar.GetComponent<PlayerProfileAccess>().PlayerProfile = playerProfile;
+                playerProfile.InScene = true;
+            }
         }
-        inputManager.DisableJoining();
     }
 
 }
