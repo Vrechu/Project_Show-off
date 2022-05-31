@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
+    private PlayerInputs playerInputs;
 
     [SerializeField] private float topSpeed = 5;
     [SerializeField] private float groundedAcceleration = 2000;
@@ -15,20 +16,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float inAirDrag = 0.05f;
     [SerializeField] private Transform cameraTransform;
 
-    private enum PlayerNumber
-    {
-        Player1, Player2
-    }
-
-
-    private PlayerInputScript playerInputScript;
-    private PlayerInput playerInput;
 
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
-        playerInputScript = new PlayerInputScript();
-        playerInputScript.Ingame.Walk.Enable();
+        playerInputs = GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs;
     }
 
     void Update()
@@ -40,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!OverTopSpeed())
         {
-            playerRigidbody.AddForce(new Vector3(direction().x, 0, direction().y) * Acceleration(), ForceMode.Acceleration);
+            playerRigidbody.AddForce(new Vector3(Direction().x, 0, Direction().y) * Acceleration(), ForceMode.Acceleration);
         }
         playerRigidbody.AddForce(Drag(), ForceMode.Acceleration);
     }
@@ -70,14 +62,14 @@ public class PlayerMovement : MonoBehaviour
         else return playerRigidbody.velocity * inAirDrag * -1 * Time.deltaTime;
     }
 
-    public Vector2 direction()
+    public Vector2 Direction()
     {
         if (cameraTransform != null)
         {
-            Vector3 cameraVector = (cameraTransform.right * playerInputScript.Ingame.Walk.ReadValue<Vector2>().x
-            + cameraTransform.forward * playerInputScript.Ingame.Walk.ReadValue<Vector2>().y).normalized;
+            Vector3 cameraVector = (cameraTransform.right * playerInputs.Direction().x * -1)
+            + (cameraTransform.forward * playerInputs.Direction().y).normalized;
             return new Vector2(cameraVector.x, cameraVector.z);
         }
-        else return playerInputScript.Ingame.Walk.ReadValue<Vector2>().normalized;
+        else return playerInputs.Direction().normalized;
     }
 }

@@ -5,33 +5,30 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     private RespawnManager respawnManager;
-
-    private enum PlayerNumber
-    {
-        Player1, Player2
-    }
-
-    [SerializeField] private PlayerNumber playerNumber = PlayerNumber.Player1;
+    private int playerNumber;
 
     private void Start()
     {
-        respawnManager = RespawnManager.Instance;
+        LevelSettings.OnSettingsReady += SetSpawnManager;
+        playerNumber = GetComponent<PlayerProfileAccess>().PlayerProfile.Number;
+    }
+
+    private void OnDestroy()
+    {
+        LevelSettings.OnSettingsReady -= SetSpawnManager;
+    }
+
+    private void SetSpawnManager()
+    {
+        respawnManager = LevelSettings.Instance.RespawnManager;
     }
 
     public void MoveToRespawn()
     {
-        if (respawnManager.CurrentRespawnPoint() != null)
+        if (respawnManager.MySpawnPoint(playerNumber) != null)
         {
-            switch (playerNumber)
-            {
-                case PlayerNumber.Player1:
-                    transform.position = respawnManager.CurrentRespawnPoint().position;
-                    break;
-
-                case PlayerNumber.Player2:
-                    transform.position = respawnManager.CurrentRespawnPoint().position + Vector3.right;
-                    break;
-            }
+            transform.position = respawnManager.MySpawnPoint(playerNumber).position;
         }
+        else Debug.LogError("no spawn points!");
     }
 }

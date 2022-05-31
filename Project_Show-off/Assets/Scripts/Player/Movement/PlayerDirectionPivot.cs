@@ -18,10 +18,10 @@ public class PlayerDirectionPivot : MonoBehaviour
 
     private void SetDirection()
     {
-        if (playerMovement.direction().magnitude != 0 
-            && !GetComponentInChildren<JointGrab>().IsGrabbing) {
+        if (playerMovement.Direction().magnitude != 0 
+            && !GetComponentInChildren<PlayerGrab>().IsGrabbing) {
             Quaternion rotation = Quaternion.identity;
-            rotation.SetLookRotation(new Vector3(playerMovement.direction().x, 0, playerMovement.direction().y), Vector3.up);
+            rotation.SetLookRotation(new Vector3(playerMovement.Direction().x, 0, playerMovement.Direction().y), Vector3.up);
             transform.rotation = rotation;
         } }
 }

@@ -10,7 +10,7 @@ public class PlayerGrab : MonoBehaviour
 
     private void Start()
     {
-        playerInputs = GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs;
+        playerInputs = GetComponentInParent<PlayerProfileAccess>().PlayerProfile.PlayerInputs;
     }
 
     private void OnTriggerStay(Collider other)
