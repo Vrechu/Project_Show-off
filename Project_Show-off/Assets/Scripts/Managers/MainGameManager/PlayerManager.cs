@@ -6,9 +6,9 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; set; }
     private List<PlayerProfile> playerProfiles = new List<PlayerProfile>();
-    [SerializeField] private int maxPlayers = 4;
+    [SerializeField] public int maxPlayers = 4;
 
-    private void Start()
+    private void Awake()
     {
         if (Instance == null) Instance = this;
         else {
@@ -17,20 +17,20 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void NewControllerPlayer()
+    public void NewControllerPlayer(int controllerNumber)
     {
         if (playerProfiles.Count < maxPlayers)
         {
-            playerProfiles.Add(new PlayerProfile(playerProfiles.Count + 1, new ControllerInputs(playerProfiles.Count + 1)));
+            playerProfiles.Add(new PlayerProfile(playerProfiles.Count ,controllerNumber, new ControllerInputs(controllerNumber)));
         }
         else Debug.LogError("Maximum players reached!");
     }
 
-    public void NewKeyboardPlayer()
+    public void NewKeyboardPlayer(int controllerNumber)
     {
         if (playerProfiles.Count < maxPlayers)
         {
-            playerProfiles.Add(new PlayerProfile(playerProfiles.Count + 1, new KeyboardInputs(playerProfiles.Count + 1)));
+            playerProfiles.Add(new PlayerProfile(playerProfiles.Count, controllerNumber, new ControllerInputs(controllerNumber)));
         }
         else Debug.LogError("Maximum players reached!");
     }
@@ -38,5 +38,10 @@ public class PlayerManager : MonoBehaviour
     public List<PlayerProfile> GetPlayerProfiles()
     {
         return playerProfiles;
+    }
+
+    public void ClearPlayers()
+    {
+        playerProfiles.Clear();
     }
 }

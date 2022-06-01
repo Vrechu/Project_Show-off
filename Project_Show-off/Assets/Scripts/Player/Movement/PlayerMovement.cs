@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetCamera()
     {
-        cameraTransform = LevelSettings.Instance.CameraManager.MyCamera(playerProfile.Number).transform;
+        cameraTransform = LevelSettings.Instance.CameraManager.MyCamera(playerProfile.ControllerNumber).transform;
     }
 
     void Update()
