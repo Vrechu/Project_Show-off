@@ -16,8 +16,9 @@ public class PlayerJump : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("1");
         Debug.Log("access: " + GetComponent<PlayerProfileAccess>());
-        Debug.Log("cameramanager: " + GetComponent<PlayerProfileAccess>().PlayerProfile);
+        Debug.Log("profile: " + GetComponent<PlayerProfileAccess>().PlayerProfile);
         Debug.Log("inputs: " + GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs);
 
         objectRigidbody = GetComponent<Rigidbody>();
@@ -38,6 +39,7 @@ public class PlayerJump : MonoBehaviour
             && jumpTimer < 0 
             && playerInputs.Jump() == 1)
         {
+            Debug.Log("2");
             objectRigidbody.AddForce(transform.up * jumpSpeed,ForceMode.Acceleration);
             jumpTimer = jumpTime;
         }
