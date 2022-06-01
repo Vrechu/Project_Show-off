@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class StaticCameraManager : CameraManager
 {
-    [SerializeField] private GameObject staticCamera;
+    [SerializeField] private Camera staticCamera;
 
-    private PlayerManager playerManager;
-    protected override GameObject MyCamera(int playerNumber)
+    public override Camera MyCamera(int playerNumber)
     {
         return staticCamera;
     }
 
-    public override void SetCamera(PlayerProfile playerProfile)
+    public override void SetCamera()
     {
-        //playerProfile.avatar.GetComponentInChildren<Camera>().enabled = false;
-        //playerProfile.avatar.GetComponent<PlayerMovement>().cameraTransform = staticCamera.transform;
+        for (int i = 0; i < playerManager.GetPlayerProfiles().Count; i++)
+        {
+            playerManager.GetPlayerProfiles()[i].avatar.GetComponentInChildren<Camera>().enabled = false;
+            playerManager.GetPlayerProfiles()[i].avatar.GetComponent<PlayerMovement>().cameraTransform = staticCamera.transform;
+        }
     }
 }

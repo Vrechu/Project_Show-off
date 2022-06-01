@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
-    private PlayerInputs playerInputs;
+    private PlayerProfile playerProfile;
 
     [SerializeField] private float topSpeed = 5;
     [SerializeField] private float groundedAcceleration = 2000;
@@ -20,7 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
-        playerInputs = GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs;
+        playerProfile = GetComponent<PlayerProfileAccess>().PlayerProfile;
+        cameraTransform = LevelSettings.Instance.CameraManager.MyCamera(playerProfile.Number).transform;
     }
 
     void Update()
@@ -66,10 +67,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (cameraTransform != null)
         {
-            Vector3 cameraVector = (cameraTransform.right * playerInputs.Direction().x)
-            + (cameraTransform.forward * playerInputs.Direction().y).normalized;
+            Vector3 cameraVector = (cameraTransform.right * playerProfile.PlayerInputs.Direction().x)
+            + (cameraTransform.forward * playerProfile.PlayerInputs.Direction().y).normalized;
             return new Vector2(cameraVector.x, cameraVector.z);
         }
-        else return playerInputs.Direction().normalized;
+        else
+        {
+            return playerProfile.PlayerInputs.Direction().normalized;
+        }
     }
 }
