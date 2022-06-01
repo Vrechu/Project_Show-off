@@ -8,7 +8,6 @@ public class StaticCameraManager : CameraManager
 
     public override Camera MyCamera(int playerNumber)
     {
-        Debug.Log(staticCamera);
         return staticCamera;
     }
 
