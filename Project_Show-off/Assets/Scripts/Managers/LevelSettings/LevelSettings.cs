@@ -9,6 +9,8 @@ public class LevelSettings : MonoBehaviour
     public static event Action OnSettingsReady;
 
     public RespawnManager RespawnManager { get; set; }
+    public CameraManager CameraManager { get; set; }
+
 
     private bool LevelSettingsDone = false;
     
@@ -20,7 +22,9 @@ public class LevelSettings : MonoBehaviour
     }
     private void Update()
     {
-        if (RespawnManager != null && !LevelSettingsDone)
+        if (!LevelSettingsDone 
+            && RespawnManager != null 
+            && CameraManager  != null)
         {
             OnSettingsReady?.Invoke();
             Debug.Log("Level settings done");

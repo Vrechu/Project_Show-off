@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float currentSpeed = 0;
     [SerializeField] private float groundedDrag = 0.02f;
     [SerializeField] private float inAirDrag = 0.05f;
-    [SerializeField] private Transform cameraTransform;
+    public Transform cameraTransform;
 
 
     private void Start()

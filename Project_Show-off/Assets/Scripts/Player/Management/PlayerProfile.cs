@@ -9,7 +9,8 @@ public class PlayerProfile
 {
     readonly public int Number;
     private float score = 0;
-    private GameObject avatar;
+    public GameObject AvatarPrefab;
+    public GameObject avatar;
     public PlayerInputs PlayerInputs;
     public bool InScene = false;
 
@@ -28,15 +29,5 @@ public class PlayerProfile
     public float GetScore()
     {
         return score;
-    }
-
-    public void SetAvatar(GameObject newAvatar)
-    {
-        avatar = newAvatar;
-    }
-
-    public GameObject GetAvatar()
-    {
-        return avatar;
     }
 }

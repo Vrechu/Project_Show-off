@@ -20,7 +20,7 @@ public class SetAvatarUi : MonoBehaviour
     {
         foreach (PlayerProfile playerProfile in PlayerManager.Instance.GetPlayerProfiles())
         {
-            playerProfile.SetAvatar(avatar);
+            playerProfile.AvatarPrefab = avatar;
 
         }
     }

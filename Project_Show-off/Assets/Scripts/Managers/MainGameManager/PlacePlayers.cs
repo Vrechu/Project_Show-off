@@ -6,17 +6,18 @@ using UnityEngine.InputSystem;
 public class PlacePlayers : MonoBehaviour
 {
     private RespawnManager respawnManager;
+
     private void Start()
     {
-        LevelSettings.OnSettingsReady += SetSpawnManager;
+        LevelSettings.OnSettingsReady += SetManagers;
     }
 
     private void OnDestroy()
     {
-        LevelSettings.OnSettingsReady -= SetSpawnManager;
+        LevelSettings.OnSettingsReady -= SetManagers;
     }
 
-    private void SetSpawnManager()
+    private void SetManagers()
     {
         respawnManager = LevelSettings.Instance.RespawnManager;
     }
@@ -27,9 +28,11 @@ public class PlacePlayers : MonoBehaviour
         {
             if (!playerProfile.InScene)
             {
-                GameObject avatar = Instantiate(playerProfile.GetAvatar(), respawnManager.MySpawnPoint(playerProfile.Number));
+                GameObject avatar = Instantiate(playerProfile.AvatarPrefab, respawnManager.MySpawnPoint(playerProfile.Number));
+                playerProfile.avatar = avatar;
                 avatar.GetComponent<PlayerProfileAccess>().PlayerProfile = playerProfile;
                 playerProfile.InScene = true;
+                //LevelSettings.Instance.CameraManager.SetCamera(playerProfile);
             }
         }
     }
