@@ -22,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         playerProfile = GetComponent<PlayerProfileAccess>().PlayerProfile;
         cameraTransform = LevelSettings.Instance.CameraManager.MyCamera(playerProfile.Number).transform;
+        Debug.Log("4");
+        Debug.Log("settings: " + LevelSettings.Instance);
+        Debug.Log("cameramanager: " + LevelSettings.Instance.CameraManager);
+        Debug.Log("camera: " + LevelSettings.Instance.CameraManager.MyCamera(playerProfile.Number));
     }
 
     void Update()
