@@ -7,7 +7,6 @@ public abstract class CameraManager : MonoBehaviour
     protected PlayerManager playerManager;
     protected virtual void Start()
     {
-        Debug.Log("1");
         GetComponent<LevelSettings>().CameraManager = this;
         playerManager = PlayerManager.Instance;
         SetCamera();

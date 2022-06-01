@@ -8,7 +8,6 @@ public class StaticCameraManager : CameraManager
 
     public override Camera MyCamera(int playerNumber)
     {
-        Debug.Log("3");
         Debug.Log(staticCamera);
         return staticCamera;
     }
@@ -17,7 +16,6 @@ public class StaticCameraManager : CameraManager
     {
         for (int i = 0; i < playerManager.GetPlayerProfiles().Count; i++)
         {
-            Debug.Log("2");
             playerManager.GetPlayerProfiles()[i].avatar.GetComponentInChildren<Camera>().enabled = false;
             playerManager.GetPlayerProfiles()[i].avatar.GetComponent<PlayerMovement>().cameraTransform = staticCamera.transform;
         }

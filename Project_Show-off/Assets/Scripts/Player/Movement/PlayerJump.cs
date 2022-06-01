@@ -16,8 +16,13 @@ public class PlayerJump : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("access: " + GetComponent<PlayerProfileAccess>());
+        Debug.Log("cameramanager: " + GetComponent<PlayerProfileAccess>().PlayerProfile);
+        Debug.Log("inputs: " + GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs);
+
         objectRigidbody = GetComponent<Rigidbody>();
         playerInputs = GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs;
+
     }
 
     void Update()
