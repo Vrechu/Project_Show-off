@@ -8,9 +8,4 @@ public class TestPLayerProfile : MonoBehaviour
     {
         GetComponent<PlayerProfileAccess>().PlayerProfile = new PlayerProfile(1, new KeyboardInputs(1));
     }
-
-    private void Update()
-    {
-        Debug.Log(GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs.Direction());
-    }
 }
