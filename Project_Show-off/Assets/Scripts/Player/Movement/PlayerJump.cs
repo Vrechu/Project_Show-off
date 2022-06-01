@@ -10,6 +10,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float jumpTimer = 0;
 
     private PlayerInputs playerInputs;
+    private CheckIfGrounded checkIfGrounded;
 
     [SerializeField] private float jumpSpeed = 100;
 
@@ -22,6 +23,7 @@ public class PlayerJump : MonoBehaviour
         Debug.Log("inputs: " + GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs);
 
         objectRigidbody = GetComponent<Rigidbody>();
+        checkIfGrounded = GetComponent<CheckIfGrounded>();
         playerInputs = GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerInputs;
 
     }
@@ -35,7 +37,11 @@ public class PlayerJump : MonoBehaviour
 
     private void Jump()
     {
-        if (GetComponent<CheckIfGrounded>().IsGrounded()
+        if (checkIfGrounded.IsGrounded()) Debug.Log("grounded");
+        if (jumpTimer < 0) Debug.Log("timer");
+        if (playerInputs.Jump() == 1) Debug.Log("input");
+
+        if (checkIfGrounded.IsGrounded()
             && jumpTimer < 0 
             && playerInputs.Jump() == 1)
         {
