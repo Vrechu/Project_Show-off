@@ -16,11 +16,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float inAirDrag = 0.05f;
     public Transform cameraTransform;
 
+    private void Awake()
+    {
+        LevelSettings.OnSettingsReady += SetCamera;
+    }
 
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
-        playerProfile = GetComponent<PlayerProfileAccess>().PlayerProfile;
+        playerProfile = GetComponent<PlayerProfileAccess>().PlayerProfile;        
+    }
+
+    private void OnDestroy()
+    {
+        LevelSettings.OnSettingsReady -= SetCamera;       
+    }
+
+    private void SetCamera()
+    {
         cameraTransform = LevelSettings.Instance.CameraManager.MyCamera(playerProfile.Number).transform;
         Debug.Log("4");
         Debug.Log("settings: " + LevelSettings.Instance);
