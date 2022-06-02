@@ -21,4 +21,12 @@ public class ManageScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void LoadRandomLevel()
+    {
+        string level;
+        level = LevelOrderManager.Instance.RandomNextLevel();
+        LoadScene(level);
+        Debug.Log("Level loaded: " + level);
+    }
 }

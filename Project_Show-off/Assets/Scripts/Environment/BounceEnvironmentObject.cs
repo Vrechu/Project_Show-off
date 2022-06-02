@@ -18,11 +18,9 @@ public class BounceEnvironmentObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-            Debug.Log("1");
         if (collision.gameObject.tag == "Player"
             && !isDelayed)
         {
-            Debug.Log("2");
             collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.up * bounceForce);            
         }
     }

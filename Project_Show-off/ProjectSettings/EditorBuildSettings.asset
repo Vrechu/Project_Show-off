@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Final/MainMenu.unity
     guid: 47ccf5cfca10e59499c2ca2f0ed088a4
   - enabled: 1
     path: Assets/Scenes/Level_concepts/TreadmillTest.unity
@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MultiplayerTest.unity
     guid: d18344273fa4b5e4c91b70456bf0bed8
+  - enabled: 1
+    path: Assets/Scenes/demo scene/TEST_LEVEL.unity
+    guid: 5e7e876b98c9b7f4d9803d6d4a68e9a5
+  - enabled: 1
+    path: Assets/Scenes/Final/TEST_LEVEL_2.unity
+    guid: a45510d762c70244a829189d6a7175e6
+  - enabled: 1
+    path: Assets/Scenes/Final/Level 3.unity
+    guid: 6f7cf47cb71093d4ab5894f98ac05b0e
   m_configObjects: {}

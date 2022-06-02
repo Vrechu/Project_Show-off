@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager Instance;
+
     public float[] GlobalPlayerScores = new float[4];
     public float[] LevelPlayerScores = new float[4];
+
+    private void Start()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+    }
 
     public void SetGlobalPlayerScores()
     {
