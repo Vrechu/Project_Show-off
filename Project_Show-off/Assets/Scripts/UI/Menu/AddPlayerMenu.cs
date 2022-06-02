@@ -27,7 +27,7 @@ public class AddPlayerMenu : MonoBehaviour
         {
             for (int i = 0; i < controllerJoined.Length-1; i++)
             {
-                if (!controllerJoined[i] && Input.GetAxis("CJump" + (i + 1)) == 1)
+                if (!controllerJoined[i] && Input.GetAxis("CMenu" + (i + 1)) == 1)
                 {
                     avatarSelectors[playerManager.GetPlayerProfiles().Count].SetActive(true);
                     playerManager.NewControllerPlayer(i+1);

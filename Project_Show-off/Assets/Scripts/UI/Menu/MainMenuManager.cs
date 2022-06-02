@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainScreen;
     [SerializeField] private GameObject characterSelect;
     [SerializeField] private GameObject title;
+    [SerializeField] private GameObject titleButton, mainMenuButton;
 
     public enum MenuScreen
     {
@@ -29,6 +31,10 @@ public class MainMenuManager : MonoBehaviour
                 characterSelect.SetActive(false);
                 title.SetActive(false);
                 mainScreen.SetActive(true);
+
+                EventSystem.current.SetSelectedGameObject(null);
+
+                EventSystem.current.SetSelectedGameObject(mainMenuButton);
                 break;
 
             case "CharacterSelect":
@@ -41,7 +47,15 @@ public class MainMenuManager : MonoBehaviour
                 mainScreen.SetActive(false);
                 characterSelect.SetActive(false);
                 title.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(null);
+
+                EventSystem.current.SetSelectedGameObject(titleButton);
                 break;
         }
     }    
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
