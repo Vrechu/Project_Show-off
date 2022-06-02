@@ -24,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
-        playerProfile = GetComponent<PlayerProfileAccess>().PlayerProfile;        
+        playerProfile = GetComponent<PlayerProfileAccess>().PlayerProfile;
+        cameraTransform = LevelSettings.Instance.CameraManager.MyCamera(playerProfile.PlayerNumber).transform;
     }
 
     private void OnDestroy()

@@ -13,10 +13,6 @@ public class StaticCameraManager : CameraManager
 
     public override void SetCamera()
     {
-        for (int i = 0; i < playerManager.GetPlayerProfiles().Count; i++)
-        {
-            playerManager.GetPlayerProfiles()[i].avatar.GetComponentInChildren<Camera>().enabled = false;
-            playerManager.GetPlayerProfiles()[i].avatar.GetComponent<PlayerMovement>().cameraTransform = staticCamera.transform;
-        }
+        
     }
 }

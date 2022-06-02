@@ -12,7 +12,6 @@ public class PlayerManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else {
-            Debug.LogError("more than one player manager!");
             Destroy(this); 
         }
     }
@@ -30,7 +29,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (playerProfiles.Count < maxPlayers)
         {
-            playerProfiles.Add(new PlayerProfile(playerProfiles.Count, controllerNumber, new ControllerInputs(controllerNumber)));
+            playerProfiles.Add(new PlayerProfile(playerProfiles.Count, controllerNumber, new KeyboardInputs(controllerNumber)));
         }
         else Debug.LogError("Maximum players reached!");
     }

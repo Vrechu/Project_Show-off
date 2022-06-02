@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class ControllerInputs : PlayerInputs
 {
-    public ControllerInputs(int playerNumber) : base(playerNumber)
+    public ControllerInputs(int controllerNumber) : base(controllerNumber)
     {
     }
 
     public override Vector2 Direction()
     {
-        return new Vector2(Input.GetAxis("CHorizontal" + playerNumber)* -1, Input.GetAxis("CVertical" + playerNumber));
+        return new Vector2(Input.GetAxis("CHorizontal" + controllerNumber)* -1, Input.GetAxis("CVertical" + controllerNumber));
     }
 
     public override float Jump()
     {
-        return Input.GetAxis("CJump" + playerNumber);
+        return Input.GetAxis("CJump" + controllerNumber);
     }
 
     public override float Grab()
     {
-        return Input.GetAxis("CGrab" + playerNumber);
+        return Input.GetAxis("CGrab" + controllerNumber);
     }
 
     public override float Back()
     {
-        return Input.GetAxis("CBack" + playerNumber);
+        return Input.GetAxis("CBack" + controllerNumber);
     }
 
     public override float Menu()
     {
-        return Input.GetAxis("CMenu" + playerNumber);
+        return Input.GetAxis("CMenu" + controllerNumber);
     }
 }

@@ -9,9 +9,8 @@ public class PlayerProfile
 {
     readonly public int PlayerNumber;
     readonly public int ControllerNumber;
-    private float score = 0;
     public GameObject AvatarPrefab;
-    public GameObject avatar;
+    public GameObject Avatar;
     public PlayerInputs PlayerInputs;
     public bool InScene = false;
 
@@ -19,17 +18,6 @@ public class PlayerProfile
     {
         PlayerNumber = playerNumber;
         ControllerNumber = controllerNumber;
-        score = 0;
         PlayerInputs = inputs;
-    }
-
-    public void AddScore(float addedScore)
-    {
-        score += addedScore;
-    }
-
-    public float GetScore()
-    {
-        return score;
     }
 }
