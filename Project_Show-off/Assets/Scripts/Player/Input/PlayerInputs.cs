@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class PlayerInputs
 {
-    protected int playerNumber;
+    protected int controllerNumber;
     public PlayerInputs(int playerNumber)
     {
-        this.playerNumber = playerNumber;
+        this.controllerNumber = playerNumber;
     }
 
     public abstract Vector2 Direction();

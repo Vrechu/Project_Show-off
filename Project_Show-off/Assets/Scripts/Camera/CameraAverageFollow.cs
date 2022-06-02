@@ -6,13 +6,22 @@ public class CameraAverageFollow : MonoBehaviour
 {
     private GameObject[] players;
     private Vector3 offset;
-    private Camera cam;
 
     void Start()
     {
+        GetPlayers();
+        PlacePlayers.OnPlayerSpawn += GetPlayers;
+    }
+
+    private void OnDestroy()
+    {
+        PlacePlayers.OnPlayerSpawn -= GetPlayers;
+    }
+
+    private void GetPlayers()
+    {
         players = GameObject.FindGameObjectsWithTag("Player");
         offset = transform.position - PlayerAverage();
-        
     }
 
     void Update()
@@ -22,11 +31,15 @@ public class CameraAverageFollow : MonoBehaviour
 
     private Vector3 PlayerAverage()
     {
-        Vector3 average = new Vector3(0, 0, 0);
-        for (int i = 0; i < players.Length; i++)
+        if (players.Length > 0)
         {
-            average += players[i].transform.position;
+            Vector3 average = new Vector3(0, 0, 0);
+            for (int i = 0; i < players.Length; i++)
+            {
+                average += players[i].transform.position;
+            }
+            return average / players.Length;
         }
-        return average / players.Length;
+        else return new Vector3(0, 0, 0);
     }
 }

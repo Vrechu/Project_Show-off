@@ -20,7 +20,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void SetPlayerAvatar()
     {
-        playerManager.GetPlayerProfiles()[playerNumber].avatar = avatarPrefabs[currentPrefab];
+        playerManager.GetPlayerProfiles()[playerNumber].AvatarPrefab = avatarPrefabs[currentPrefab];
     }
 
     public void NextAvatar()

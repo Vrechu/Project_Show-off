@@ -10,7 +10,8 @@ public class Respawn : MonoBehaviour
     private void Start()
     {
         LevelSettings.OnSettingsReady += SetSpawnManager;
-        playerNumber = GetComponent<PlayerProfileAccess>().PlayerProfile.ControllerNumber;
+        playerNumber = GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerNumber;
+        SetSpawnManager();
     }
 
     private void OnDestroy()

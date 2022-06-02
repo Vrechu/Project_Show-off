@@ -10,6 +10,7 @@ public class LevelSettings : MonoBehaviour
 
     public RespawnManager RespawnManager { get; set; }
     public CameraManager CameraManager { get; set; }
+    public LevelEndManager LevelEndManager { get; set; }
 
 
     private bool LevelSettingsDone = false;
@@ -18,17 +19,17 @@ public class LevelSettings : MonoBehaviour
     void Start()
     {
         Instance = this;
-        Debug.Log("Level settings changed");
     }
     private void Update()
     {
         if (!LevelSettingsDone 
             && RespawnManager != null 
-            && CameraManager  != null)
+            && CameraManager  != null
+            && LevelEndManager != null)
         {
+            LevelSettingsDone = true;
             OnSettingsReady?.Invoke();
             Debug.Log("Level settings done");
-            LevelSettingsDone = true;
         }
     }
 }

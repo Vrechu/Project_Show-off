@@ -4,27 +4,35 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public float[] playerScores;
-    private PlayerManager playerManager;
+    public float[] GlobalPlayerScores = new float[4];
+    public float[] LevelPlayerScores = new float[4];
 
-    private void Start()
+    public void SetGlobalPlayerScores()
     {
-        playerManager = PlayerManager.Instance;
-    }
-
-    public void SetPlayerScores()
-    {
-        for(int i = 0; i < playerManager.GetPlayerProfiles().Count; i++)
+        for (int i = 0; i < GlobalPlayerScores.Length; i++)
         {
-            playerScores[i] = playerManager.GetPlayerProfiles()[i].GetScore();
+            GlobalPlayerScores[i] += LevelPlayerScores[i];
         }
     }
 
-    public void ClearPlayerSCores()
+    public void AddLevelPlayerScore(int playerNumber, float addedScore)
     {
-        for (int i = 0; i < playerScores.Length; i++)
+        LevelPlayerScores[playerNumber] += addedScore;
+    }
+
+    public void ClearGlobalPlayerSCores()
+    {
+        for (int i = 0; i < GlobalPlayerScores.Length; i++)
         {
-            playerScores[i] = 0;
+            GlobalPlayerScores[i] = 0;
+        }
+    }
+
+    public void ClearLevelPlayerScores()
+    {
+        for (int i = 0; i < LevelPlayerScores.Length; i++)
+        {
+            LevelPlayerScores[i] = 0;
         }
     }
 }

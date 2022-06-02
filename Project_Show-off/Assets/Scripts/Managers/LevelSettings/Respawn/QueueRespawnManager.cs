@@ -27,6 +27,22 @@ public class QueueRespawnManager : RespawnManager
 
     public override Transform MySpawnPoint(int playerNumber)
     {
+        Transform spawn = transform; 
+        switch (playerNumber)
+        {
+            case 0:
+                spawn.position = respawnPointQueue.Peek().position + new Vector3(-1.5f, 0, 0);
+                break;
+            case 1:
+                spawn.position = respawnPointQueue.Peek().position + new Vector3(-0.5f, 0, 0);
+                break;
+            case 2:
+                spawn.position = respawnPointQueue.Peek().position + new Vector3(0.5f, 0, 0); 
+                break;
+            case 3:
+                spawn.position = respawnPointQueue.Peek().position + new Vector3(1.5f, 0, 0);
+                break;
+        }
         return respawnPointQueue.Peek();
     }
 
