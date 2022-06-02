@@ -408,7 +408,6 @@ GameObject:
   - component: {fileID: 8783826159358833248}
   - component: {fileID: 1371569479628059167}
   - component: {fileID: 795287485059252274}
-  - component: {fileID: 733106112609034913}
   m_Layer: 0
   m_Name: LEAF_SWEEPER_3
   m_TagString: Untagged
@@ -499,21 +498,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &733106112609034913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6703948349066101055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a19304b6e99a5f4bbfd241b814a0458, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 20
-  rotatingDirection: 0
-  rotationAxis: 1
 --- !u!1 &7658669006017378357
 GameObject:
   m_ObjectHideFlags: 0

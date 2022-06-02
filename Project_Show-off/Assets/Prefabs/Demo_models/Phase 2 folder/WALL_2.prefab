@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3425687046830579265}
   - component: {fileID: 7218999137636434434}
   - component: {fileID: 4340359069644836867}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bouncy E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 724808525679196461}
   - component: {fileID: 5021403434339601422}
   - component: {fileID: 6560701957521133814}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bouncy S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 4108307483713228147}
   - component: {fileID: 8186132231023218761}
   - component: {fileID: 3454203760465861959}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WALL_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 248654912109452251}
   - component: {fileID: 5295133864071574481}
   - component: {fileID: 6231035441238794991}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bouncy N
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3824650110699311514}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WALL_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ Transform:
   m_GameObject: {fileID: 5406913405515144770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.4837, y: 3.4837, z: 3.4837}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7949256382900825242}
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 4261210517139442721}
   - component: {fileID: 5333768964127277976}
   - component: {fileID: 5474602134828782158}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bouncy U
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 5741344379474245758}
   - component: {fileID: 5879535937067215794}
   - component: {fileID: 4058452836019234470}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bouncy W
   m_TagString: Untagged
   m_Icon: {fileID: 0}

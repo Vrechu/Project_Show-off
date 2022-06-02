@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5186747146280111256}
   - component: {fileID: 28402678344403323}
   - component: {fileID: 5486407792612917185}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BOUNCE_PAD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2074556526000438413}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BOUNCE_PAD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,8 +108,8 @@ Transform:
   m_GameObject: {fileID: 5495001134768702170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6203835664273843489}
   m_Father: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 8631799700544990189}
   - component: {fileID: 8967051834431137756}
   - component: {fileID: 2538613356558004326}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BOUNCY_UP
   m_TagString: Untagged
   m_Icon: {fileID: 0}

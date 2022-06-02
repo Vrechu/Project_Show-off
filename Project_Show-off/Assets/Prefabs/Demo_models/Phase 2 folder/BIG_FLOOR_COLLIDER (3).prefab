@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3277751325587709862}
   - component: {fileID: 7452279593716536932}
   - component: {fileID: 6691864454296661964}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BIG_FLOOR_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8141237962510464844}
   - component: {fileID: 762854950407380268}
   - component: {fileID: 3794570374203479382}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BIG_FLOOR_COLLIDER (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,9 +109,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5708451746874455705}
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00573, y: 0.00001, z: 0.02618}
-  m_LocalScale: {x: 0.0098739, y: 0.0011011134, z: 0.0252}
+  m_LocalScale: {x: 0.80916, y: 0.4460703, z: 14.896296}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3277751325587709862}
