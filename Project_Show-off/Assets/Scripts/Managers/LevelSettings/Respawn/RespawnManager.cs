@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class RespawnManager : MonoBehaviour
 {
+    public Transform[] spawns = new Transform[4];
+
     protected virtual void Start()
     {
         GetComponent<LevelSettings>().RespawnManager = this;

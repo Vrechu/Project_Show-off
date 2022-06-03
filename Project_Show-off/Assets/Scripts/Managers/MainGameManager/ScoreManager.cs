@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
+    public static ScoreManager Instance { get; set; }
 
     public float[] GlobalPlayerScores = new float[4];
     public float[] LevelPlayerScores = new float[4];
 
-    private void Start()
+    private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(this);
@@ -41,6 +41,22 @@ public class ScoreManager : MonoBehaviour
         for (int i = 0; i < LevelPlayerScores.Length; i++)
         {
             LevelPlayerScores[i] = 0;
+            
         }
+    }
+
+    public int TopPlayer()
+    {
+        float topScore = 0;
+        int player = 0;
+        for (int i = 0; i < GlobalPlayerScores.Length; i++)
+        {
+            if (GlobalPlayerScores[i] > topScore)
+            {
+                topScore = GlobalPlayerScores[i];
+                player = i;
+            }
+        }
+        return player;
     }
 }

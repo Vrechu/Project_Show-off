@@ -13,20 +13,19 @@ public class FinishTrigger : MonoBehaviour
 
     private void Start()
     {
-        levelEndManager = LevelSettings.Instance.LevelEndManager;
         playerManager = PlayerManager.Instance;
         scoreManager = ScoreManager.Instance;
-        PlacePlayers.OnPlayerSpawn += SetPlayers;
+        LevelSettings.OnSettingsReady += SetLevelEndManager;
     }
 
     private void OnDestroy()
     {
-        PlacePlayers.OnPlayerSpawn -= SetPlayers;
+        LevelSettings.OnSettingsReady -= SetLevelEndManager;
     }
 
-    private void SetPlayers()
+    private void SetLevelEndManager()
     {
-
+        levelEndManager = LevelSettings.Instance.LevelEndManager;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +36,7 @@ public class FinishTrigger : MonoBehaviour
             scoreManager.AddLevelPlayerScore(playerNumber, scoresOnFinish[playersFinished]);
             playersFinished++;
             CheckFinshedPlayers();
+            Destroy(other.gameObject);
         }
     }
 

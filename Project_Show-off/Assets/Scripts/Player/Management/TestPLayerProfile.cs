@@ -6,6 +6,6 @@ public class TestPLayerProfile : MonoBehaviour
 {
     private void Awake()
     {
-        GetComponent<PlayerProfileAccess>().PlayerProfile = new PlayerProfile(1, 1, new KeyboardInputs(1));
+        GetComponent<PlayerProfileAccess>().PlayerProfile = new PlayerProfile(0, 0, new KeyboardInputs(0));
     }
 }

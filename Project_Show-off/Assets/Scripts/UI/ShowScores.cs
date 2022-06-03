@@ -36,7 +36,7 @@ public class ShowScores : MonoBehaviour
     {
         for (int i = 0; i < playerManager.GetPlayerProfiles().Count; i++)
         {
-            levelScoreText[i].text = scoreManager.GlobalPlayerScores[i].ToString();
+            levelScoreText[i].text = scoreManager.LevelPlayerScores[i].ToString();
         }
     }
 

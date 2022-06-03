@@ -679,6 +679,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: finalScreen
+      value: FinalScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: Levels.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: Levels.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: Levels.Array.data[1]
+      value: TEST_LEVEL_2
+      objectReference: {fileID: 0}
     - target: {fileID: 630673209414567947, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -729,17 +745,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
---- !u!114 &630673210328771200 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
-  m_PrefabInstance: {fileID: 630673210328771199}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffaf36e14ed63ad4c8d953104a7ae8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8060837180915331478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -755,6 +760,22 @@ PrefabInstance:
       propertyPath: playerNumber
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8060837180246559749, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: d23426f7e8a4b57479b287cd49a951cf, type: 3}
+    - target: {fileID: 8060837180246559749, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: d1ad8b982f2667041a0508926211c575, type: 3}
+    - target: {fileID: 8060837180246559749, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: 2d90b1e685b9dbd438edee447b3c4ac7, type: 3}
+    - target: {fileID: 8060837180246559749, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: 84ec9944256ada74b94f29ee9c56a0fc, type: 3}
     - target: {fileID: 8060837180441045521, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_text
       value: Press start
@@ -859,6 +880,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8060837180685323936, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: d23426f7e8a4b57479b287cd49a951cf, type: 3}
+    - target: {fileID: 8060837180685323936, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: d1ad8b982f2667041a0508926211c575, type: 3}
+    - target: {fileID: 8060837180685323936, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: 2d90b1e685b9dbd438edee447b3c4ac7, type: 3}
+    - target: {fileID: 8060837180685323936, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: 84ec9944256ada74b94f29ee9c56a0fc, type: 3}
     - target: {fileID: 8060837180852840889, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0
@@ -886,18 +923,18 @@ PrefabInstance:
     - target: {fileID: 8060837181049378105, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 630673210328771200}
+      objectReference: {fileID: 169037725}
     - target: {fileID: 8060837181049378105, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8060837181049378105, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadRandomLevel
+      value: StartGame
       objectReference: {fileID: 0}
     - target: {fileID: 8060837181049378105, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ManageScene, Assembly-CSharp
+      value: MainMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8060837181049378105, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -939,10 +976,42 @@ PrefabInstance:
       propertyPath: playerNumber
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8060837181538148974, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: d23426f7e8a4b57479b287cd49a951cf, type: 3}
+    - target: {fileID: 8060837181538148974, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: d1ad8b982f2667041a0508926211c575, type: 3}
+    - target: {fileID: 8060837181538148974, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: 2d90b1e685b9dbd438edee447b3c4ac7, type: 3}
+    - target: {fileID: 8060837181538148974, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: 84ec9944256ada74b94f29ee9c56a0fc, type: 3}
     - target: {fileID: 8060837181798151129, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: playerNumber
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8060837181798151129, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: d23426f7e8a4b57479b287cd49a951cf, type: 3}
+    - target: {fileID: 8060837181798151129, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: d1ad8b982f2667041a0508926211c575, type: 3}
+    - target: {fileID: 8060837181798151129, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: 2d90b1e685b9dbd438edee447b3c4ac7, type: 3}
+    - target: {fileID: 8060837181798151129, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: avatarPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 138089080622383589, guid: 84ec9944256ada74b94f29ee9c56a0fc, type: 3}
     - target: {fileID: 8060837181924468338, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -11,7 +11,7 @@ public class GameInstanceManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else
         {
-            Debug.LogError("more than one Game Manager! new manager destroyed.");
+            Debug.Log("more than one Game Manager. New manager destroyed.");
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);

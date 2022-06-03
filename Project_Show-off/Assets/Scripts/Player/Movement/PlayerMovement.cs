@@ -81,9 +81,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (cameraTransform != null)
         {
-            Vector3 cameraVector = (cameraTransform.right * playerProfile.PlayerInputs.Direction().x)
-            + (cameraTransform.forward * playerProfile.PlayerInputs.Direction().y).normalized;
-            return new Vector2(cameraVector.x, cameraVector.z);
+            Vector2 cameraVector = (new Vector2(cameraTransform.forward.x, cameraTransform.forward.z).normalized
+                + new Vector2(cameraTransform.right.x, cameraTransform.right.z).normalized).normalized;
+
+            Vector2 direction = new Vector2(cameraVector.x * playerProfile.PlayerInputs.Direction().x,
+                cameraVector.y * playerProfile.PlayerInputs.Direction().y).normalized;
+
+            /*Vector3 cameraVector = (cameraTransform.right * playerProfile.PlayerInputs.Direction().x)
+            + (cameraTransform.forward * playerProfile.PlayerInputs.Direction().y).normalized;*/
+            return direction;
         }
         else
         {

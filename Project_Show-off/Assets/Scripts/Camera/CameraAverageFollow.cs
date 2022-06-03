@@ -33,7 +33,7 @@ public class CameraAverageFollow : MonoBehaviour
     {
         if (players.Length > 0)
         {
-            Vector3 average = new Vector3(0, 0, 0);
+            Vector3 average = Vector3.zero;
             for (int i = 0; i < players.Length; i++)
             {
                 average += players[i].transform.position;

@@ -58,4 +58,11 @@ public class MainMenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void StartGame()
+    {
+        ScoreManager.Instance.ClearGlobalPlayerSCores();
+        ManageScene.Instance.ClearSelectedLevels();
+        ManageScene.Instance.LoadRandomLevel();
+    }
 }

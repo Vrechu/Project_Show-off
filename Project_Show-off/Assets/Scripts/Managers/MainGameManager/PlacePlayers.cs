@@ -32,7 +32,7 @@ public class PlacePlayers : MonoBehaviour
         {
             if (!playerProfile.InScene)
             {
-                GameObject avatar = Instantiate(playerProfile.AvatarPrefab, respawnManager.MySpawnPoint(playerProfile.PlayerNumber));
+                GameObject avatar = Instantiate(playerProfile.AvatarPrefab, respawnManager.MySpawnPoint(playerProfile.PlayerNumber), true);
                 playerProfile.Avatar = avatar;
                 avatar.GetComponent<PlayerProfileAccess>().PlayerProfile = playerProfile;
                 playerProfile.InScene = true;                

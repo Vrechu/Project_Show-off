@@ -5,7 +5,6 @@ using UnityEngine;
 public class TimedLevelEndManager : LevelEndManager
 {
     [SerializeField] private float levelTime;
-    [SerializeField] private float levelTimer;
 
     protected override void Start()
     {
@@ -18,7 +17,7 @@ public class TimedLevelEndManager : LevelEndManager
         LevelCountdown();
     }
 
-    private void LevelCountdown()
+    protected  void LevelCountdown()
     {
         if (levelTimer > 0)
         {

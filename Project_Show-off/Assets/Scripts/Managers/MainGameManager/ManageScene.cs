@@ -6,15 +6,18 @@ using UnityEngine.SceneManagement;
 public class ManageScene : MonoBehaviour
 {
     public static ManageScene Instance { get; set; }
+    public string[] Levels;
+    public string finalScreen = "FinalScreen";
+    private bool[] selectedLevels;
 
     private void Start()
     {
         if (Instance == null) Instance = this;
         else
         {
-            Debug.LogError("more than one scene manager!");
             Destroy(this);
         }
+        selectedLevels = new bool[Levels.Length];
     }
 
     public void LoadScene(string sceneName)
@@ -25,8 +28,42 @@ public class ManageScene : MonoBehaviour
     public void LoadRandomLevel()
     {
         string level;
-        level = LevelOrderManager.Instance.RandomNextLevel();
+        level = RandomNextLevel();
         LoadScene(level);
         Debug.Log("Level loaded: " + level);
+    }
+
+    public string RandomNextLevel()
+    {
+        int random = Random.Range(0, Levels.Length);
+
+        return UnpickedLevel(random, 0);
+    }
+
+    private string UnpickedLevel(int selectedNumber, int rolls = 0)
+    {
+        if (rolls < Levels.Length)
+        {
+            rolls++;
+            if (!selectedLevels[selectedNumber])
+            {
+                selectedLevels[selectedNumber] = true;
+                return Levels[selectedNumber];
+            }
+            else if (selectedNumber < Levels.Length - 1)
+            {
+                return UnpickedLevel(selectedNumber + 1, rolls);
+            }
+            else return UnpickedLevel(0, rolls);
+        }
+        else return finalScreen;
+    }
+
+    public void ClearSelectedLevels()
+    {
+        for (int i = 0; i < selectedLevels.Length; i++)
+        {
+            selectedLevels[i] = false;
+        }
     }
 }

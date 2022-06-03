@@ -368,9 +368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55479327eba1d5a4e93dd0add06c0bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topSpeed: 5
-  groundedAcceleration: 2000
-  inAirAcceleration: 1000
+  topSpeed: 6
+  groundedAcceleration: 3000
+  inAirAcceleration: 3000
   currentSpeed: 0
   groundedDrag: 180
   inAirDrag: 50
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e104876353ccb4e997f3cd2efcb1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDistance: 0.51
+  checkDistance: 0.55
 --- !u!114 &138089080622383612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpTime: 0.2
   jumpTimer: 0
-  jumpSpeed: 1000
+  jumpSpeed: 500
 --- !u!114 &-6716760171945060333
 MonoBehaviour:
   m_ObjectHideFlags: 0

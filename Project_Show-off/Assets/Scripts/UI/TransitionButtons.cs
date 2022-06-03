@@ -19,8 +19,8 @@ public class TransitionButtons : MonoBehaviour
         secondScreen.SetActive(true);
     }
 
-    public void NextLevel(string levelName)
+    public void NextLevel()
     {
-        ManageScene.Instance.LoadScene(levelName);
+        ManageScene.Instance.LoadRandomLevel();
     }
 }
