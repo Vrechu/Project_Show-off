@@ -36,6 +36,7 @@ public class Button : MonoBehaviour
         if ( rechargeTimer <= 0 && collision.transform.tag == "Player")
         {
             rechargeTimer = rechargeTime;
+            OnButtunPushed?.Invoke();
         }
     }
 }
