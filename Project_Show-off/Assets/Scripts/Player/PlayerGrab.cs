@@ -7,10 +7,34 @@ public class PlayerGrab : MonoBehaviour
     private PlayerInputs playerInputs;
     private Transform grabbingObject;
     public bool IsGrabbing = false;
+    [SerializeField] private bool canGrab = true;
+    [SerializeField] private float grabTime = 1;
+    [SerializeField] private float grabTimer = 0;
+    [SerializeField] private float pushForce = 200;
+    
 
     private void Start()
     {
         playerInputs = GetComponentInParent<PlayerProfileAccess>().PlayerProfile.PlayerInputs;
+    }
+
+    private void Update()
+    {
+        GrabCountDown();
+        if (playerInputs.Grab() == 0) canGrab = true;
+    }
+
+    private void GrabCountDown()
+    {
+        if (IsGrabbing)
+        {
+            if (grabTimer > 0)
+            {
+                grabTimer -= Time.deltaTime;
+            }
+            else LetLoose();
+        }
+        else grabTimer = grabTime;
     }
 
     private void OnTriggerStay(Collider other)
@@ -20,33 +44,43 @@ public class PlayerGrab : MonoBehaviour
             switch (other.tag)
             {
                 case "Grabbable":
-                    if (grabbingObject == null)
+                    if (canGrab && grabbingObject == null)
                     {
-                        grabbingObject = other.transform;
-                        grabbingObject.gameObject.AddComponent<FixedJoint>();
-                        grabbingObject.GetComponent<FixedJoint>().connectedBody = GetComponentInParent<Rigidbody>();
-                        IsGrabbing = true;
+                        Grab(other);
                     }
 
                     break;
 
                 case "Player":
-                    if (grabbingObject == null)
+                    if (canGrab && grabbingObject == null)
                     {
-                        grabbingObject = other.transform;
-                        grabbingObject.gameObject.AddComponent<FixedJoint>();
-                        grabbingObject.GetComponent<FixedJoint>().connectedBody = GetComponentInParent<Rigidbody>();
-                        IsGrabbing = true;
+                        Grab(other);
                     }
                     break;
             }
-
         }
         else if (grabbingObject != null)
         {
-            Destroy(grabbingObject.GetComponent<FixedJoint>());
-            grabbingObject = null;
-            IsGrabbing = false;
+            LetLoose();
         }
+    }
+
+    private void Grab(Collider other)
+    {
+        grabbingObject = other.transform;
+        grabbingObject.gameObject.AddComponent<FixedJoint>();
+        grabbingObject.GetComponent<FixedJoint>().connectedBody = GetComponentInParent<Rigidbody>();
+        IsGrabbing = true;
+        canGrab = false;
+        grabTimer = grabTime;
+    }
+
+    private void LetLoose()
+    {
+        Destroy(grabbingObject.GetComponent<FixedJoint>());
+        grabbingObject.GetComponent<Rigidbody>().AddForce(transform.forward * pushForce, ForceMode.Impulse);
+        grabbingObject = null;
+        IsGrabbing = false;
+        grabTimer = grabTime;
     }
 }
