@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    [SerializeField] private Transform[] spawnPositions;
-    [SerializeField] private GameObject[] objects;
+    [SerializeField] private bool spawnOnHere = false;
+    [SerializeField] private bool automaticSpawn = false;
+    [SerializeField] private bool movingObjects = false;
 
-    [SerializeField] private bool AutomaticSpawn = false;
-    [SerializeField] private bool SpawnOnHere = false;
+    [SerializeField] private GameObject[] objects;
+    [SerializeField] private Transform[] spawnPositions;
+    [SerializeField] private Transform[] targets;
+
 
     [SerializeField] private float time = 5;
     [SerializeField] private float timer;
+
 
     private void Start()
     {
@@ -27,14 +31,16 @@ public class SpawnObject : MonoBehaviour
     public void SpawnObjectHere()
     {
         int randomObject = Random.Range(0, objects.Length);
-        Instantiate(objects[randomObject], transform);
+        GameObject placedObject = Instantiate(objects[randomObject], transform);
+        if (movingObjects) placedObject.GetComponent<MoveObjectToTarget>().SetDirection(targets[0]);
     }
 
     public void SpawnObjectAtPositions()
     {
         int randomObject = Random.Range(0, objects.Length);
         int randomPosition = Random.Range(0, spawnPositions.Length);
-        Instantiate(objects[randomObject], spawnPositions[randomPosition]);
+        GameObject placedObject = Instantiate(objects[randomObject], spawnPositions[randomPosition]);
+        if (movingObjects) placedObject.GetComponent<MoveObjectToTarget>().SetDirection(targets[randomPosition]);
     }
 
     private void CountDown()
@@ -47,9 +53,9 @@ public class SpawnObject : MonoBehaviour
 
     private void AutoSpawn()
     {
-        if (AutomaticSpawn && timer <= 0)
+        if (automaticSpawn && timer <= 0)
         {
-            if (SpawnOnHere)
+            if (spawnOnHere)
             {
                 SpawnObjectHere();
             }
