@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
         LevelPlayerScores[playerNumber] += addedScore;
     }
 
-    public void ClearGlobalPlayerSCores()
+    public void ClearGlobalPlayerScores()
     {
         for (int i = 0; i < GlobalPlayerScores.Length; i++)
         {

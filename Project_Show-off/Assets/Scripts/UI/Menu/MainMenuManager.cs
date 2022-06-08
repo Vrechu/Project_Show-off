@@ -61,7 +61,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        ScoreManager.Instance.ClearGlobalPlayerSCores();
+        ScoreManager.Instance.ClearGlobalPlayerScores();
         ManageScene.Instance.ClearSelectedLevels();
         ManageScene.Instance.LoadRandomLevel();
     }

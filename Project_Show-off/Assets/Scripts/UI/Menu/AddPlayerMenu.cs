@@ -5,20 +5,56 @@ using UnityEngine;
 public class AddPlayerMenu : MonoBehaviour
 {
     private PlayerManager playerManager;
+    private PlayerInputs inputs;
     private bool[] controllerJoined = new bool[5];
+    private int playersJoined = 0;
 
+    [SerializeField] private MainMenuManager mainMenuManager;
     [SerializeField] private GameObject[] avatarSelectors;
+    [SerializeField] private CharacterSelection[] characterSelections;
 
-    void Start()
+    private void Start()
     {
         playerManager = PlayerManager.Instance;
-        ClearPlayers();
+        inputs = new UniversalInputs(0);
     }
 
+    private void OnEnable()
+    {
+        ClearPlayers();        
+    }
 
     void Update()
     {
         AddPlayer();
+        CheckLockedIn();
+        GoBack();
+    }
+
+    void CheckLockedIn()
+    {
+        int locked = 0;
+        if (inputs.MenuPressed())
+        {
+            for (int i = 0; i < playersJoined; i++)
+            {
+                if (characterSelections[i].LockedIn)
+                {
+                    locked++;                    
+                }
+            }
+            if (locked == playersJoined) mainMenuManager.StartGame();
+        }
+    }
+
+    private void GoBack()
+    {
+        if (inputs.GrabPressed())
+        {
+            mainMenuManager.SetMenuScreen("Main");
+            ClearPlayers();
+        }
+
     }
 
     public void AddPlayer()
@@ -29,20 +65,23 @@ public class AddPlayerMenu : MonoBehaviour
             {
                 if (!controllerJoined[i] && Input.GetAxis("CMenu" + (i + 1)) == 1)
                 {
-                    avatarSelectors[playerManager.GetPlayerProfiles().Count].SetActive(true);
                     playerManager.NewControllerPlayer(i+1);
+                    Debug.Log("inputs: " + playerManager.GetPlayerProfiles()[0].PlayerInputs);
+                    avatarSelectors[playersJoined].SetActive(true);
                     controllerJoined[i] = true;
-                    Debug.Log("Controller joined: " + (i+1) + ", Player: " + playerManager.GetPlayerProfiles().Count);
+                    playersJoined++;
+                    Debug.Log("Controller joined: " + (i+1) + ", Player: " + playersJoined);
                 }
             }
 
-            if (Input.GetAxis("Jump") == 1
+            if (Input.GetKeyDown(KeyCode.Return)
                 && !controllerJoined[4])
             {
-                avatarSelectors[playerManager.GetPlayerProfiles().Count].SetActive(true);
                 playerManager.NewKeyboardPlayer(0);
+                avatarSelectors[playersJoined].SetActive(true);
                 controllerJoined[4] = true;
-                Debug.Log("Keyboard joined, Player: " + playerManager.GetPlayerProfiles().Count);
+                playersJoined++;
+                Debug.Log("Keyboard joined, Player: " + playersJoined);
             }
         }
     }
@@ -59,6 +98,7 @@ public class AddPlayerMenu : MonoBehaviour
             avatarSelectors[i].SetActive(false);
         }
 
-        playerManager.ClearPlayers();
+        playersJoined = 0;
+        if (playerManager != null) playerManager.ClearPlayers();
     }
 }
