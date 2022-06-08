@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TestPLayerProfile : MonoBehaviour
 {
+    [SerializeField] private int number = 0;
+
     private void Awake()
     {
-        GetComponent<PlayerProfileAccess>().PlayerProfile = new PlayerProfile(0, 0, new KeyboardInputs(0));
+        GetComponent<PlayerProfileAccess>().PlayerProfile = new PlayerProfile(number, number, new KeyboardInputs(number));
     }
 }
