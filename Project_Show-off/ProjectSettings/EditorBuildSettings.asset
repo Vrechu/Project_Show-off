@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_concepts/TreadmillTest.unity
     guid: 0158fc8012d304d45b459c4e54415648
   - enabled: 1
-    path: Assets/Scenes/Character_Controller_Prototype.unity
+    path: Assets/Scenes/MainTest.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/MultiplayerTest.unity

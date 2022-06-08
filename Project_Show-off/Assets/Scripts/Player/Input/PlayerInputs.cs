@@ -74,7 +74,12 @@ public abstract class PlayerInputs
         if (Menu() != lastMenu)
         {
             lastMenu = Menu();
-            if (Menu() == 1) return true;
+            if (Menu() == 1)
+            {
+                Debug.Log("hey");
+                return true;
+
+            }
             else return false;
         }
         else return false;
