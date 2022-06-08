@@ -64,6 +64,7 @@ public class IngameCanvas : MonoBehaviour
 
     public void BackToMenu()
     {
+        Time.timeScale = 1;
         ManageScene.Instance.LoadScene("MainMenu");
     }
 }

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class FinalScreen : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI[] scores = new TextMeshProUGUI[4];
     [SerializeField] private GameObject[] winner = new GameObject[4];
+    [SerializeField] private GameObject firstSelected;
     private ScoreManager scoreManager;
     private PlayerManager playerManager;
 
@@ -14,6 +16,8 @@ public class FinalScreen : MonoBehaviour
     {
         scoreManager = ScoreManager.Instance;
         playerManager = PlayerManager.Instance;
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstSelected);
         SetWinner();
     }
 
