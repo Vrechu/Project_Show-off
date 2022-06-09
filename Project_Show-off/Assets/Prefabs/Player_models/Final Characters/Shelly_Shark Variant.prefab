@@ -66,26 +66,26 @@ PrefabInstance:
     - target: {fileID: -6015170475880553001, guid: 46a16079eb7f3cb46a63f76697f85c6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 91efa00c21460b24eb693cf0243fc162, type: 2}
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
     - target: {fileID: -4106330328238831832, guid: 46a16079eb7f3cb46a63f76697f85c6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 91efa00c21460b24eb693cf0243fc162, type: 2}
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
     - target: {fileID: -3970323667898751570, guid: 46a16079eb7f3cb46a63f76697f85c6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 91efa00c21460b24eb693cf0243fc162, type: 2}
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
     - target: {fileID: -58320149754657351, guid: 46a16079eb7f3cb46a63f76697f85c6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ad51f3f0b2999240ab2ad00d6bf9c93, type: 2}
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
     - target: {fileID: 919132149155446097, guid: 46a16079eb7f3cb46a63f76697f85c6b, type: 3}
       propertyPath: m_Name
-      value: Shelly_Shark
+      value: Shelly_Shark Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8489682812607128081, guid: 46a16079eb7f3cb46a63f76697f85c6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 91efa00c21460b24eb693cf0243fc162, type: 2}
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46a16079eb7f3cb46a63f76697f85c6b, type: 3}

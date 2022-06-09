@@ -111,6 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsGrabbing: 0
+  canGrab: 1
+  grabTime: 1
+  grabTimer: 0
+  pushForce: 200
 --- !u!1 &2080872875
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +546,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 357276646512625434}
     m_Modifications:
+    - target: {fileID: 974562666253591945, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09727d0f24e64b74f90f567932d991f2, type: 2}
+    - target: {fileID: 1222824979306368906, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09727d0f24e64b74f90f567932d991f2, type: 2}
+    - target: {fileID: 2354427126013258146, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09727d0f24e64b74f90f567932d991f2, type: 2}
+    - target: {fileID: 3441786437083859701, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09727d0f24e64b74f90f567932d991f2, type: 2}
+    - target: {fileID: 4418769744973908124, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09727d0f24e64b74f90f567932d991f2, type: 2}
     - target: {fileID: 6223264560688543336, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -598,6 +622,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6593374670199747671, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09727d0f24e64b74f90f567932d991f2, type: 2}
+    - target: {fileID: 6679976935054143647, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09727d0f24e64b74f90f567932d991f2, type: 2}
+    - target: {fileID: 6704325141381970465, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09727d0f24e64b74f90f567932d991f2, type: 2}
     - target: {fileID: 6707736203920043218, guid: 0c4bd7c9190385344b469ce34f9dc947, type: 3}
       propertyPath: m_Name
       value: Jenna_Jaguar Variant

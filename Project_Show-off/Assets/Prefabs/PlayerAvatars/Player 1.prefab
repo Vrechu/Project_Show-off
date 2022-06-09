@@ -111,6 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsGrabbing: 0
+  canGrab: 1
+  grabTime: 1
+  grabTimer: 0
+  pushForce: 200
 --- !u!1 &2080872875
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +546,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 357276646512625434}
     m_Modifications:
+    - target: {fileID: 1184413835089602086, guid: a62ba7fcff474cb4f908bc4081ba6f2a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
+    - target: {fileID: 1913543530003644814, guid: a62ba7fcff474cb4f908bc4081ba6f2a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
+    - target: {fileID: 2503413981420733215, guid: a62ba7fcff474cb4f908bc4081ba6f2a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
+    - target: {fileID: 3267388170755154329, guid: a62ba7fcff474cb4f908bc4081ba6f2a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
+    - target: {fileID: 5276910071023264224, guid: a62ba7fcff474cb4f908bc4081ba6f2a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 529313130ce2148478d9eaf1ab9318d7, type: 2}
     - target: {fileID: 7076336917658231772, guid: a62ba7fcff474cb4f908bc4081ba6f2a, type: 3}
       propertyPath: m_RootOrder
       value: 1

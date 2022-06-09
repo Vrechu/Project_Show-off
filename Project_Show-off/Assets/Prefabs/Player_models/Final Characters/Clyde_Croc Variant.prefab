@@ -66,30 +66,30 @@ PrefabInstance:
     - target: {fileID: -5637082619082624141, guid: 0b3987983684faa4892f205598857c12, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 13b3c6c03029622429c8f16a1a6ebf78, type: 2}
+      objectReference: {fileID: 2100000, guid: 79a7efcb36e72a041819694ffe6a013a, type: 2}
     - target: {fileID: -288321781084324589, guid: 0b3987983684faa4892f205598857c12, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 13b3c6c03029622429c8f16a1a6ebf78, type: 2}
+      objectReference: {fileID: 2100000, guid: 79a7efcb36e72a041819694ffe6a013a, type: 2}
     - target: {fileID: 919132149155446097, guid: 0b3987983684faa4892f205598857c12, type: 3}
       propertyPath: m_Name
-      value: Clyde_Croc
+      value: Clyde_Croc Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5059591949992997933, guid: 0b3987983684faa4892f205598857c12, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 13b3c6c03029622429c8f16a1a6ebf78, type: 2}
+      objectReference: {fileID: 2100000, guid: 79a7efcb36e72a041819694ffe6a013a, type: 2}
     - target: {fileID: 5934110383125421073, guid: 0b3987983684faa4892f205598857c12, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 13b3c6c03029622429c8f16a1a6ebf78, type: 2}
+      objectReference: {fileID: 2100000, guid: 79a7efcb36e72a041819694ffe6a013a, type: 2}
     - target: {fileID: 6279543674423861602, guid: 0b3987983684faa4892f205598857c12, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 13b3c6c03029622429c8f16a1a6ebf78, type: 2}
+      objectReference: {fileID: 2100000, guid: 79a7efcb36e72a041819694ffe6a013a, type: 2}
     - target: {fileID: 6460610826714688291, guid: 0b3987983684faa4892f205598857c12, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 13b3c6c03029622429c8f16a1a6ebf78, type: 2}
+      objectReference: {fileID: 2100000, guid: 79a7efcb36e72a041819694ffe6a013a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3987983684faa4892f205598857c12, type: 3}
