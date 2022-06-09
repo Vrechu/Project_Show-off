@@ -152,6 +152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe474c135786bd418b785a535e695d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnOnHere: 0
+  automaticSpawn: 1
+  movingObjects: 0
+  objects:
+  - {fileID: 2362896387582690602, guid: 2881615db3dd56441992cdb3a877ec32, type: 3}
+  - {fileID: 4395735082267609636, guid: e1ce87993ef3e264689be6500d6cb6f2, type: 3}
+  - {fileID: 7597213912134681321, guid: 6b9c5884a702c7f449a44bb366c072cb, type: 3}
+  - {fileID: 5406913405515144770, guid: 2daf20f4b0e929b4ba616965ea78a0b8, type: 3}
   spawnPositions:
   - {fileID: 1294492226}
   - {fileID: 1728530735}
@@ -163,13 +171,7 @@ MonoBehaviour:
   - {fileID: 2071551866}
   - {fileID: 1980288077}
   - {fileID: 1825783152}
-  objects:
-  - {fileID: 2362896387582690602, guid: 2881615db3dd56441992cdb3a877ec32, type: 3}
-  - {fileID: 4395735082267609636, guid: e1ce87993ef3e264689be6500d6cb6f2, type: 3}
-  - {fileID: 7597213912134681321, guid: 6b9c5884a702c7f449a44bb366c072cb, type: 3}
-  - {fileID: 5406913405515144770, guid: 2daf20f4b0e929b4ba616965ea78a0b8, type: 3}
-  AutomaticSpawn: 1
-  SpawnOnHere: 0
+  targets: []
   time: 1
   timer: 0
 --- !u!4 &139745855
@@ -1077,7 +1079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290417986}
   m_LocalRotation: {x: 0.27710438, y: -0, z: -0, w: 0.96083987}
-  m_LocalPosition: {x: 0.55, y: 7.47, z: -2.16}
+  m_LocalPosition: {x: 0.55, y: 7.89, z: -2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

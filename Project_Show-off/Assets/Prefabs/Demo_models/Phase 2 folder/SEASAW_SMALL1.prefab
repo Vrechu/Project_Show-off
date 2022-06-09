@@ -56,6 +56,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2059822781843226194}
     m_Modifications:
+    - target: {fileID: 5822403314533371072, guid: e6b6712c94ddffa4db5bfc82ef8b77bb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb234beaf97d6f848a958b78bc5aa931, type: 2}
     - target: {fileID: 8478421498234685869, guid: e6b6712c94ddffa4db5bfc82ef8b77bb, type: 3}
       propertyPath: m_Name
       value: SEASAW_SMALL1_COLLIDER
