@@ -21,10 +21,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_concepts/demo scene/TEST_LEVEL.unity
     guid: 5e7e876b98c9b7f4d9803d6d4a68e9a5
   - enabled: 1
-    path: Assets/Scenes/TEST_LEVEL_2.unity
+    path: Assets/Scenes/Final/TEST_LEVEL_2.unity
     guid: a45510d762c70244a829189d6a7175e6
   - enabled: 1
-    path: Assets/Scenes/Level 3.unity
+    path: Assets/Scenes/Final/Level 3.unity
     guid: 6f7cf47cb71093d4ab5894f98ac05b0e
   - enabled: 1
     path: Assets/Scenes/Final/Transition.unity

@@ -28,6 +28,11 @@ public class ScoreManager : MonoBehaviour
         LevelPlayerScores[playerNumber] += addedScore;
     }
 
+    public void RemoveLevelPlayerScore(int playerNumber, float removedScore)
+    {
+        LevelPlayerScores[playerNumber] -= removedScore;
+    }
+
     public void ClearGlobalPlayerScores()
     {
         for (int i = 0; i < GlobalPlayerScores.Length; i++)
