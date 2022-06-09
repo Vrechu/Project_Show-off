@@ -33,7 +33,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (checkIfGrounded.IsGrounded()
             && jumpTimer < 0 
-            && playerInputs.Jump() == 1)
+            && playerInputs.JumpPressed())
         {
             objectRigidbody.AddForce(transform.up * jumpSpeed,ForceMode.Acceleration);
             jumpTimer = jumpTime;
