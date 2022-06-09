@@ -111,6 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsGrabbing: 0
+  canGrab: 1
+  grabTime: 1
+  grabTimer: 0
+  pushForce: 200
 --- !u!1 &2080872875
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +546,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 357276646512625434}
     m_Modifications:
+    - target: {fileID: 1094058162731905688, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35eb7bb7d268fcb4abb9a10c1b2fe7a9, type: 2}
+    - target: {fileID: 1496917933977638540, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35eb7bb7d268fcb4abb9a10c1b2fe7a9, type: 2}
+    - target: {fileID: 3545869739520090812, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35eb7bb7d268fcb4abb9a10c1b2fe7a9, type: 2}
+    - target: {fileID: 5612044476568851792, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35eb7bb7d268fcb4abb9a10c1b2fe7a9, type: 2}
     - target: {fileID: 5906506610547197952, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -598,6 +618,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960246468280693688, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35eb7bb7d268fcb4abb9a10c1b2fe7a9, type: 2}
+    - target: {fileID: 6442998876816664152, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35eb7bb7d268fcb4abb9a10c1b2fe7a9, type: 2}
     - target: {fileID: 6535832309706904250, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
       propertyPath: m_Name
       value: Ramone_Raptor Variant
@@ -606,6 +634,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7557415576366842307, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35eb7bb7d268fcb4abb9a10c1b2fe7a9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e17dba2d12405dd4b9f03df268db866a, type: 3}
 --- !u!4 &8304273814717902923 stripped
