@@ -339,11 +339,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
       propertyPath: Levels.Array.data[0]
-      value: MainTest
+      value: Ballpit Collector
       objectReference: {fileID: 0}
     - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
       propertyPath: Levels.Array.data[1]
-      value: TEST_LEVEL_2
+      value: MainTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: Levels.Array.data[2]
+      value: MainTest
       objectReference: {fileID: 0}
     - target: {fileID: 630673209414567947, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
       propertyPath: m_RootOrder
