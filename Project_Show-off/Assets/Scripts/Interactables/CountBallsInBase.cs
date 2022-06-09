@@ -10,7 +10,8 @@ public class CountBallsInBase : MonoBehaviour
     {
         if (other.CompareTag("ScoringObject"))
         {
-            ScoreManager.Instance.AddLevelPlayerScore(playerNumber ,other.GetComponent<ScoreObject>().score);            
+            ScoreManager.Instance.AddLevelPlayerScore(playerNumber ,other.GetComponent<ScoreObject>().score);
+            Debug.Log("added");
         }
     }
 
@@ -19,6 +20,7 @@ public class CountBallsInBase : MonoBehaviour
         if (other.CompareTag("ScoringObject"))
         {
             ScoreManager.Instance.RemoveLevelPlayerScore(playerNumber, other.GetComponent<ScoreObject>().score);
+            Debug.Log("removed");
         }
     }
 
