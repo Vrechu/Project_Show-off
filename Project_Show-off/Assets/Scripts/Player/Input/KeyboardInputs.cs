@@ -57,4 +57,10 @@ public class KeyboardInputs : PlayerInputs
         if (Input.GetKey(KeyCode.Return)) return 1;
         else return 0;
     }
+
+    public override float Join()
+    {
+        if (Input.GetKey(KeyCode.Y)) return 1;
+        else return 0;
+    }
 }

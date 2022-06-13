@@ -26,6 +26,6 @@ public class TransitionButtons : MonoBehaviour
 
     public void NextLevel()
     {
-        ManageScene.Instance.LoadRandomLevel();
+        ManageScene.Instance.SetNextLevel();
     }
 }

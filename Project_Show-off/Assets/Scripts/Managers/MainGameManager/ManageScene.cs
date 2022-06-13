@@ -9,6 +9,7 @@ public class ManageScene : MonoBehaviour
     public string[] Levels;
     public string finalScreen = "FinalScreen";
     private bool[] selectedLevels;
+    public int NextLevel;
 
     private void Start()
     {
@@ -23,40 +24,43 @@ public class ManageScene : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        Debug.Log("Scene loaded: " + sceneName);
     }
 
-    public void LoadRandomLevel()
+    public void LoadNextLevel()
     {
-        string level;
-        level = RandomNextLevel();
-        LoadScene(level);
-        Debug.Log("Level loaded: " + level);
+        LoadScene(Levels[NextLevel]);
     }
 
-    public string RandomNextLevel()
+    public void SetNextLevel()
     {
-        int random = Random.Range(0, Levels.Length);
-
-        return UnpickedLevel(random, 0);
+        NextLevel = RandomNextLevel();        
     }
 
-    private string UnpickedLevel(int selectedNumber, int rolls = 0)
+    public int RandomNextLevel()
     {
-        if (rolls < Levels.Length)
+        int random = Random.Range(1, Levels.Length);
+
+        return UnpickedLevel(random);
+    }
+
+    private int UnpickedLevel(int selectedNumber, int rolls = 0)
+    {
+        if (rolls < Levels.Length-1)
         {
             rolls++;
             if (!selectedLevels[selectedNumber])
             {
                 selectedLevels[selectedNumber] = true;
-                return Levels[selectedNumber];
+                return selectedNumber;
             }
             else if (selectedNumber < Levels.Length - 1)
             {
                 return UnpickedLevel(selectedNumber + 1, rolls);
             }
-            else return UnpickedLevel(0, rolls);
+            else return UnpickedLevel(1, rolls);
         }
-        else return finalScreen;
+        else return 0;
     }
 
     public void ClearSelectedLevels()
