@@ -92,7 +92,7 @@ Material:
     - _IntersectionWaterBlend: 0
     - _LightingHardness: 0
     - _LightingSmoothness: 0.71
-    - _NormalsStrength: 0.42
+    - _NormalsStrength: 0.03
     - _PlanarReflectionFresnel: 2.5
     - _PlanarReflectionStrength: 0.82
     - _QueueControl: 0
