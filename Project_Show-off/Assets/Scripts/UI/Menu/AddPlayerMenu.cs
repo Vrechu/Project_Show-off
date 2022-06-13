@@ -10,7 +10,7 @@ public class AddPlayerMenu : MonoBehaviour
     private int playersJoined = 0;
 
     [SerializeField] private MainMenuManager mainMenuManager;
-    [SerializeField] private GameObject[] avatarSelectors;
+    [SerializeField] private GameObject[] avatarSelectors, deleteOnEnable;
     [SerializeField] private CharacterSelection[] characterSelections;
     public GameObject[] avatarPrefabs;
     public bool[] avatarsPicked = new bool[4];
@@ -82,6 +82,7 @@ public class AddPlayerMenu : MonoBehaviour
                     playerManager.NewControllerPlayer(i+1);
                     Debug.Log("inputs: " + playerManager.GetPlayerProfiles()[0].PlayerInputs);
                     avatarSelectors[playersJoined].SetActive(true);
+                    deleteOnEnable[playersJoined].SetActive(false);
                     controllerJoined[i] = true;
                     playersJoined++;
                     Debug.Log("Controller joined: " + (i+1) + ", Player: " + playersJoined);
@@ -93,6 +94,7 @@ public class AddPlayerMenu : MonoBehaviour
             {
                 playerManager.NewKeyboardPlayer(0);
                 avatarSelectors[playersJoined].SetActive(true);
+                deleteOnEnable[playersJoined].SetActive(false);
                 controllerJoined[4] = true;
                 playersJoined++;
                 Debug.Log("Keyboard joined, Player: " + playersJoined);
@@ -110,6 +112,11 @@ public class AddPlayerMenu : MonoBehaviour
         for (int i = 0; i < avatarSelectors.Length; i++)
         {
             avatarSelectors[i].SetActive(false);
+        }
+
+        for (int i = 0; i < deleteOnEnable.Length; i++)
+        {
+            deleteOnEnable[i].SetActive(true);
         }
 
         for (int i = 0; i < avatarsPicked.Length; i++)

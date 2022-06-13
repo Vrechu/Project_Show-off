@@ -8,7 +8,7 @@ public class CharacterSelection : MonoBehaviour
     public int playerNumber;
     [SerializeField] private AddPlayerMenu addPlayerMenu;
 
-    [SerializeField] private GameObject[] avatarImages, disabledWhenLocked, enabledWhenLocked;
+    [SerializeField] private GameObject[] avatarImages, names, disabledWhenLocked, enabledWhenLocked;
     public int currentPrefab = 0;
     public PlayerInputs playerInputs;
     public bool LockedIn = false;
@@ -116,8 +116,10 @@ public class CharacterSelection : MonoBehaviour
         for (int i = 0; i < avatarImages.Length; i++)
         {
             avatarImages[i].SetActive(false);
+            names[i].SetActive(false);
         }
         avatarImages[currentPrefab].SetActive(true);
+        names[currentPrefab].SetActive(true);
     }
 
 }
