@@ -57,4 +57,14 @@ public class UniversalInputs : PlayerInputs
         if (Input.GetKey(KeyCode.Escape)) return 1;
         else return 0;
     }
+
+    public override float Join()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (Input.GetAxis("CJoin" + (i + 1)) == 1) return Input.GetAxis("CMenu" + (i + 1));
+        }
+        if (Input.GetKey(KeyCode.Y)) return 1;
+        else return 0;
+    }
 }

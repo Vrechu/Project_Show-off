@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class PlayerInputs
 {
     protected int controllerNumber;
-    protected float lastJump, lastGrab, lastBack, lastMenu, lastDirection = 0;
+    protected float lastJump, lastGrab, lastBack, lastMenu, lastJoin, lastDirection = 0;
 
     public PlayerInputs(int controllerNumber)
     {
@@ -35,6 +35,8 @@ public abstract class PlayerInputs
     public abstract float Grab();
     public abstract float Back();
     public abstract float Menu();
+    public abstract float Join();
+
     public bool JumpPressed()
     {
         if (Jump() != lastJump)
@@ -75,6 +77,21 @@ public abstract class PlayerInputs
         {
             lastMenu = Menu();
             if (Menu() == 1)
+            {
+                return true;
+
+            }
+            else return false;
+        }
+        else return false;
+    }
+
+    public bool JoinPressed()
+    {
+        if (Join() != lastJoin)
+        {
+            lastJoin = Join();
+            if (Join() == 1)
             {
                 return true;
 

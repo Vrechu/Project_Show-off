@@ -373,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
       propertyPath: Levels.Array.data[0]
-      value: Ballpit Collector 2.0
+      value: FinalScreen
       objectReference: {fileID: 0}
     - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
       propertyPath: Levels.Array.data[1]
@@ -429,24 +429,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
---- !u!1 &630673210328771200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 630673209414567948, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
-  m_PrefabInstance: {fileID: 630673210328771199}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &630673210328771201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630673210328771200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e7eacbf2fe074488f4b8097a80cac4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravityMultiplier: 2
 --- !u!1001 &8060837180915331478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -547,10 +529,6 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 8060837180879966386, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8060837181924468338, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

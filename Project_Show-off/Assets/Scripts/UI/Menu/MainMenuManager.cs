@@ -6,17 +6,8 @@ using UnityEngine.EventSystems;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject mainScreen;
-    [SerializeField] private GameObject characterSelect;
-    [SerializeField] private GameObject title;
-    [SerializeField] private GameObject titleButton, mainMenuButton;
-
-    public enum MenuScreen
-    {
-        Main, CharacterSelect, Title
-    }  
-
-    public MenuScreen ActiveScreen;
+    [SerializeField] private GameObject mainScreen, characterSelect, title, settings, credits, howTo;
+    [SerializeField] private GameObject mainMenuButton, settingsButton, creditsButton, howToButton;
 
     private void Start()
     {
@@ -27,42 +18,81 @@ public class MainMenuManager : MonoBehaviour
     {
         switch (screenName)
         {
-            case "Main":
+            case "Title":
+                title.SetActive(true);
+                mainScreen.SetActive(false);
                 characterSelect.SetActive(false);
-                title.SetActive(false);
-                mainScreen.SetActive(true);
+                settings.SetActive(false);
+                credits.SetActive(false);
+                howTo.SetActive(false);
 
                 EventSystem.current.SetSelectedGameObject(null);
+                break;
 
+            case "Main":
+                title.SetActive(false);
+                mainScreen.SetActive(true);
+                characterSelect.SetActive(false);
+                settings.SetActive(false);
+                credits.SetActive(false);
+                howTo.SetActive(false);
+
+                EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(mainMenuButton);
                 break;
 
             case "CharacterSelect":
-                mainScreen.SetActive(false);
                 title.SetActive(false);
+                mainScreen.SetActive(false);
                 characterSelect.SetActive(true);
+                settings.SetActive(false);
+                credits.SetActive(false);
+                howTo.SetActive(false);
+
+                EventSystem.current.SetSelectedGameObject(null);
                 break;
 
-            case "Title":
+            case "Settings":
+                title.SetActive(false);
                 mainScreen.SetActive(false);
                 characterSelect.SetActive(false);
-                title.SetActive(true);
-                EventSystem.current.SetSelectedGameObject(null);
+                settings.SetActive(true);
+                credits.SetActive(false);
+                howTo.SetActive(false);
 
-                EventSystem.current.SetSelectedGameObject(titleButton);
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(settingsButton);
                 break;
+
+            case "Credits":
+                title.SetActive(false);
+                mainScreen.SetActive(false);
+                characterSelect.SetActive(false);
+                settings.SetActive(false);
+                credits.SetActive(true);
+                howTo.SetActive(false);
+
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(creditsButton);
+                break;
+
+            case "HowTo":
+                title.SetActive(false);
+                mainScreen.SetActive(false);
+                characterSelect.SetActive(false);
+                settings.SetActive(false);
+                credits.SetActive(false);
+                howTo.SetActive(true);
+
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(howToButton);
+                break;
+
         }
     }    
 
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    public void StartGame()
-    {
-        ScoreManager.Instance.ClearGlobalPlayerScores();
-        ManageScene.Instance.ClearSelectedLevels();
-        ManageScene.Instance.LoadRandomLevel();
     }
 }

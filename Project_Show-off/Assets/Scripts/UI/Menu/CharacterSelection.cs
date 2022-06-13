@@ -5,21 +5,19 @@ using UnityEngine;
 public class CharacterSelection : MonoBehaviour
 {
     private PlayerManager playerManager;
-    [SerializeField] private int playerNumber;
+    public int playerNumber;
+    [SerializeField] private AddPlayerMenu addPlayerMenu;
 
-    [SerializeField] private GameObject[] avatarPrefabs;
-    [SerializeField] private GameObject[] avatarImages;
-
-    [SerializeField] private GameObject[] disabledWhenLocked;
-    private int currentPrefab = 0;
+    [SerializeField] private GameObject[] avatarImages, disabledWhenLocked, enabledWhenLocked;
+    public int currentPrefab = 0;
     public PlayerInputs playerInputs;
     public bool LockedIn = false;
-    //public bool switchedAvatar, pressedSelect, pressedBack = true;
+
 
     void Start()
     {
         playerManager = PlayerManager.Instance;
-        SetCurrentPrefab();
+        SetCurrentPrefabImage();
     }
 
     private void Update()
@@ -65,12 +63,17 @@ public class CharacterSelection : MonoBehaviour
 
     public void LockInAvatar()
     {
-        playerManager.GetPlayerProfiles()[playerNumber].AvatarPrefab = avatarPrefabs[currentPrefab];
+        playerManager.GetPlayerProfiles()[playerNumber].AvatarPrefab = addPlayerMenu.avatarPrefabs[currentPrefab];
         for (int i = 0; i < disabledWhenLocked.Length; i++)
         {
             disabledWhenLocked[i].SetActive(false);
         }
+        for (int i = 0; i < enabledWhenLocked.Length; i++)
+        {
+            enabledWhenLocked[i].SetActive(true);
+        }
         LockedIn = true;
+        addPlayerMenu.SetAvatarPicked(currentPrefab, playerNumber);
     }
 
     public void UnlockAvatar()
@@ -79,26 +82,38 @@ public class CharacterSelection : MonoBehaviour
         {
             disabledWhenLocked[i].SetActive(true);
         }
+        for (int i = 0; i < enabledWhenLocked.Length; i++)
+        {
+            enabledWhenLocked[i].SetActive(false);
+        }
         LockedIn = false;
     }
 
     public void NextAvatar()
     {
-        if (currentPrefab < avatarPrefabs.Length - 1) currentPrefab++;
+        if (currentPrefab < addPlayerMenu.avatarPrefabs.Length - 1) currentPrefab++;
         else currentPrefab = 0;
-        SetCurrentPrefab();
+        SetCurrentPrefabImage();
+        if (addPlayerMenu.avatarsPicked[currentPrefab])
+        {
+            NextAvatar();
+        }
     }
 
     public void PreviousAvatar()
     {
         if (currentPrefab > 0) currentPrefab--;
-        else currentPrefab = avatarPrefabs.Length - 1;
-        SetCurrentPrefab();
+        else currentPrefab = addPlayerMenu.avatarPrefabs.Length - 1;
+        SetCurrentPrefabImage();
+        if (addPlayerMenu.avatarsPicked[currentPrefab])
+        {
+            PreviousAvatar();
+        }
     }
 
-    private void SetCurrentPrefab()
+    private void SetCurrentPrefabImage()
     {
-        for (int i = 0; i < avatarPrefabs.Length; i++)
+        for (int i = 0; i < avatarImages.Length; i++)
         {
             avatarImages[i].SetActive(false);
         }

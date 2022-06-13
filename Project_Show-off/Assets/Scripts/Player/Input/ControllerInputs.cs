@@ -32,4 +32,9 @@ public class ControllerInputs : PlayerInputs
     {
         return Input.GetAxis("CMenu" + controllerNumber);
     }
+
+    public override float Join()
+    {
+        return Input.GetAxis("CJoin" + controllerNumber);
+    }
 }

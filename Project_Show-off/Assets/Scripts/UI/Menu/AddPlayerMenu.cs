@@ -12,6 +12,8 @@ public class AddPlayerMenu : MonoBehaviour
     [SerializeField] private MainMenuManager mainMenuManager;
     [SerializeField] private GameObject[] avatarSelectors;
     [SerializeField] private CharacterSelection[] characterSelections;
+    public GameObject[] avatarPrefabs;
+    public bool[] avatarsPicked = new bool[4];
 
     private void Start()
     {
@@ -26,24 +28,36 @@ public class AddPlayerMenu : MonoBehaviour
 
     void Update()
     {
-        AddPlayer();
-        CheckLockedIn();
+        if (inputs.MenuPressed()) StartCheck();
         GoBack();
+        AddPlayer();
     }
 
-    void CheckLockedIn()
+    public bool CheckLockedIn()
     {
         int locked = 0;
-        if (inputs.MenuPressed())
+        if (playersJoined > 0)
         {
             for (int i = 0; i < playersJoined; i++)
             {
                 if (characterSelections[i].LockedIn)
                 {
-                    locked++;                    
+                    locked++;
                 }
             }
-            if (locked == playersJoined) mainMenuManager.StartGame();
+            if (locked == playersJoined) return true;
+            else return false;
+        }
+        else return false;
+    }
+
+    public void StartCheck()
+    {
+        if (CheckLockedIn())
+        {
+            ScoreManager.Instance.ClearGlobalPlayerScores();
+            ManageScene.Instance.ClearSelectedLevels();
+            ManageScene.Instance.LoadScene("InfoScreen");
         }
     }
 
@@ -63,7 +77,7 @@ public class AddPlayerMenu : MonoBehaviour
         {
             for (int i = 0; i < controllerJoined.Length-1; i++)
             {
-                if (!controllerJoined[i] && Input.GetAxis("CMenu" + (i + 1)) == 1)
+                if (!controllerJoined[i] && Input.GetAxis("CJoin" + (i + 1)) == 1)
                 {
                     playerManager.NewControllerPlayer(i+1);
                     Debug.Log("inputs: " + playerManager.GetPlayerProfiles()[0].PlayerInputs);
@@ -74,7 +88,7 @@ public class AddPlayerMenu : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Return)
+            if (Input.GetKeyDown(KeyCode.Y)
                 && !controllerJoined[4])
             {
                 playerManager.NewKeyboardPlayer(0);
@@ -98,7 +112,24 @@ public class AddPlayerMenu : MonoBehaviour
             avatarSelectors[i].SetActive(false);
         }
 
+        for (int i = 0; i < avatarsPicked.Length; i++)
+        {
+            avatarsPicked[i] = false;
+        }
         playersJoined = 0;
         if (playerManager != null) playerManager.ClearPlayers();
+    }
+
+    public void SetAvatarPicked(int pickedAvatar, int player)
+    {
+        avatarsPicked[pickedAvatar] = true;
+        for (int i = 0; i < characterSelections.Length; i++)
+        {
+            if (player != characterSelections[i].playerNumber
+                && characterSelections[i].currentPrefab == pickedAvatar)
+            {
+                characterSelections[i].NextAvatar();
+            }
+        }
     }
 }
