@@ -83,7 +83,7 @@ Material:
     - _CausticsSpeed: 0.219
     - _CausticsSplit: 0.318
     - _CausticsStrength: 2.09
-    - _FoamShadowDepth: 10
+    - _FoamShadowDepth: 1
     - _FoamShadowStrength: 0.45
     - _IntersectionFoamBlend: 1
     - _IntersectionFoamDepth: 0.72
@@ -91,10 +91,10 @@ Material:
     - _IntersectionFoamShadowProjection: 4.6
     - _IntersectionWaterBlend: 0
     - _LightingHardness: 0
-    - _LightingSmoothness: 0.71
-    - _NormalsStrength: 0.03
-    - _PlanarReflectionFresnel: 2.5
-    - _PlanarReflectionStrength: 0.82
+    - _LightingSmoothness: 1
+    - _NormalsStrength: 0
+    - _PlanarReflectionFresnel: 4.43
+    - _PlanarReflectionStrength: 2.84
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RefractionStrength: 0.022
@@ -118,7 +118,7 @@ Material:
     - _IntersectionFoamMovement: {r: 0, g: 0, b: 0, a: 0}
     - _IntersectionFoamSampling: {r: 1, g: 0, b: 0, a: 0}
     - _LightingDiffuseColor: {r: 0, g: 0, b: 0, a: 0}
-    - _LightingSpecularColor: {r: 1, g: 1, b: 1, a: 0}
+    - _LightingSpecularColor: {r: 0.6096476, g: 0.91560173, b: 0.9433962, a: 0}
     - _NormalsMovement: {r: 0.04, g: 0.36, b: 0, a: 0}
     - _ShoreColor: {r: 0, g: 0.98039216, b: 0.30192798, a: 0}
     - _SurfaceFoamColor1: {r: 1, g: 1, b: 1, a: 0.3215686}
