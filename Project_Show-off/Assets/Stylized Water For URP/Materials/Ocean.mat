@@ -23,8 +23,6 @@ Material:
   m_Name: Ocean
   m_Shader: {fileID: -6465566751694194690, guid: b85c5e2c0d0c9774ab24e77078fc44cb, type: 3}
   m_ValidKeywords:
-  - FOAM_SHADOWS_ON
-  - INTERSECTION_EFFECTS_ON
   - WATER_LIGHTING_ON
   - WORLD_SPACE_UV_ON
   m_InvalidKeywords: []
@@ -71,8 +69,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - FOAM_SHADOWS: 1
-    - INTERSECTION_EFFECTS: 1
+    - FOAM_SHADOWS: 0
+    - INTERSECTION_EFFECTS: 0
     - SHORE_MOVEMENT: 0
     - SURFACE_FOAM: 0
     - WATER_LIGHTING: 1
@@ -85,36 +83,36 @@ Material:
     - _CausticsStrength: 2.09
     - _FoamShadowDepth: 1
     - _FoamShadowStrength: 0.45
-    - _IntersectionFoamBlend: 1
-    - _IntersectionFoamDepth: 0.72
+    - _IntersectionFoamBlend: 0.1
+    - _IntersectionFoamDepth: 2
     - _IntersectionFoamScale: 0.19
     - _IntersectionFoamShadowProjection: 4.6
     - _IntersectionWaterBlend: 0
     - _LightingHardness: 0
     - _LightingSmoothness: 1
-    - _NormalsStrength: 0
-    - _PlanarReflectionFresnel: 4.43
-    - _PlanarReflectionStrength: 2.84
+    - _NormalsStrength: -0.33
+    - _PlanarReflectionFresnel: 5.93
+    - _PlanarReflectionStrength: 4.88
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RefractionStrength: 0.022
+    - _RefractionStrength: 0
     - _ShoreBlend: 1
-    - _ShoreDepth: 0.74
+    - _ShoreDepth: 0
     - _ShoreFade: 1
     - _ShoreFoamBreakupScale: 0
     - _ShoreFoamBreakupStrength: 0
     - _ShoreFoamFrequency: 0
     - _ShoreFoamSpeed: 0
     - _ShoreFoamWidth: 0
-    - _SurfaceFoamBlend: 1
+    - _SurfaceFoamBlend: 0.1
     - _SurfaceFoamHeightMask: 0
     - _SurfaceFoamHeightMaskSmoothness: 0
-    - _SurfaceFoamShadowProjection: 15
+    - _SurfaceFoamShadowProjection: 10
     - _UnderwaterRefractionStrength: 0.099
-    - _WaterColorDepth: 0.8
-    - _WaterColorHorizonDistance: 20
+    - _WaterColorDepth: 4.82
+    - _WaterColorHorizonDistance: 10
     m_Colors:
-    - _IntersectionFoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _IntersectionFoamColor: {r: 0.61387503, g: 0.8396226, b: 0.81239396, a: 1}
     - _IntersectionFoamMovement: {r: 0, g: 0, b: 0, a: 0}
     - _IntersectionFoamSampling: {r: 1, g: 0, b: 0, a: 0}
     - _LightingDiffuseColor: {r: 0, g: 0, b: 0, a: 0}
@@ -126,7 +124,7 @@ Material:
     - _SurfaceFoamMovement: {r: 0.7, g: 0, b: 0.47, a: 0.01}
     - _SurfaceFoamSampling: {r: 0.62, g: 0, b: 0, a: 0}
     - _SurfaceFoamTilingAndOffset: {r: -1, g: -1, b: 0.57, a: 0.22}
-    - _WaterColorDeep: {r: 0.01176471, g: 0.28624168, b: 0.50980073, a: 1}
+    - _WaterColorDeep: {r: 0, g: 0.48287708, b: 0.509434, a: 1}
     - _WaterColorHorizon: {r: 0, g: 0.22741818, b: 0.8, a: 1}
     - _WaterColorShallow: {r: 0, g: 0.7725491, b: 0.62352943, a: 0.5019608}
     - _WaterColorUnderwater: {r: 0.20389047, g: 0.30977106, b: 0.517647, a: 1}
