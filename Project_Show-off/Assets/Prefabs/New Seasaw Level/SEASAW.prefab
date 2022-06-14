@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3767464934249728704}
   - component: {fileID: 7965264188272419074}
   - component: {fileID: 8080310317214880976}
-  - component: {fileID: 8181980167027107468}
   - component: {fileID: 7854197380072835962}
   - component: {fileID: 5956350243300414592}
+  - component: {fileID: 7687175240437470387}
   m_Layer: 0
   m_Name: SEASAW
   m_TagString: Untagged
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 4795316317459088204}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: -0.23721817, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8181980167027107468
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795316317459088204}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 840.00006, y: 127.60901, z: 1820}
-  m_Center: {x: 0, y: 5.082672, z: 0}
 --- !u!54 &7854197380072835962
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,3 +138,16 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!65 &7687175240437470387
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795316317459088204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.000001, y: 1.8229859, z: 26}
+  m_Center: {x: 0, y: 0.07260957, z: 0}
