@@ -17,9 +17,6 @@ public class AddPlayerMenu : MonoBehaviour
     [SerializeField] private float countdownTime = 6;
     [SerializeField] private float countdownTimer;
 
-    public GameObject[] avatarPrefabs;
-    public bool[] avatarsPicked = new bool[4];
-
     private void Start()
     {
         playerManager = PlayerManager.Instance;
@@ -124,9 +121,9 @@ public class AddPlayerMenu : MonoBehaviour
             deleteOnEnable[i].SetActive(true);
         }
 
-        for (int i = 0; i < avatarsPicked.Length; i++)
+        for (int i = 0; i < AvatarManager.Instance.avatarsPicked.Length; i++)
         {
-            avatarsPicked[i] = false;
+            AvatarManager.Instance.avatarsPicked[i] = false;
         }
         playersJoined = 0;
         if (playerManager != null) playerManager.ClearPlayers();
@@ -134,7 +131,7 @@ public class AddPlayerMenu : MonoBehaviour
 
     public void SetAvatarPicked(int pickedAvatar, int player)
     {
-        avatarsPicked[pickedAvatar] = true;
+        AvatarManager.Instance.avatarsPicked[pickedAvatar] = true;
         for (int i = 0; i < characterSelections.Length; i++)
         {
             if (player != characterSelections[i].playerNumber

@@ -63,9 +63,6 @@ public class MainMenuManager : MonoBehaviour
                 settings.SetActive(true);
                 credits.SetActive(false);
                 howTo.SetActive(false);
-
-              //  EventSystem.current.SetSelectedGameObject(null);
-               // EventSystem.current.SetSelectedGameObject(settingsButton);
                 break;
 
             case "Credits":

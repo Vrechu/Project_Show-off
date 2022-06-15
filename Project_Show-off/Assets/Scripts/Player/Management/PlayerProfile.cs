@@ -9,8 +9,8 @@ public class PlayerProfile
 {
     readonly public int PlayerNumber;
     readonly public int ControllerNumber;
-    public GameObject AvatarPrefab;
-    public GameObject Avatar;
+    public int AvatarNumber;
+    public GameObject AvatarInstance;
     public PlayerInputs PlayerInputs;
     public bool InScene = false;
 

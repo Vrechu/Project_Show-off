@@ -9,6 +9,9 @@ public class IngameCanvas : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private GameObject ingameMenu;
     [SerializeField] private GameObject firstSelected;
+
+    [SerializeField] private GameObject[] playerUIObjects;
+
     public bool InMenu = false;
     private UniversalInputs inputs = new UniversalInputs(0);
 
@@ -17,6 +20,7 @@ public class IngameCanvas : MonoBehaviour
     {
         CloseMenu();
         LevelSettings.OnSettingsReady += SetManager;
+        SetPlayerUI();
     }
 
     private void OnDestroy()
@@ -42,7 +46,19 @@ public class IngameCanvas : MonoBehaviour
     {
         if (levelEndManager != null)
         {
-            timeText.text = levelEndManager.levelTimer.ToString();
+            timeText.text = ((int)levelEndManager.levelTimer).ToString();
+        }
+    }
+
+    private void SetPlayerUI()
+    {
+        for (int i = 0; i < playerUIObjects.Length; i++) 
+        {
+            playerUIObjects[i].SetActive(false);            
+        }
+        for (int i = 0; i < PlayerManager.Instance.GetPlayerProfiles().Count; i++)
+        {
+            playerUIObjects[i].SetActive(true);
         }
     }
 
@@ -50,13 +66,14 @@ public class IngameCanvas : MonoBehaviour
     {
         ingameMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-       EventSystem.current.SetSelectedGameObject(firstSelected);
+        EventSystem.current.SetSelectedGameObject(firstSelected);
         InMenu = true;
         Time.timeScale = 0;
     }
 
     public void CloseMenu()
     {
+        EventSystem.current.SetSelectedGameObject(null);
         ingameMenu.SetActive(false);
         InMenu = false;
         Time.timeScale = 1;

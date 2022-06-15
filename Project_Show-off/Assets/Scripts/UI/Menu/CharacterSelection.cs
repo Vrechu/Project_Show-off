@@ -63,7 +63,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void LockInAvatar()
     {
-        playerManager.GetPlayerProfiles()[playerNumber].AvatarPrefab = addPlayerMenu.avatarPrefabs[currentPrefab];
+        playerManager.GetPlayerProfiles()[playerNumber].AvatarNumber = currentPrefab;
         for (int i = 0; i < disabledWhenLocked.Length; i++)
         {
             disabledWhenLocked[i].SetActive(false);
@@ -87,14 +87,15 @@ public class CharacterSelection : MonoBehaviour
             enabledWhenLocked[i].SetActive(false);
         }
         LockedIn = false;
+        AvatarManager.Instance.avatarsPicked[currentPrefab] = false;
     }
 
     public void NextAvatar()
     {
-        if (currentPrefab < addPlayerMenu.avatarPrefabs.Length - 1) currentPrefab++;
+        if (currentPrefab < AvatarManager.Instance.AvatarPrefabs.Length - 1) currentPrefab++;
         else currentPrefab = 0;
         SetCurrentPrefabImage();
-        if (addPlayerMenu.avatarsPicked[currentPrefab])
+        if (AvatarManager.Instance.avatarsPicked[currentPrefab])
         {
             NextAvatar();
         }
@@ -103,9 +104,9 @@ public class CharacterSelection : MonoBehaviour
     public void PreviousAvatar()
     {
         if (currentPrefab > 0) currentPrefab--;
-        else currentPrefab = addPlayerMenu.avatarPrefabs.Length - 1;
+        else currentPrefab = AvatarManager.Instance.AvatarPrefabs.Length - 1;
         SetCurrentPrefabImage();
-        if (addPlayerMenu.avatarsPicked[currentPrefab])
+        if (AvatarManager.Instance.avatarsPicked[currentPrefab])
         {
             PreviousAvatar();
         }

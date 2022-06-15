@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,10 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; set; }
+    public static event Action OnScoreChange;
 
-    public float[] ScoresPerRank = new float[] { 100, 75, 50, 25 }; 
-    public float[] GlobalPlayerScores = new float[4];
-    public float[] LevelPlayerScores = new float[4];
-    public int[] LevelPlayerRanks = new int[4];
+    public int[] ScoresPerRank = new int[] { 100, 75, 50, 25 }; 
+    public int[] GlobalPlayerScores, GlobalPlayerRanks ,LevelPlayerScores, LevelPlayerRanks = new int[4];
 
     private void Awake()
     {
@@ -25,14 +25,17 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void AddLevelPlayerScore(int playerNumber, float addedScore)
+    public void AddLevelPlayerScore(int playerNumber, int addedScore)
     {
         LevelPlayerScores[playerNumber] += addedScore;
+        OnScoreChange?.Invoke();
+        CalculateLevelRanksFromScores();
     }
 
-    public void RemoveLevelPlayerScore(int playerNumber, float removedScore)
+    public void RemoveLevelPlayerScore(int playerNumber, int removedScore)
     {
         LevelPlayerScores[playerNumber] -= removedScore;
+        CalculateLevelRanksFromScores();
     }
 
     public void ClearGlobalPlayerScores()
@@ -66,6 +69,12 @@ public class ScoreManager : MonoBehaviour
         return player;
     }
 
+    public void SetLevelPlayerRank(int player, int rank)
+    {
+        LevelPlayerRanks[player] = rank;
+        OnScoreChange?.Invoke();
+    }
+
     public void ClearLevelPlayerRanks()
     {
         for (int i = 0; i < LevelPlayerRanks.Length; i++)
@@ -73,4 +82,31 @@ public class ScoreManager : MonoBehaviour
             LevelPlayerRanks[i] = 0;
         }
     }
+
+    private void CalculateLevelRanksFromScores()
+    {
+        for (int i = 0; i < LevelPlayerScores.Length; i++)
+        {
+            int rank = 3;
+            for (int j = 0; j < LevelPlayerScores.Length; j++)
+            {
+                if (LevelPlayerScores[i] >= LevelPlayerScores[j]) rank--;
+            }
+            LevelPlayerRanks[i] = rank;
+        }
+    }
+
+    private void CalculateGlobalRanksFromScores()
+    {
+        for (int i = 0; i < GlobalPlayerScores.Length; i++)
+        {
+            int rank = 3;
+            for (int j = 0; j < GlobalPlayerScores.Length; j++)
+            {
+                if (GlobalPlayerScores[i] >= GlobalPlayerScores[j]) rank--;
+            }
+            GlobalPlayerRanks[i] = rank;
+        }
+    }
+
 }

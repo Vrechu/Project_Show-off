@@ -32,11 +32,12 @@ public class PlacePlayers : MonoBehaviour
         {
             if (!playerProfile.InScene)
             {
-                GameObject avatar = Instantiate(playerProfile.AvatarPrefab, respawnManager.MySpawnPoint(playerProfile.PlayerNumber).position,
+                GameObject avatar = Instantiate(AvatarManager.Instance.AvatarPrefabs[playerProfile.AvatarNumber]
+                    , respawnManager.MySpawnPoint(playerProfile.PlayerNumber).position,
                     respawnManager.MySpawnPoint(playerProfile.PlayerNumber).rotation);
-                playerProfile.Avatar = avatar;
+                playerProfile.AvatarInstance = avatar;
                 avatar.GetComponent<PlayerProfileAccess>().PlayerProfile = playerProfile;
-                playerProfile.InScene = true;                
+                playerProfile.InScene = true;
             }
         }
         OnPlayerSpawn?.Invoke();

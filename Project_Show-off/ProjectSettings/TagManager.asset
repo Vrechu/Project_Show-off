@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Grabbable
   - ScoringObject
+  - DestroyOnFall
   layers:
   - Default
   - TransparentFX
