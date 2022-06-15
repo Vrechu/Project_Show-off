@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AddPlayerMenu : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class AddPlayerMenu : MonoBehaviour
     [SerializeField] private MainMenuManager mainMenuManager;
     [SerializeField] private GameObject[] avatarSelectors, deleteOnEnable;
     [SerializeField] private CharacterSelection[] characterSelections;
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private float countdownTime = 6;
+    [SerializeField] private float countdownTimer;
+
     public GameObject[] avatarPrefabs;
     public bool[] avatarsPicked = new bool[4];
 
@@ -28,9 +33,9 @@ public class AddPlayerMenu : MonoBehaviour
 
     void Update()
     {
-        if (inputs.MenuPressed()) StartCheck();
         GoBack();
         AddPlayer();
+        CountDown();
     }
 
     public bool CheckLockedIn()
@@ -137,6 +142,25 @@ public class AddPlayerMenu : MonoBehaviour
             {
                 characterSelections[i].NextAvatar();
             }
+        }
+    }
+
+    private void CountDown()
+    {
+        if (CheckLockedIn())
+        {
+            if (countdownTimer > 1)
+            {
+                countdownTimer -= Time.deltaTime;
+
+            }
+            else StartCheck();
+            timerText.text = "Starting " + ((int)countdownTimer).ToString();
+        }
+        else
+        {
+            countdownTimer = countdownTime;
+            timerText.text = "";
         }
     }
 }

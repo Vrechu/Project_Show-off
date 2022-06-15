@@ -20,6 +20,7 @@ public class TransitionButtons : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(secondSelected);
         ScoreManager.Instance.ClearLevelPlayerScores();
+        ScoreManager.Instance.ClearLevelPlayerRanks();
         firstScreen.SetActive(false);
         secondScreen.SetActive(true);
     }

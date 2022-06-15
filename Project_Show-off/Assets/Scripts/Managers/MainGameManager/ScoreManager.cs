@@ -6,8 +6,10 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance { get; set; }
 
+    public float[] ScoresPerRank = new float[] { 100, 75, 50, 25 }; 
     public float[] GlobalPlayerScores = new float[4];
     public float[] LevelPlayerScores = new float[4];
+    public int[] LevelPlayerRanks = new int[4];
 
     private void Awake()
     {
@@ -19,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     {
         for (int i = 0; i < GlobalPlayerScores.Length; i++)
         {
-            GlobalPlayerScores[i] += LevelPlayerScores[i];
+            GlobalPlayerScores[i] += ScoresPerRank[LevelPlayerRanks[i]];
         }
     }
 
@@ -45,8 +47,7 @@ public class ScoreManager : MonoBehaviour
     {
         for (int i = 0; i < LevelPlayerScores.Length; i++)
         {
-            LevelPlayerScores[i] = 0;
-            
+            LevelPlayerScores[i] = 0;            
         }
     }
 
@@ -63,5 +64,13 @@ public class ScoreManager : MonoBehaviour
             }
         }
         return player;
+    }
+
+    public void ClearLevelPlayerRanks()
+    {
+        for (int i = 0; i < LevelPlayerRanks.Length; i++)
+        {
+            LevelPlayerRanks[i] = 0;
+        }
     }
 }

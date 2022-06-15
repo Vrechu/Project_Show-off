@@ -11,6 +11,12 @@ public class TimedLevelEndManager : LevelEndManager
     {
         base.Start();
         levelTimer = levelTime;
+        DieOnFall.OnAllPlayersDead += EndLevel;
+    }
+
+    private void OnDestroy()
+    {
+        DieOnFall.OnAllPlayersDead -= EndLevel;
     }
 
     private void FixedUpdate()

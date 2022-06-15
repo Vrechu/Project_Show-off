@@ -19,6 +19,7 @@ public class ManageScene : MonoBehaviour
             Destroy(this);
         }
         selectedLevels = new bool[Levels.Length];
+        Levels[0] = finalScreen;
     }
 
     public void LoadScene(string sceneName)

@@ -7,15 +7,23 @@ using UnityEngine.EventSystems;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainScreen, characterSelect, title, settings, credits, howTo;
-    [SerializeField] private GameObject mainMenuButton, settingsButton, creditsButton, howToButton;
+    [SerializeField] private GameObject mainMenuButton, settingsButton;
+    private UniversalInputs inputs = new UniversalInputs(0);
+    private string currentScreen;
 
     private void Start()
     {
         SetMenuScreen("Title");
     }
 
+    private void Update()
+    {
+        ToMenu();
+    }
+
     public void SetMenuScreen(string screenName)
     {
+        currentScreen = screenName;
         switch (screenName)
         {
             case "Title":
@@ -25,8 +33,6 @@ public class MainMenuManager : MonoBehaviour
                 settings.SetActive(false);
                 credits.SetActive(false);
                 howTo.SetActive(false);
-
-                EventSystem.current.SetSelectedGameObject(null);
                 break;
 
             case "Main":
@@ -48,8 +54,6 @@ public class MainMenuManager : MonoBehaviour
                 settings.SetActive(false);
                 credits.SetActive(false);
                 howTo.SetActive(false);
-
-                EventSystem.current.SetSelectedGameObject(null);
                 break;
 
             case "Settings":
@@ -60,8 +64,8 @@ public class MainMenuManager : MonoBehaviour
                 credits.SetActive(false);
                 howTo.SetActive(false);
 
-                EventSystem.current.SetSelectedGameObject(null);
-                EventSystem.current.SetSelectedGameObject(settingsButton);
+              //  EventSystem.current.SetSelectedGameObject(null);
+               // EventSystem.current.SetSelectedGameObject(settingsButton);
                 break;
 
             case "Credits":
@@ -71,9 +75,6 @@ public class MainMenuManager : MonoBehaviour
                 settings.SetActive(false);
                 credits.SetActive(true);
                 howTo.SetActive(false);
-
-                EventSystem.current.SetSelectedGameObject(null);
-                EventSystem.current.SetSelectedGameObject(creditsButton);
                 break;
 
             case "HowTo":
@@ -83,9 +84,6 @@ public class MainMenuManager : MonoBehaviour
                 settings.SetActive(false);
                 credits.SetActive(false);
                 howTo.SetActive(true);
-
-                EventSystem.current.SetSelectedGameObject(null);
-                EventSystem.current.SetSelectedGameObject(howToButton);
                 break;
 
         }
@@ -94,5 +92,24 @@ public class MainMenuManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    void ToMenu() 
+    { 
+        if (inputs.BackPressed() && 
+            (currentScreen == "Settings"
+            || currentScreen == "Credits"
+            || currentScreen == "HowTo"))
+        {
+            SetMenuScreen("Main");
+        }
+        if ((inputs.JumpPressed()
+            || inputs.MenuPressed()
+            || inputs.GrabPressed()
+            || inputs.JoinPressed())           
+            && currentScreen == "Title")
+        {
+            SetMenuScreen("Main");
+        }
     }
 }

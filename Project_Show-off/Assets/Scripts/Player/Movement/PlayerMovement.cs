@@ -48,6 +48,14 @@ public class PlayerMovement : MonoBehaviour
         if (!OverTopSpeed())
         {
             playerRigidbody.AddForce(new Vector3(Direction().x, 0, Direction().y) * Acceleration(), ForceMode.Acceleration);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(transform.position, transform.up * -1, out hitInfo, 1.5f))
+            {
+                Rigidbody rb = hitInfo.rigidbody;
+
+                if (rb != null) rb.AddForce(new Vector3(-Direction().x, 0, -Direction().y) * Acceleration());                
+            }
+
         }
         playerRigidbody.AddForce(Drag(), ForceMode.Acceleration);
     }
@@ -81,14 +89,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (cameraTransform != null)
         {
-            Vector2 cameraVector = (new Vector2(cameraTransform.forward.x, cameraTransform.forward.z).normalized
-                + new Vector2(cameraTransform.right.x, cameraTransform.right.z).normalized).normalized;
+            Vector2 cameraForwardVector = new Vector2(cameraTransform.forward.x, cameraTransform.forward.z).normalized;
 
-            Vector2 direction = new Vector2(cameraVector.x * playerProfile.PlayerInputs.Direction().x,
-                cameraVector.y * playerProfile.PlayerInputs.Direction().y).normalized;
+            Vector2 cameraRightVector = new Vector2(cameraTransform.right.x, cameraTransform.right.z).normalized;
 
-            /*Vector3 cameraVector = (cameraTransform.right * playerProfile.PlayerInputs.Direction().x)
-            + (cameraTransform.forward * playerProfile.PlayerInputs.Direction().y).normalized;*/
+            Vector2 direction = (cameraRightVector * playerProfile.PlayerInputs.Direction().x +
+                cameraForwardVector * playerProfile.PlayerInputs.Direction().y).normalized;
             return direction;
         }
         else
