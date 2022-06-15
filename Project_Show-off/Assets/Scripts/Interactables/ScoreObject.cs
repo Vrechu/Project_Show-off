@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ScoreObject : MonoBehaviour
 {
-    public float score = 10;
+    public int score = 10;
 }

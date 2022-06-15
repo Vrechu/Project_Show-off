@@ -7,7 +7,7 @@ public class FinishTrigger : MonoBehaviour
 {
     private ScoreManager scoreManager;
     private int playersFinished = 0;
-    [SerializeField] private float[] scoresOnFinish = new float[4];
+    [SerializeField] private int[] scoresOnFinish = new int[4];
     private PlayerManager playerManager;
     private LevelEndManager levelEndManager;
 
