@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 630673209414567947}
-  - component: {fileID: 630673209414567946}
   - component: {fileID: 630673209414567945}
+  - component: {fileID: 630673209414567946}
   - component: {fileID: 630673209414567944}
   - component: {fileID: 3941273120734834001}
+  - component: {fileID: 7699290928602845744}
   m_Layer: 0
   m_Name: MainGameManager
   m_TagString: Untagged
@@ -35,20 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &630673209414567946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630673209414567948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffaf36e14ed63ad4c8d953104a7ae8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Levels: []
-  finalScreen: 
 --- !u!114 &630673209414567945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +48,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42ba82a284c0e641982f199dc75bb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartingPoint: 0
+--- !u!114 &630673209414567946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630673209414567948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaf36e14ed63ad4c8d953104a7ae8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levels:
+  - FinalScreen
+  finalScreen: FinalScreen
+  NextLevel: 0
 --- !u!114 &630673209414567944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,13 +90,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7b09be9125c0a43b619f60d6795f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalPlayerScores:
-  - 0
-  - 0
-  - 0
-  - 0
-  LevelPlayerScores:
-  - 0
-  - 0
-  - 0
-  - 0
+  ScoresPerRank: 640000004b0000003200000019000000
+  GlobalPlayerScores: 00000000000000000000000000000000
+  GlobalPlayerRanks: 
+  LevelPlayerScores: 00000000000000000000000000000000
+  LevelPlayerRanks: 00000000000000000000000000000000
+--- !u!114 &7699290928602845744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630673209414567948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bcdf90474cc23c4fac87be29819edaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatarsPicked: 00000000
+  AvatarPrefabs:
+  - {fileID: 138089080622383589, guid: d23426f7e8a4b57479b287cd49a951cf, type: 3}
+  - {fileID: 138089080622383589, guid: d1ad8b982f2667041a0508926211c575, type: 3}
+  - {fileID: 138089080622383589, guid: 2d90b1e685b9dbd438edee447b3c4ac7, type: 3}
+  - {fileID: 138089080622383589, guid: 84ec9944256ada74b94f29ee9c56a0fc, type: 3}
+  AvatarNames:
+  - Shelly
+  - Bobby
+  - Ramone
+  - Janna

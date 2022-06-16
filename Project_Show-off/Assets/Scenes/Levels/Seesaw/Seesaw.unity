@@ -1047,7 +1047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 138089080622383589, guid: 53e40f6fc95a7b4439d35f01be319ff5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e40f6fc95a7b4439d35f01be319ff5, type: 3}
@@ -1234,18 +1234,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6813267351698285484, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
-      propertyPath: m_fontSize
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 6813267351698285484, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 6813267351698285486, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 431
-      objectReference: {fileID: 0}
     - target: {fileID: 6813267351898281266, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
