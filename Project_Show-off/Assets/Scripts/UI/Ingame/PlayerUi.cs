@@ -15,6 +15,7 @@ public class PlayerUi : MonoBehaviour
     {
         SetAvatarImage();
         SetPlayerIcon();
+        SetScore();
         crown.SetActive(false);
         ScoreManager.OnScoreChange += SetScore;
     }
@@ -52,7 +53,7 @@ public class PlayerUi : MonoBehaviour
         {
             score.text = ScoreManager.Instance.LevelPlayerScores[playerNumber].ToString();
         } 
-        else score.text = ScoreManager.Instance.LevelPlayerRanks[playerNumber].ToString();
+        else score.text = (ScoreManager.Instance.LevelPlayerRanks[playerNumber] +1).ToString();
         SetCrown();
     }
 

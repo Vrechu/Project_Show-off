@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class ScoreAndNewBall : MonoBehaviour
 {
     [SerializeField] private int playerNumber;
-    public static UnityEvent OnScore;
+    public UnityEvent OnScore;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +18,4 @@ public class ScoreAndNewBall : MonoBehaviour
             Debug.Log("added");
         }
     }
-
-
 }

@@ -417,5 +417,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8993012842420208671, guid: 551e4a6975fcb1c43b16856772d6f4aa, type: 3}
+      propertyPath: countdownTimer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 551e4a6975fcb1c43b16856772d6f4aa, type: 3}

@@ -19,7 +19,7 @@ public class DieOnFall : MonoBehaviour
         {
             Debug.Log("Player died: " + other.GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerNumber 
                 + ", position: " + playersAlive);
-            ScoreManager.Instance.SetLevelPlayerRank(other.GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerNumber, playersAlive);
+            ScoreManager.Instance.SetLevelPlayerRank(other.GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerNumber, playersAlive -1);
             Destroy(other.gameObject);
             playersAlive--;
             if (playersAlive < 1) OnAllPlayersDead?.Invoke();

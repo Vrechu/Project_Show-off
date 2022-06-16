@@ -373,6 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcdf90474cc23c4fac87be29819edaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avatarsPicked: 00000000
   AvatarPrefabs:
   - {fileID: 138089080622383589, guid: d23426f7e8a4b57479b287cd49a951cf, type: 3}
   - {fileID: 138089080622383589, guid: d1ad8b982f2667041a0508926211c575, type: 3}
@@ -404,6 +405,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
       propertyPath: Levels.Array.data[1]
+      value: greybox_lvl1
+      objectReference: {fileID: 0}
+    - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: Levels.Array.data[2]
       value: LEVEL2
       objectReference: {fileID: 0}
     - target: {fileID: 630673209414567947, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
@@ -477,7 +482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8060837180185441033, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8060837180506866916, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_Pivot.x

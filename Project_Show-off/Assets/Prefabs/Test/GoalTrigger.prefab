@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2980301396712198714}
   - component: {fileID: 2980301396712198717}
   - component: {fileID: 2980301396712198716}
-  - component: {fileID: 2980301396712198719}
+  - component: {fileID: 3184015484989987150}
   m_Layer: 0
   m_Name: GoalTrigger
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2980301396712198719
+--- !u!114 &3184015484989987150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2980301396712198718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8760e5f98521c6b4a9eba2aa78a69b30, type: 3}
+  m_Script: {fileID: 11500000, guid: 70bf0bc5edd7f3a46ad2d57bcc27f04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0

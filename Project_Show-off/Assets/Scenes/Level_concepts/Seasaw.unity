@@ -158,8 +158,6 @@ MonoBehaviour:
   objects:
   - {fileID: 2362896387582690602, guid: 2881615db3dd56441992cdb3a877ec32, type: 3}
   - {fileID: 4395735082267609636, guid: e1ce87993ef3e264689be6500d6cb6f2, type: 3}
-  - {fileID: 7597213912134681321, guid: 6b9c5884a702c7f449a44bb366c072cb, type: 3}
-  - {fileID: 5406913405515144770, guid: 2daf20f4b0e929b4ba616965ea78a0b8, type: 3}
   spawnPositions:
   - {fileID: 1294492226}
   - {fileID: 1728530735}
@@ -570,6 +568,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 138089080622383615, guid: 53e40f6fc95a7b4439d35f01be319ff5, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e40f6fc95a7b4439d35f01be319ff5, type: 3}
 --- !u!1 &504913368 stripped
@@ -674,7 +676,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 319407831, guid: 8c7592931d924814dad64dafcb0724fc, type: 3}
       propertyPath: m_CollisionDetection
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3261916402785655430, guid: 8c7592931d924814dad64dafcb0724fc, type: 3}
       propertyPath: m_Name
@@ -751,6 +753,18 @@ PrefabInstance:
     - target: {fileID: 5694634695383869794, guid: 8c7592931d924814dad64dafcb0724fc, type: 3}
       propertyPath: m_Spring.spring
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694634695383869794, guid: 8c7592931d924814dad64dafcb0724fc, type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694634695383869794, guid: 8c7592931d924814dad64dafcb0724fc, type: 3}
+      propertyPath: m_EnablePreprocessing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694634695383869794, guid: 8c7592931d924814dad64dafcb0724fc, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7038232301666300421, guid: 8c7592931d924814dad64dafcb0724fc, type: 3}
       propertyPath: m_Material
