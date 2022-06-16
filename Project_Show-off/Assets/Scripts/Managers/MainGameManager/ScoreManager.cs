@@ -28,7 +28,6 @@ public class ScoreManager : MonoBehaviour
     public void AddLevelPlayerScore(int playerNumber, int addedScore)
     {
         LevelPlayerScores[playerNumber] += addedScore;
-        OnScoreChange?.Invoke();
         CalculateLevelRanksFromScores();
     }
 
@@ -90,9 +89,9 @@ public class ScoreManager : MonoBehaviour
             int rank = 3;
             for (int j = 0; j < LevelPlayerScores.Length; j++)
             {
-                if (LevelPlayerScores[i] >= LevelPlayerScores[j]) rank--;
+                if (j != i && LevelPlayerScores[i] >= LevelPlayerScores[j]) rank--;
             }
-            LevelPlayerRanks[i] = rank;
+            SetLevelPlayerRank(i, rank);
         }
     }
 
@@ -103,7 +102,7 @@ public class ScoreManager : MonoBehaviour
             int rank = 3;
             for (int j = 0; j < GlobalPlayerScores.Length; j++)
             {
-                if (GlobalPlayerScores[i] >= GlobalPlayerScores[j]) rank--;
+                if (j != i && GlobalPlayerScores[i] >= GlobalPlayerScores[j]) rank--;
             }
             GlobalPlayerRanks[i] = rank;
         }

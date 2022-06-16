@@ -84,9 +84,12 @@ public class PlayerGrab : MonoBehaviour
 
     private void LetLoose()
     {
-        Destroy(grabbingObject.GetComponent<FixedJoint>());
-        grabbingObject.GetComponent<Rigidbody>().AddForce(transform.forward * pushForce, ForceMode.Impulse);
-        grabbingObject = null;
+        if (grabbingObject != null)
+        {
+            Destroy(grabbingObject.GetComponent<FixedJoint>());
+            grabbingObject.GetComponent<Rigidbody>().AddForce(transform.forward * pushForce, ForceMode.Impulse);
+            grabbingObject = null;
+        } 
         IsGrabbing = false;
         grabTimer = grabTime;
     }
