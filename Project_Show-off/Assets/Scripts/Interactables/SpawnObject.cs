@@ -31,7 +31,7 @@ public class SpawnObject : MonoBehaviour
     public void SpawnObjectHere()
     {
         int randomObject = Random.Range(0, objects.Length);
-        GameObject placedObject = Instantiate(objects[randomObject], transform);
+        GameObject placedObject = Instantiate(objects[randomObject], transform.position, Quaternion.identity);
         if (movingObjects) placedObject.GetComponent<MoveObjectToTarget>().SetDirection(targets[0]);
     }
 

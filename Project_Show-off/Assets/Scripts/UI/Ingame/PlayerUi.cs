@@ -43,7 +43,7 @@ public class PlayerUi : MonoBehaviour
         {
             playerIcons[i].SetActive(false);
         }
-        avatarImages[playerNumber].SetActive(true);
+        playerIcons[playerNumber].SetActive(true);
     }
 
 
