@@ -577,9 +577,25 @@ PrefabInstance:
       value: SEASAW
       objectReference: {fileID: 0}
     - target: {fileID: 5956350243300414592, guid: ab4520062ac2ea848beaf6e1efcc1709, type: 3}
+      propertyPath: m_Anchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956350243300414592, guid: ab4520062ac2ea848beaf6e1efcc1709, type: 3}
+      propertyPath: m_UseSpring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956350243300414592, guid: ab4520062ac2ea848beaf6e1efcc1709, type: 3}
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 30304084}
+    - target: {fileID: 5956350243300414592, guid: ab4520062ac2ea848beaf6e1efcc1709, type: 3}
+      propertyPath: m_Spring.damper
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956350243300414592, guid: ab4520062ac2ea848beaf6e1efcc1709, type: 3}
+      propertyPath: m_Spring.spring
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4520062ac2ea848beaf6e1efcc1709, type: 3}
 --- !u!1001 &574724199
@@ -1031,7 +1047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 138089080622383589, guid: 53e40f6fc95a7b4439d35f01be319ff5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e40f6fc95a7b4439d35f01be319ff5, type: 3}
