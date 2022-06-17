@@ -64,6 +64,12 @@ public class PlayerGrab : MonoBehaviour
                         Grab(other);
                     }
                     break;
+                case "DestroyOnFall":
+                    if (canGrab && grabbingObject == null)
+                    {
+                        Grab(other);
+                    }
+                    break;
             }
         }
         else if (grabbingObject != null)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3445224786660343124}
   m_Layer: 0
   m_Name: Mango
-  m_TagString: Untagged
+  m_TagString: DestroyOnFall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

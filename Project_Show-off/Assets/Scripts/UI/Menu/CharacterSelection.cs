@@ -72,6 +72,11 @@ public class CharacterSelection : MonoBehaviour
         {
             enabledWhenLocked[i].SetActive(true);
         }
+        for (int i = 0; i < avatarImages.Length; i++)
+        {
+            avatarImages[i].transform.localScale *= 1.4f;
+        }
+
         LockedIn = true;
         addPlayerMenu.SetAvatarPicked(currentPrefab, playerNumber);
     }
@@ -85,6 +90,10 @@ public class CharacterSelection : MonoBehaviour
         for (int i = 0; i < enabledWhenLocked.Length; i++)
         {
             enabledWhenLocked[i].SetActive(false);
+        }
+        for (int i = 0; i < avatarImages.Length; i++)
+        {
+            avatarImages[i].transform.localScale /= 1.4f;
         }
         LockedIn = false;
         AvatarManager.Instance.avatarsPicked[currentPrefab] = false;

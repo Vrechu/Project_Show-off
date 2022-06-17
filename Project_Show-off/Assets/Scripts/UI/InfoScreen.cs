@@ -16,7 +16,6 @@ public class InfoScreen : MonoBehaviour
     private void Start()
     {
         continuePanel.SetActive(false);
-        ManageScene.Instance.SetNextLevel();
         SetPanel();
     }
 

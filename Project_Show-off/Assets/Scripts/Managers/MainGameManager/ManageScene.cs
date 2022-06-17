@@ -11,12 +11,23 @@ public class ManageScene : MonoBehaviour
     private bool[] selectedLevels;
     public int NextLevel;
 
-    private void Start()
+    private void Awake()
+    {
+        GameInstanceManager.OnManagerDone += ManagerSetup;
+    }
+
+    private void OnDestroy()
+    {
+        GameInstanceManager.OnManagerDone -= ManagerSetup;
+    }
+
+    private void ManagerSetup()
     {
         if (Instance == null) Instance = this;
         else
         {
-            Destroy(this);
+            Destroy(Instance);
+            Instance = this;
         }
         selectedLevels = new bool[Levels.Length];
         Levels[0] = finalScreen;

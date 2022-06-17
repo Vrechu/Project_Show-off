@@ -59,6 +59,7 @@ public class AddPlayerMenu : MonoBehaviour
         {
             ScoreManager.Instance.ClearGlobalPlayerScores();
             ManageScene.Instance.ClearSelectedLevels();
+            ManageScene.Instance.SetNextLevel();
             ManageScene.Instance.LoadScene("InfoScreen");
         }
     }

@@ -12,12 +12,29 @@ public class AvatarManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(this);
-
-        for (int i = 0; i < avatarsPicked.Length; i++)
-        {
-            avatarsPicked[i] = false;
-        }
+         GameInstanceManager.OnManagerDone += ManagerSetup;
     }
+    private void OnDestroy()
+    {
+        GameInstanceManager.OnManagerDone -= ManagerSetup;
+    }
+
+    private void ManagerSetup()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(Instance);
+            Instance = this;
+        }
+            for (int i = 0; i < avatarsPicked.Length; i++)
+            {
+                avatarsPicked[i] = false;
+            }
+        }
+
+    
 }

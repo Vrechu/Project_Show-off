@@ -10,9 +10,21 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
+        GameInstanceManager.OnManagerDone += ManagerSetup;
+    }
+
+    private void OnDestroy()
+    {
+        GameInstanceManager.OnManagerDone -= ManagerSetup;
+    }
+
+    private void ManagerSetup()
+    {
         if (Instance == null) Instance = this;
-        else {
-            Destroy(this); 
+        else
+        {
+            Destroy(Instance);
+            Instance = this;
         }
     }
 

@@ -9,10 +9,17 @@ public class SetPlayerMarker : MonoBehaviour
     [SerializeField] private bool OnPlayer = false;
     [SerializeField] private int playerNumber = 0;
 
-    void Start()
+    private void Awake()
     {
         LevelSettings.OnSettingsReady += SetCamera;
-       
+    }
+    private void OnDestroy()
+    {
+        LevelSettings.OnSettingsReady -= SetCamera;
+    }
+
+    private void Start()
+    {
         for (int i = 0; i < icons.Length; i++)
         {
             icons[i].SetActive(false);
@@ -20,16 +27,12 @@ public class SetPlayerMarker : MonoBehaviour
         if (OnPlayer)
         {
             icons[GetComponentInParent<PlayerProfileAccess>().PlayerProfile.PlayerNumber].SetActive(true);
+            SetCamera();
         }
         else icons[playerNumber].SetActive(true);
     }
 
-    private void OnDestroy()
-    {
-        LevelSettings.OnSettingsReady -= SetCamera;
-    }
-
-    private void SetCamera()
+    public void SetCamera()
     {
         cameraTransform = LevelSettings.Instance.CameraManager.MyCamera(0).transform;
         transform.rotation = cameraTransform.rotation;

@@ -8,21 +8,22 @@ public class FinalScreen : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI[] scores = new TextMeshProUGUI[4];
     [SerializeField] private GameObject[] winner = new GameObject[4];
-    [SerializeField] private GameObject firstSelected;
     private ScoreManager scoreManager;
     private PlayerManager playerManager;
+
+    [SerializeField] private float countdownTimer = 4;
+    private UniversalInputs inputs = new UniversalInputs(0);
+    private bool canContinue = false;
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private GameObject continuePanel;
+
 
     void Start()
     {
         scoreManager = ScoreManager.Instance;
         playerManager = PlayerManager.Instance;
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(firstSelected);
+        continuePanel.SetActive(false);
         SetWinner();
-    }
-
-    private void FixedUpdate()
-    {
         ShowScores();
     }
 
@@ -43,8 +44,35 @@ public class FinalScreen : MonoBehaviour
         }
     }
 
-    public void BackToMenu()
+    private void Update()
     {
-        ManageScene.Instance.LoadScene("MainMenu");
+        CountDown();
+        Continue();
+    }
+
+    public void Continue()
+    {
+        if (canContinue && inputs.JumpPressed())
+        {
+            ManageScene.Instance.LoadScene("MainMenu");
+        }
+    }
+
+    private void CountDown()
+    {
+        if (!canContinue)
+        {
+            if (countdownTimer > 1)
+            {
+                countdownTimer -= Time.deltaTime;
+                timerText.text = ((int)countdownTimer).ToString();
+            }
+            else
+            {
+                canContinue = true;
+                continuePanel.SetActive(true);
+                timerText.text = "";
+            }
+        }
     }
 }

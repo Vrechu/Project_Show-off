@@ -41,7 +41,6 @@ public class SpawnObject : MonoBehaviour
         int randomPosition = Random.Range(0, spawnPositions.Length);
         GameObject placedObject = Instantiate(objects[randomObject], spawnPositions[randomPosition].position, Quaternion.identity);
         if (movingObjects) placedObject.GetComponent<MoveObjectToTarget>().SetDirection(targets[randomPosition]);
-        Debug.Log("object: " + randomObject + "position: " + randomPosition);
     }
 
     private void CountDown()
