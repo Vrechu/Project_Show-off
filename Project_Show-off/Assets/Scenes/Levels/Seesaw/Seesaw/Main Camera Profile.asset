@@ -18,10 +18,10 @@ MonoBehaviour:
     m_Value: 1.04
   intensity:
     m_OverrideState: 1
-    m_Value: 2.78
+    m_Value: 2.32
   scatter:
     m_OverrideState: 1
-    m_Value: 0.882
+    m_Value: 0.602
   clamp:
     m_OverrideState: 0
     m_Value: 65472
@@ -74,13 +74,13 @@ MonoBehaviour:
   active: 1
   redOutRedIn:
     m_OverrideState: 1
-    m_Value: 176
+    m_Value: 173
   redOutGreenIn:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 4
   redOutBlueIn:
     m_OverrideState: 1
-    m_Value: -8
+    m_Value: 1
   greenOutRedIn:
     m_OverrideState: 0
     m_Value: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   shadows:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 0.48794055, g: 0.6264561, b: 0.8018868, a: 1}
   highlights:
     m_OverrideState: 1

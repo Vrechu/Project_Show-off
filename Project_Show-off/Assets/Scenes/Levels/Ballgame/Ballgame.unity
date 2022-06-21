@@ -145,9 +145,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5608968605250812733, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 783
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608968605250812733, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 365
+      objectReference: {fileID: 0}
+    - target: {fileID: 5658286531405586230, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -754
+      objectReference: {fileID: 0}
+    - target: {fileID: 5658286531405586230, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 362
+      objectReference: {fileID: 0}
     - target: {fileID: 5943273940163309633, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
       propertyPath: scoreGame
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994049429836236952, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -762
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994049429836236952, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -350
       objectReference: {fileID: 0}
     - target: {fileID: 6813267351898281266, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
       propertyPath: m_Pivot.x
@@ -236,6 +260,14 @@ PrefabInstance:
     - target: {fileID: 6813267351898281269, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
       propertyPath: m_Name
       value: IngameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390718314387617212, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 805
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390718314387617212, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -332
       objectReference: {fileID: 0}
     - target: {fileID: 7477381914602278245, guid: 493426963bae9534c95dbfb9e772c9c5, type: 3}
       propertyPath: scoreGame
