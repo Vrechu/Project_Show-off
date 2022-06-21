@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42ba82a284c0e641982f199dc75bb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingPoint: 0
+  StartingPoint: 1
 --- !u!114 &630673209414567946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +63,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - FinalScreen
+  - Ballgame
+  - Seesaw
   finalScreen: FinalScreen
   NextLevel: 0
 --- !u!114 &630673209414567944
@@ -109,10 +111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarsPicked: 00000000
   AvatarPrefabs:
-  - {fileID: 138089080622383589, guid: d23426f7e8a4b57479b287cd49a951cf, type: 3}
-  - {fileID: 138089080622383589, guid: d1ad8b982f2667041a0508926211c575, type: 3}
-  - {fileID: 138089080622383589, guid: 2d90b1e685b9dbd438edee447b3c4ac7, type: 3}
-  - {fileID: 138089080622383589, guid: 84ec9944256ada74b94f29ee9c56a0fc, type: 3}
+  - {fileID: 4752796674338393533, guid: e62d1ed0dab2112408cfb277df1b2843, type: 3}
+  - {fileID: 4752796674338393533, guid: bffb30c35f01a8c4486deac08c5933fa, type: 3}
+  - {fileID: 4752796674338393533, guid: e158af8ccdd06b34ea56c6682fe7266b, type: 3}
+  - {fileID: 4752796674338393533, guid: 1554e92d6ca782849ba50c3048e4cd99, type: 3}
   AvatarNames:
   - Shelly
   - Bobby

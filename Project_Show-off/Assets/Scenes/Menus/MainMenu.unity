@@ -363,22 +363,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 630673209414567945, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
-      propertyPath: StartingPoint
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
-      propertyPath: Levels.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
-      propertyPath: Levels.Array.data[1]
-      value: Ballgame
-      objectReference: {fileID: 0}
-    - target: {fileID: 630673209414567946, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
-      propertyPath: Levels.Array.data[2]
-      value: Seesaw
-      objectReference: {fileID: 0}
     - target: {fileID: 630673209414567947, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
       propertyPath: m_RootOrder
       value: 3
