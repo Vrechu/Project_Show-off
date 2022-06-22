@@ -8,8 +8,8 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance { get; set; }
     public static event Action OnScoreChange;
 
-    public int[] ScoresPerRank = new int[] { 100, 75, 50, 25 }; 
-    public int[] GlobalPlayerScores, GlobalPlayerRanks ,LevelPlayerScores, LevelPlayerRanks = new int[4];
+    public int[] ScoresPerRank = new int[] { 100, 80, 70, 60 }; 
+    public int[] GlobalPlayerScores, OldGlobalPlayerScores, GlobalPlayerRanks ,LevelPlayerScores, LevelPlayerRanks = new int[4];
 
     private void Awake()
     {
@@ -29,12 +29,18 @@ public class ScoreManager : MonoBehaviour
             Destroy(Instance);
             Instance = this;
         }
+
+        for (int i = 0; i < GlobalPlayerScores.Length; i++)
+        {
+            GlobalPlayerScores[i] = 0;
+        }
     }
 
     public void SetGlobalPlayerScores()
     {
         for (int i = 0; i < GlobalPlayerScores.Length; i++)
         {
+            OldGlobalPlayerScores[i] = GlobalPlayerScores[i];
             GlobalPlayerScores[i] += ScoresPerRank[LevelPlayerRanks[i]];
         }
     }
@@ -109,7 +115,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private void CalculateGlobalRanksFromScores()
+    public void CalculateGlobalRanksFromScores()
     {
         for (int i = 0; i < GlobalPlayerScores.Length; i++)
         {
