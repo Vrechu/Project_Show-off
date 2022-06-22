@@ -22,7 +22,8 @@ public class DieOnFall : MonoBehaviour
             ScoreManager.Instance.SetLevelPlayerRank(other.GetComponent<PlayerProfileAccess>().PlayerProfile.PlayerNumber, playersAlive -1);
             Destroy(other.gameObject);
             playersAlive--;
-            if (playersAlive < 1) OnAllPlayersDead?.Invoke();
+            if (playersAlive < 2) OnAllPlayersDead?.Invoke();
+            SoundManager.Instance.PlayEffect(SoundManager.Instance.FallAlt);
         }
         else if (other.CompareTag("DestroyOnFall")) Destroy(other.gameObject);
     }

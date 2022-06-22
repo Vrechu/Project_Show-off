@@ -33,6 +33,7 @@ public class SpawnObject : MonoBehaviour
         int randomObject = Random.Range(0, objects.Length);
         GameObject placedObject = Instantiate(objects[randomObject], transform.position, Quaternion.identity);
         if (movingObjects) placedObject.GetComponent<MoveObjectToTarget>().SetDirection(targets[0]);
+        SoundManager.Instance.PlayEffect(SoundManager.Instance.Fall);
     }
 
     public void SpawnObjectAtPositions()
@@ -41,6 +42,7 @@ public class SpawnObject : MonoBehaviour
         int randomPosition = Random.Range(0, spawnPositions.Length);
         GameObject placedObject = Instantiate(objects[randomObject], spawnPositions[randomPosition].position, Quaternion.identity);
         if (movingObjects) placedObject.GetComponent<MoveObjectToTarget>().SetDirection(targets[randomPosition]);
+        SoundManager.Instance.PlayEffect(SoundManager.Instance.Fall);
     }
 
     private void CountDown()

@@ -42,7 +42,8 @@ public class ShowScores : MonoBehaviour
         }
 
         ManageScene.Instance.SetNextLevel();
-
+ 
+        SoundManager.Instance.PlayMusic(SoundManager.Instance.LoadingMusic);
 
         SetUpScores();
     }
@@ -98,6 +99,7 @@ public class ShowScores : MonoBehaviour
                 canContinue = true;
                 continuePanel.SetActive(true);
                 SetCrown();
+                SoundManager.Instance.PlayEffect(SoundManager.Instance.Return);
             }
         }
     }
@@ -108,6 +110,7 @@ public class ShowScores : MonoBehaviour
         {
             if (ManageScene.Instance.NextLevel != 0) ManageScene.Instance.LoadScene("InfoScreen");
             else ManageScene.Instance.LoadNextLevel();
+            SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
         }
     }
 

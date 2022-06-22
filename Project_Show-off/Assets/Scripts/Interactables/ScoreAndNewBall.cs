@@ -15,6 +15,7 @@ public class ScoreAndNewBall : MonoBehaviour
             ScoreManager.Instance.AddLevelPlayerScore(playerNumber, other.GetComponent<ScoreObject>().score);
             OnScore?.Invoke();
             Destroy(other.gameObject);
+            SoundManager.Instance.PlayEffect(SoundManager.Instance.Cheer);
         }
     }
 }

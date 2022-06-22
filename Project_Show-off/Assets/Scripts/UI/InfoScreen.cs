@@ -17,6 +17,7 @@ public class InfoScreen : MonoBehaviour
     {
         continuePanel.SetActive(false);
         SetPanel();
+        SoundManager.Instance.PlayMusic(SoundManager.Instance.LoadingMusic);
     }
 
     private void Update()
@@ -39,6 +40,7 @@ public class InfoScreen : MonoBehaviour
         if (canContinue && inputs.JumpPressed())
         {
             ManageScene.Instance.LoadNextLevel();
+            SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
         }
     }
 
@@ -56,6 +58,7 @@ public class InfoScreen : MonoBehaviour
                 canContinue = true;
                 continuePanel.SetActive(true);
                 timerText.text = "";
+                SoundManager.Instance.PlayEffect(SoundManager.Instance.Return);
             }
         }
     }

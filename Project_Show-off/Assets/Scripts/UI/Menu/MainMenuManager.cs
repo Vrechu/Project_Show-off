@@ -11,83 +11,67 @@ public class MainMenuManager : MonoBehaviour
     private UniversalInputs inputs = new UniversalInputs(0);
     private string currentScreen;
 
+
     private void Start()
     {
-        SetMenuScreen("Title");
+        SetMenuScreen("Title");        
     }
 
     private void Update()
     {
         ToMenu();
+        if (SoundManager.Instance != null && !SoundManager.Instance.MusicSource.isPlaying)
+        {
+            SoundManager.Instance.PlayMusic(SoundManager.Instance.MainMenuMusic);
+        }
     }
 
     public void SetMenuScreen(string screenName)
     {
         currentScreen = screenName;
+        title.SetActive(false);
+        mainScreen.SetActive(false);
+        characterSelect.SetActive(false);
+        settings.SetActive(false);
+        credits.SetActive(false);
+        howTo.SetActive(false);
+
         switch (screenName)
         {
             case "Title":
                 title.SetActive(true);
-                mainScreen.SetActive(false);
-                characterSelect.SetActive(false);
-                settings.SetActive(false);
-                credits.SetActive(false);
-                howTo.SetActive(false);
                 break;
 
             case "Main":
-                title.SetActive(false);
                 mainScreen.SetActive(true);
-                characterSelect.SetActive(false);
-                settings.SetActive(false);
-                credits.SetActive(false);
-                howTo.SetActive(false);
 
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(mainMenuButton);
                 break;
 
             case "CharacterSelect":
-                title.SetActive(false);
-                mainScreen.SetActive(false);
                 characterSelect.SetActive(true);
-                settings.SetActive(false);
-                credits.SetActive(false);
-                howTo.SetActive(false);
                 break;
 
             case "Settings":
-                title.SetActive(false);
-                mainScreen.SetActive(false);
-                characterSelect.SetActive(false);
                 settings.SetActive(true);
-                credits.SetActive(false);
-                howTo.SetActive(false);
                 break;
 
             case "Credits":
-                title.SetActive(false);
-                mainScreen.SetActive(false);
-                characterSelect.SetActive(false);
-                settings.SetActive(false);
                 credits.SetActive(true);
-                howTo.SetActive(false);
                 break;
 
             case "HowTo":
-                title.SetActive(false);
-                mainScreen.SetActive(false);
-                characterSelect.SetActive(false);
-                settings.SetActive(false);
-                credits.SetActive(false);
                 howTo.SetActive(true);
                 break;
 
         }
+        if (SoundManager.Instance != null) SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
     }    
 
     public void QuitGame()
     {
+        SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
         Application.Quit();
     }
 

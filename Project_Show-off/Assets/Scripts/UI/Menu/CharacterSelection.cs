@@ -77,6 +77,8 @@ public class CharacterSelection : MonoBehaviour
             avatarImages[i].transform.localScale *= 1.4f;
         }
 
+        SoundManager.Instance.PlayEffect(SoundManager.Instance.PlayerSounds[currentPrefab]);
+
         LockedIn = true;
         addPlayerMenu.SetAvatarPicked(currentPrefab, playerNumber);
     }

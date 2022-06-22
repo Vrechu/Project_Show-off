@@ -86,6 +86,7 @@ public class PlayerGrab : MonoBehaviour
         IsGrabbing = true;
         canGrab = false;
         grabTimer = grabTime;
+        SoundManager.Instance.PlayEffect(SoundManager.Instance.Bite);
     }
 
     private void LetLoose()

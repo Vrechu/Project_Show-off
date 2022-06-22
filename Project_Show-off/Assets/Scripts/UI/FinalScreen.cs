@@ -33,6 +33,8 @@ public class FinalScreen : MonoBehaviour
             playerPanels[i].SetActive(true);
         }
 
+        SoundManager.Instance.PlayMusic(SoundManager.Instance.LoadingMusic);
+
         continuePanel.SetActive(false);
         SetWinner();
         ShowScores();
@@ -74,6 +76,7 @@ public class FinalScreen : MonoBehaviour
         if (canContinue && inputs.JumpPressed())
         {
             ManageScene.Instance.LoadScene("MainMenu");
+            SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
         }
     }
 
@@ -91,6 +94,7 @@ public class FinalScreen : MonoBehaviour
                 canContinue = true;
                 continuePanel.SetActive(true);
                 timerText.text = "";
+                SoundManager.Instance.PlayEffect(SoundManager.Instance.Return);
             }
         }
     }

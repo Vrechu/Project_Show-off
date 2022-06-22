@@ -40,10 +40,7 @@ public class IngameCanvas : MonoBehaviour
             if (!InMenu) OpenMenu();
             else CloseMenu();
         }
-    }
 
-    private void FixedUpdate()
-    {
         if (levelEndManager != null)
         {
             timeText.text = ((int)levelEndManager.levelTimer).ToString();
@@ -69,6 +66,7 @@ public class IngameCanvas : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(firstSelected);
         InMenu = true;
         Time.timeScale = 0;
+        SoundManager.Instance.PlayEffect(SoundManager.Instance.Return);
     }
 
     public void CloseMenu()
@@ -77,6 +75,7 @@ public class IngameCanvas : MonoBehaviour
         ingameMenu.SetActive(false);
         InMenu = false;
         Time.timeScale = 1;
+        SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
     }
 
     public void BackToMenu()
@@ -84,5 +83,6 @@ public class IngameCanvas : MonoBehaviour
         Time.timeScale = 1;
         PlayerManager.Instance.ClearPlayers();
         ManageScene.Instance.LoadScene("MainMenu");
+        SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
     }
 }

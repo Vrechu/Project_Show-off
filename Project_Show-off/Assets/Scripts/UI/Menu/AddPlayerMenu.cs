@@ -61,6 +61,7 @@ public class AddPlayerMenu : MonoBehaviour
             ManageScene.Instance.ClearSelectedLevels();
             ManageScene.Instance.SetNextLevel();
             ManageScene.Instance.LoadScene("InfoScreen");
+            SoundManager.Instance.PlayEffect(SoundManager.Instance.StartGame);
         }
     }
 
@@ -70,6 +71,7 @@ public class AddPlayerMenu : MonoBehaviour
         {
             mainMenuManager.SetMenuScreen("Main");
             ClearPlayers();
+            SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
         }
 
     }
@@ -89,6 +91,7 @@ public class AddPlayerMenu : MonoBehaviour
                     controllerJoined[i] = true;
                     playersJoined++;
                     Debug.Log("Controller joined: " + (i+1) + ", Player: " + playersJoined);
+                    SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
                 }
             }
 
@@ -101,6 +104,7 @@ public class AddPlayerMenu : MonoBehaviour
                 controllerJoined[4] = true;
                 playersJoined++;
                 Debug.Log("Keyboard joined, Player: " + playersJoined);
+                SoundManager.Instance.PlayEffect(SoundManager.Instance.Select);
             }
         }
     }

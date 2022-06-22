@@ -37,6 +37,7 @@ public class PlayerJump : MonoBehaviour
         {
             objectRigidbody.AddForce(transform.up * jumpSpeed,ForceMode.Acceleration);
             jumpTimer = jumpTime;
+            SoundManager.Instance.PlayEffect(SoundManager.Instance.Jump);
         }
     }
 
