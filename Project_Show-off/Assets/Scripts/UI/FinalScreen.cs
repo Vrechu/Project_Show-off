@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class FinalScreen : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI[] scores = new TextMeshProUGUI[4];
-    [SerializeField] private GameObject[] winner = new GameObject[4];
+    [SerializeField] private GameObject[] crowns, playerPanels = new GameObject[4];
     private ScoreManager scoreManager;
     private PlayerManager playerManager;
 
@@ -22,6 +22,17 @@ public class FinalScreen : MonoBehaviour
     {
         scoreManager = ScoreManager.Instance;
         playerManager = PlayerManager.Instance;
+
+        for (int i = 0; i < playerPanels.Length; i++)
+        {
+            playerPanels[i].SetActive(false);
+        }
+
+        for (int i = 0; i < playerManager.GetPlayerProfiles().Count; i++)
+        {
+            playerPanels[i].SetActive(true);
+        }
+
         continuePanel.SetActive(false);
         SetWinner();
         ShowScores();
@@ -29,11 +40,19 @@ public class FinalScreen : MonoBehaviour
 
     private void SetWinner()
     {
-        for (int i = 0; i < winner.Length; i++)
+        scoreManager.CalculateGlobalRanksFromScores();
+        for (int i = 0; i < crowns.Length; i++)
         {
-            winner[i].SetActive(false);
+            crowns[i].SetActive(false);
         }
-        winner[scoreManager.TopPlayer()].SetActive(true);
+        for (int i = 0; i < scoreManager.GlobalPlayerRanks.Length; i++)
+        {
+            if (scoreManager.GlobalPlayerRanks[i] == 0)
+            {
+             crowns[i].SetActive(true);
+                playerPanels[i].transform.Translate(0, 1, 0);
+            }
+        }
     }
 
     private void ShowScores()
