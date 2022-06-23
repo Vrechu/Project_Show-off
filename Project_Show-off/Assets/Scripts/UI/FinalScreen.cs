@@ -114,7 +114,7 @@ public class FinalScreen : MonoBehaviour
                         SetWinner();
                         canContinue = true;
                         continuePanel.SetActive(true);
-                        SoundManager.Instance.PlayEffect(SoundManager.Instance.Return);
+                        SoundManager.Instance.PlayEffect(SoundManager.Instance.Victory);
                     }
                 }
             }

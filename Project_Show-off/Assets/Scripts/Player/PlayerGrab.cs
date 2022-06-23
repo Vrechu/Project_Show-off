@@ -96,6 +96,7 @@ public class PlayerGrab : MonoBehaviour
             Destroy(grabbingObject.GetComponent<FixedJoint>());
             grabbingObject.GetComponent<Rigidbody>().AddForce(transform.forward * pushForce, ForceMode.Impulse);
             grabbingObject = null;
+            SoundManager.Instance.PlayEffect(SoundManager.Instance.Push);
         } 
         IsGrabbing = false;
         grabTimer = grabTime;

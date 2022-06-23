@@ -12,7 +12,7 @@ public class SoundManager : MonoBehaviour
 
     [Header("Effects")]
     public AudioClip Bite;
-    public AudioClip Cheer, CheerAlt, Countdown, Fall, FallAlt, FruitHit, Jump;
+    public AudioClip Cheer, CheerAlt, Countdown, Fall, FallAlt, FruitHit, Jump, Push, Victory;
 
     [Header("Music")]
     public AudioClip IngameMusic;
