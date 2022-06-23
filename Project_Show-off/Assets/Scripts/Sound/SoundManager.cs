@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SoundManager : MonoBehaviour
 
 
     public AudioSource MusicSource, EffectsSource;
+    public AudioMixer Mixer;
 
     [Header("Effects")]
     public AudioClip Bite;
@@ -62,5 +64,26 @@ public class SoundManager : MonoBehaviour
             MusicSource.Play();
         }
     }
+
+    public void MuteMusic()
+    {
+        Mixer.SetFloat("MusicVolume", -80);
+    }
+
+    public void MuteEffects()
+    {
+        Mixer.SetFloat("EffectsVolume", -80);
+    }
+
+    public void UnmuteMusic()
+    {
+        Mixer.SetFloat("MusicVolume", 0);
+    }
+
+    public void UnmuteEffects()
+    {
+        Mixer.SetFloat("MusicVolume", 0);
+    }
+
 }
 

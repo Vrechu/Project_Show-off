@@ -114,7 +114,8 @@ MonoBehaviour:
   canGrab: 1
   grabTime: 1
   grabTimer: 0
-  pushForce: 150
+  pushForce: 80
+  grabHeight: 0.5
 --- !u!1 &2080872875
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,8 @@ public class PlayerGrab : MonoBehaviour
     [SerializeField] private float grabTime = 1;
     [SerializeField] private float grabTimer = 0;
     [SerializeField] private float pushForce = 200;
-    
+    [SerializeField] private float grabHeight = 0.5f;
+
 
     private void Start()
     {
@@ -81,6 +82,7 @@ public class PlayerGrab : MonoBehaviour
     private void Grab(Collider other)
     {
         grabbingObject = other.transform;
+        grabbingObject.Translate(0, grabHeight, 0);
         grabbingObject.gameObject.AddComponent<FixedJoint>();
         grabbingObject.GetComponent<FixedJoint>().connectedBody = GetComponentInParent<Rigidbody>();
         IsGrabbing = true;
@@ -94,7 +96,7 @@ public class PlayerGrab : MonoBehaviour
         if (grabbingObject != null)
         {
             Destroy(grabbingObject.GetComponent<FixedJoint>());
-            grabbingObject.GetComponent<Rigidbody>().AddForce(transform.forward * pushForce, ForceMode.Impulse);
+            grabbingObject.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up).normalized * pushForce, ForceMode.Impulse);
             grabbingObject = null;
             SoundManager.Instance.PlayEffect(SoundManager.Instance.Push);
         } 
