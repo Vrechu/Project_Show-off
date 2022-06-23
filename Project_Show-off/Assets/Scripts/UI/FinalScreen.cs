@@ -14,10 +14,11 @@ public class FinalScreen : MonoBehaviour
     [SerializeField] private float countdownTimer = 4;
     private UniversalInputs inputs = new UniversalInputs(0);
     private bool canContinue = false;
-    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject continuePanel;
 
     [SerializeField] private float distanceUP = 100;
+    [SerializeField] private float moveSpeed = 100;
+    private float panelHeight;
     private bool movedUP = false;
 
     void Start()
@@ -35,26 +36,28 @@ public class FinalScreen : MonoBehaviour
             playerPanels[i].SetActive(true);
         }
 
-        SoundManager.Instance.PlayMusic(SoundManager.Instance.LoadingMusic);
-
-        continuePanel.SetActive(false);
-        SetWinner();
-        ShowScores();
-    }
-
-    private void SetWinner()
-    {
         scoreManager.CalculateGlobalRanksFromScores();
         for (int i = 0; i < crowns.Length; i++)
         {
             crowns[i].SetActive(false);
         }
+
+        SoundManager.Instance.PlayMusic(SoundManager.Instance.LoadingMusic);
+
+        continuePanel.SetActive(false);
+        ShowScores();
+        panelHeight = playerPanels[0].transform.position.y;
+        panelHeight += distanceUP;
+    }
+
+    private void SetWinner()
+    {
+        
         for (int i = 0; i < scoreManager.GlobalPlayerRanks.Length; i++)
         {
             if (scoreManager.GlobalPlayerRanks[i] == 0)
             {
-             crowns[i].SetActive(true);
-                playerPanels[i].transform.Translate(0, 1, 0);
+                crowns[i].SetActive(true);
             }
         }
     }
@@ -71,6 +74,7 @@ public class FinalScreen : MonoBehaviour
     {
         CountDown();
         Continue();
+        MoveWinnerUp();
     }
 
     public void Continue()
@@ -86,30 +90,32 @@ public class FinalScreen : MonoBehaviour
     {
         if (!canContinue)
         {
-            if (countdownTimer > 1)
+            if (countdownTimer > 0)
             {
                 countdownTimer -= Time.deltaTime;
-                timerText.text = ((int)countdownTimer).ToString();
-            }
-            else
-            {
-                canContinue = true;
-                continuePanel.SetActive(true);
-                timerText.text = "";
-                SoundManager.Instance.PlayEffect(SoundManager.Instance.Return);
             }
         }
     }
 
     private void MoveWinnerUp()
     {
-        if (!movedUP)
+        if (!movedUP && countdownTimer < 0)
         {
             for (int i = 0; i < playerPanels.Length; i++)
             {
                 if (scoreManager.GlobalPlayerRanks[i] == 0)
                 {
-                    playerPanels[i].transform.Translate(0, Time.deltaTime, 0);
+                    if (playerPanels[i].transform.position.y < panelHeight)
+                    {
+                        playerPanels[i].transform.Translate(0, Time.deltaTime * moveSpeed, 0);
+                    }
+                    else
+                    {
+                        SetWinner();
+                        canContinue = true;
+                        continuePanel.SetActive(true);
+                        SoundManager.Instance.PlayEffect(SoundManager.Instance.Return);
+                    }
                 }
             }
         }
