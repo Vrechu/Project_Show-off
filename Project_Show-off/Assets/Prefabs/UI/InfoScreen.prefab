@@ -499,7 +499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -393.67, y: -405.20276}
+  m_AnchoredPosition: {x: -393.67, y: -405}
   m_SizeDelta: {x: 787.34, y: 179.1186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8754489513123790558
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -634,7 +634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -482, y: 421}
+  m_AnchoredPosition: {x: -515, y: 421}
   m_SizeDelta: {x: 787.34, y: 179.1186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3473008363005629138
@@ -665,7 +665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ballpit
+  m_text: Fruit Frenzy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98df2378187452f4183ee60fd3eeff39, type: 2}
   m_sharedMaterial: {fileID: -1892551411669963685, guid: 98df2378187452f4183ee60fd3eeff39, type: 2}
@@ -769,7 +769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -482, y: 421}
+  m_AnchoredPosition: {x: -511, y: 421}
   m_SizeDelta: {x: 787.34, y: 179.1186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3730114012961227149
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Froot loop
+  m_text: charcuterie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98df2378187452f4183ee60fd3eeff39, type: 2}
   m_sharedMaterial: {fileID: -1892551411669963685, guid: 98df2378187452f4183ee60fd3eeff39, type: 2}
@@ -1369,7 +1369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8212887449630817629
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1465,7 +1465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -393.67, y: -405.20276}
+  m_AnchoredPosition: {x: -393.67, y: -409}
   m_SizeDelta: {x: 787.34, y: 179.1186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5100736919566278195
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ballpit
+  m_text: "Push the fruits in \nyour base and score!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98df2378187452f4183ee60fd3eeff39, type: 2}
   m_sharedMaterial: {fileID: -1892551411669963685, guid: 98df2378187452f4183ee60fd3eeff39, type: 2}
@@ -1524,13 +1524,13 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 72
-  m_fontSizeBase: 0
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2120,7 +2120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7400607663665053672
 RectTransform:
   m_ObjectHideFlags: 0
