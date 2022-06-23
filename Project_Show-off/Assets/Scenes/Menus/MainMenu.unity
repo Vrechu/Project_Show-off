@@ -660,6 +660,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825158943}
   m_CullTransparentMesh: 1
+--- !u!1 &1851740975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 577688534610592202, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+  m_PrefabInstance: {fileID: 8060837180915331478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &630673210328771199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -667,6 +672,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 630673209414567945, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: StartingPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 630673209414567947, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -715,18 +724,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3941273120734834001, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
-      propertyPath: GlobalPlayerRanks.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3941273120734834001, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
-      propertyPath: OldGlobalPlayerScores.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699290928602845744, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
-      propertyPath: AvatarPrefabs.Array.data[0]
+    - target: {fileID: 4142472960356225102, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: playerSounds.Array.data[0]
       value: 
-      objectReference: {fileID: 4752796674338393533, guid: e62d1ed0dab2112408cfb277df1b2843, type: 3}
+      objectReference: {fileID: 8300000, guid: b96be63b4cb88ff47a476618f5af7e8b, type: 3}
+    - target: {fileID: 4142472960356225102, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: playerSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: a1eee5fd28bf97847bdf69fd66419236, type: 3}
+    - target: {fileID: 4142472960356225102, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: playerSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b64b3c87b488db4f8374384dc8391b5, type: 3}
+    - target: {fileID: 4142472960356225102, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
+      propertyPath: playerSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f4def17395d0b5348bd68c035fb67746, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 490e4c3186074044c969efb5f6328d65, type: 3}
 --- !u!1001 &8060837180915331478
@@ -828,6 +841,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8060837180506866917, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: settingsButton
+      value: 
+      objectReference: {fileID: 1851740975}
     - target: {fileID: 8060837180506866936, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -835,6 +852,10 @@ PrefabInstance:
     - target: {fileID: 8060837180685323938, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060837180879966386, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83dd90469b569eb458d72e0d4d235deb, type: 3}
