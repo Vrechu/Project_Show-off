@@ -43,7 +43,7 @@ public class PlayerGrab : MonoBehaviour
         {
             switch (other.tag)
             {
-                case "Grabbable":
+                case "Fruit":
                     if (canGrab && grabbingObject == null)
                     {
                         Grab(other);

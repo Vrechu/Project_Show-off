@@ -25,6 +25,6 @@ public class DieOnFall : MonoBehaviour
             if (playersAlive < 2) OnAllPlayersDead?.Invoke();
             SoundManager.Instance.PlayEffect(SoundManager.Instance.FallAlt);
         }
-        else if (other.CompareTag("DestroyOnFall")) Destroy(other.gameObject);
+        else if (other.CompareTag("Fruit")) Destroy(other.gameObject);
     }
 }

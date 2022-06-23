@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 4220038638772950575}
   - component: {fileID: 2494476783956032759}
   - component: {fileID: 5805007974729214478}
+  - component: {fileID: 4923786238452148923}
+  - component: {fileID: 2302698951581907512}
   m_Layer: 0
   m_Name: Banana
-  m_TagString: DestroyOnFall
+  m_TagString: Fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4583134504325911881}
   m_LocalRotation: {x: 0, y: 0, z: -0.7081196, w: 0.70609254}
   m_LocalPosition: {x: -0.00003134819, y: 0.0042990227, z: 0.00004682737}
-  m_LocalScale: {x: 25, y: 41.81178, z: 25}
+  m_LocalScale: {x: 30.000002, y: 50.174137, z: 30.000002}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,7 +95,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4583134504325911881}
   serializedVersion: 2
-  m_Mass: 15
+  m_Mass: 22
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -115,3 +117,28 @@ CapsuleCollider:
   m_Height: 0.07
   m_Direction: 1
   m_Center: {x: 0.000008445698, y: -0.007147831, z: 0}
+--- !u!114 &4923786238452148923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4583134504325911881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3121b4f227a2ca14aa6d1c5cebfc4f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2302698951581907512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4583134504325911881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc72a028505ca94ea5f9158e12aef58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 100

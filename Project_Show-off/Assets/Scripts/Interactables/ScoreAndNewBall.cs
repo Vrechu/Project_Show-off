@@ -10,7 +10,7 @@ public class ScoreAndNewBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("ScoringObject"))
+        if (other.CompareTag("Fruit"))
         {
             ScoreManager.Instance.AddLevelPlayerScore(playerNumber, other.GetComponent<ScoreObject>().score);
             OnScore?.Invoke();

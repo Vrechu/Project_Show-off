@@ -17,6 +17,8 @@ public class FinalScreen : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject continuePanel;
 
+    [SerializeField] private float distanceUP = 100;
+    private bool movedUP = false;
 
     void Start()
     {
@@ -95,6 +97,20 @@ public class FinalScreen : MonoBehaviour
                 continuePanel.SetActive(true);
                 timerText.text = "";
                 SoundManager.Instance.PlayEffect(SoundManager.Instance.Return);
+            }
+        }
+    }
+
+    private void MoveWinnerUp()
+    {
+        if (!movedUP)
+        {
+            for (int i = 0; i < playerPanels.Length; i++)
+            {
+                if (scoreManager.GlobalPlayerRanks[i] == 0)
+                {
+                    playerPanels[i].transform.Translate(0, Time.deltaTime, 0);
+                }
             }
         }
     }

@@ -11,11 +11,11 @@ public class SetPlayerMarker : MonoBehaviour
 
     private void Awake()
     {
-        LevelSettings.OnSettingsReady += SetCamera;
+        PlacePlayers.OnPlayerSpawn += SetCamera;
     }
     private void OnDestroy()
     {
-        LevelSettings.OnSettingsReady -= SetCamera;
+        PlacePlayers.OnPlayerSpawn -= SetCamera;
     }
 
     private void Start()
