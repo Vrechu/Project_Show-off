@@ -54,6 +54,8 @@ public class MainMenuManager : MonoBehaviour
                 break;
 
             case "Settings":
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(settingsButton);
                 settings.SetActive(true);
                 break;
 

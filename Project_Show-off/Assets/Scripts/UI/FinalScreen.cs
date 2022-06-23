@@ -19,7 +19,6 @@ public class FinalScreen : MonoBehaviour
     [SerializeField] private float distanceUP = 100;
     [SerializeField] private float moveSpeed = 100;
     private float panelHeight;
-    private bool movedUP = false;
 
     void Start()
     {
@@ -99,7 +98,7 @@ public class FinalScreen : MonoBehaviour
 
     private void MoveWinnerUp()
     {
-        if (!movedUP && countdownTimer < 0)
+        if (!canContinue && countdownTimer < 0)
         {
             for (int i = 0; i < playerPanels.Length; i++)
             {
@@ -115,6 +114,7 @@ public class FinalScreen : MonoBehaviour
                         canContinue = true;
                         continuePanel.SetActive(true);
                         SoundManager.Instance.PlayEffect(SoundManager.Instance.Victory);
+                        SoundManager.Instance.PlayEffect(SoundManager.Instance.PlayerSounds[i]);
                     }
                 }
             }

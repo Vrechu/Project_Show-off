@@ -119,8 +119,12 @@ public class ShowScores : MonoBehaviour
         scoreManager.CalculateGlobalRanksFromScores();
         for (int i = 0; i < playerManager.GetPlayerProfiles().Count; i++)
         {
-            if (scoreManager.GlobalPlayerRanks[i] == 0) crowns[i].SetActive(true);
-        } 
+            if (scoreManager.GlobalPlayerRanks[i] == 0)
+            {
+                crowns[i].SetActive(true);
+                SoundManager.Instance.PlayEffect(SoundManager.Instance.PlayerSounds[i]);
+            }
+        }
     }
 
     private void CountDown()

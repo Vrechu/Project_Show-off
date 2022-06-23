@@ -82,7 +82,7 @@ public class SoundManager : MonoBehaviour
 
     public void UnmuteEffects()
     {
-        Mixer.SetFloat("MusicVolume", 0);
+        Mixer.SetFloat("EffectsVolume", 0);
     }
 
 }
