@@ -127,4 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5933c69945999498e79ec2711f93f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RBShutDownTime: 12
+  RBShutDownTime: 6

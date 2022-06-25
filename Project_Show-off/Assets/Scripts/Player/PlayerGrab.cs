@@ -82,7 +82,7 @@ public class PlayerGrab : MonoBehaviour
     private void Grab(Collider other)
     {
         grabbingObject = other.transform;
-        grabbingObject.Translate(0, grabHeight, 0);
+        grabbingObject.position += new Vector3(0, grabHeight, 0);
         grabbingObject.gameObject.AddComponent<FixedJoint>();
         grabbingObject.GetComponent<FixedJoint>().connectedBody = GetComponentInParent<Rigidbody>();
         IsGrabbing = true;
